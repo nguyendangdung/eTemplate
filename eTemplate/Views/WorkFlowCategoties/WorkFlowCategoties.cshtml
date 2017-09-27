@@ -1,0 +1,8 @@
+﻿@model IEnumerable<ConsoleTest.WorkFlowCategory>
+
+<ul class="nav navbar-nav navbar-right">
+	@foreach (var item in Model)
+	{
+		<li><a href="@Url.Action("WorkFlowCategoryDetails", "Home", new {id = item.WorkFlowCategoryId})">@item.DisplayText</a></li>
+	}
+</ul>

@@ -1,0 +1,61 @@
+th {
+  text-align: left;
+  background: #f2f2f2;
+  color: #3c3c3c;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+  border-color:#BABABA;
+}
+.toolbar-new {
+  margin:0 20px;
+  float: right;
+}
+.form-wrapper {
+  display: block;
+  background: #FFF;
+  border: 1px solid #dcdcdc;
+  box-sizing: border-box;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.1);
+  -moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.1);
+  box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.1);
+  margin: 10px 20px 20px 20px;
+}
+h2.header-form {
+  font-family: Tahoma;
+  font-size: 14px;
+  font-weight: bold;
+  color: #C02222;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #DB0000;
+  margin-bottom: 10px;
+}
+.user-information 
+{
+    padding:18px 8px 18px 17px !important;    
+}
+.label-data 
+{
+    display:none;    
+}
+.xn-logo 
+{
+    background:#f6f6f6;
+}
+.user-name 
+{
+    position:fixed !important;
+    float:none !important;
+    top:0px !important;
+    right:0px !important;
+    width:auto !important;
+}
+.user-name li a .fa
+{
+    margin-right:0px !important;
+}
+.mCustomScrollBox 
+{
+    background:#134E80;    
+}

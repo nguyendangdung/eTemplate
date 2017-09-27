@@ -1,0 +1,583 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMCO</name>
+    </assembly>
+    <members>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelExportHelper.Export``1(System.Collections.Generic.IEnumerable{``0},SoftMart.Core.OfficeUtilities.Excel.Entity.ReportInfo,System.Collections.Generic.List{System.String})">
+            <summary>
+            Export List objects to Excel file
+            </summary>
+            <param name="datas">List data</param>
+            <param name="reportInfo"></param>
+            <param name="propertyNames">Danh sách tên các thuộc tính sẽ export. Bỏ qua các cột có tên rỗng, các cột này thường chứa công thức.
+                <para>Null: Dung ten cot cua table</para>
+            </param>
+            <returns>Full Excel file path</returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelExportHelper.Export(System.Data.DataTable,SoftMart.Core.OfficeUtilities.Excel.Entity.ReportInfo,System.Collections.Generic.List{System.String})">
+            <summary>
+            Export DataTable to Excel content
+            </summary>
+            <param name="table">Data</param>
+            <param name="reportInfo"></param>
+            <param name="columnNames">Danh sách tên các cột sẽ export. Bỏ qua các cột có tên rỗng, các cột này thường chứa công thức.
+            <para>Null: Dung ten cot cua table</para>
+            </param>
+            <returns>Full Excel file path</returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelExportHelper.ExportContent``1(System.Collections.Generic.IEnumerable{``0},SoftMart.Core.OfficeUtilities.Excel.Entity.ReportInfo,System.Collections.Generic.List{System.String})">
+            <summary>
+            Export List objects to Excel file
+            </summary>
+            <param name="datas">List data</param>
+            <param name="reportInfo"></param>
+            <param name="propertyNames">Danh sách tên các thuộc tính sẽ export. Bỏ qua các cột có tên rỗng, các cột này thường chứa công thức.
+                <para>Null: Dung ten cot cua table</para>
+            </param>
+            <returns>Excel content</returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelExportHelper.ExportContent(System.Data.DataTable,SoftMart.Core.OfficeUtilities.Excel.Entity.ReportInfo,System.Collections.Generic.List{System.String})">
+            <summary>
+            Export DataTable to Excel content
+            </summary>
+            <param name="table">Data</param>
+            <param name="reportInfo"></param>
+            <param name="columnNames">Danh sách tên các cột sẽ export. Bỏ qua các cột có tên rỗng, các cột này thường chứa công thức.
+                <para>Null: Dung ten cot cua table</para>
+            </param>
+            <returns>Excel content</returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelExportHelper.PrepareData(System.Data.DataTable,System.String,System.Int32,System.Collections.Generic.List{System.String})">
+            <summary>
+            Chuẩn bị dữ liệu để đổ vào Excel theo từng cột.
+            </summary>
+            <param name="dt">Table chứa dữ liệu</param>
+            <param name="startCol">Cell bắt đầu</param>
+            <param name="startRow">Cell bắt đầu</param>
+            <param name="columnNames">Các cột sẽ đổ dữ liệu. Null: Đổ toàn bộ dữ liệu. Bỏ qua các cột IsNullOrWhiteSpace</param>
+            <returns>Mỗi item trong List là dữ liệu 1 cột. Range: vùng dữ liệu, ex: "A1:A100"</returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelExportHelper.PrepareData(System.Data.DataTable,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            Chuẩn bị dữ liệu để đổ vào Excel table theo từng cột
+            </summary>
+            <param name="dt">Table chứa dữ liệu</param>
+            <param name="lstTableColumnName">Các cột trên Excel table sẽ được đổ dữ liệu</param>
+            <param name="columnNames">Các cột sẽ đổ dữ liệu. Null: Đổ toàn bộ dữ liệu. Bỏ qua các cột IsNullOrWhiteSpace</param>
+            <returns>Mỗi item trong List là dữ liệu 1 cột. Range: Tên cột của Table, ex: "Customer"</returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelExportHelper.CorrectCellValue(System.Collections.Generic.List{SoftMart.Core.OfficeUtilities.Entity.ExcelColumnValues})">
+            <summary>
+            Start with "=" -> Add "'"
+            ...
+            </summary>
+            <param name="lstColValues"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelExportHelper.ConvertObjectsToDataTable``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.List{System.String})">
+            <summary>
+            Chuyển danh sách Object sang DataTable
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="datas"></param>
+            <param name="propertyNames">null: Use all public Properties of T</param>
+            <returns></returns>
+        </member>
+        <member name="T:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper">
+             <summary>
+             Provides base methods to open and access to excel file.
+             
+             Notes: NEVER USE 2 DOTS WITH COM OBJECTS.
+            
+             Dim wkBook As Workbook
+             dim tmp as WorkBooks
+             tmp = xlApp.Workbooks
+             wkBook = tmp.Open("C:\test.xls...
+            
+             The tmp variable has a com ref that will not be released until its garabage
+             collected. the rule you should use is never use 2 dots with com objects.
+             alway create a tmp, and call ReleaseComObject() on the tmps. 
+             
+             Index starts from 1 (Base 1)
+             </summary>
+        </member>
+        <member name="F:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper._wSheet">
+            <summary>
+            Active WorkSheet
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.#ctor(System.String,System.Boolean)">
+            <summary>
+            Constructor. Excel file is loaded immediately.
+            </summary>
+            <param name="filePath">Excel file path</param>
+            <param name="readOnly">Option when Open Excel file</param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.LoadFile(System.String,System.Boolean)">
+            <summary>
+            LoadFile
+            </summary>
+            <param name="filePath"></param>
+            <param name="readOnly">Option when Open Excel file</param>
+            <param name="type"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.GetCellValue(System.String)">
+            <summary>
+            Get cell value
+            </summary>
+            <param name="cellName">Like: A1, AA1</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.GetRangeValue(System.String)">
+            <summary>
+            Get value of a Rangle
+            </summary>
+            <param name="strRange"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.GetTableNames">
+            <summary>
+            Get name of all tables in active sheet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.GetTableColumnNames(System.String)">
+            <summary>
+            Get name of all table columns in active sheet
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.SetCellValue(System.String,System.Object)">
+            <summary>
+            Set value for a cell
+            </summary>
+            <param name="cell">Ex: A10</param>
+            <param name="values">Value must be Corrected. Use ExcelExportHelper.CorrectCellValue</param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.SetColumnValue(System.String,System.Object[])">
+            <summary>
+            Set value for a Column
+            </summary>
+            <param name="strRange">ex: A10:A20</param>
+            <param name="values">Value must be Corrected. Use ExcelExportHelper.CorrectCellValue</param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.SetRowValue(System.String,System.Object[])">
+            <summary>
+            Set value for a Row
+            </summary>
+            <param name="strRange">ex: A10:A20</param>
+            <param name="values">Value must be Corrected. Use ExcelExportHelper.CorrectCellValue</param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.SetRangeValue(System.String,System.Object[0:,0:])">
+            <summary>
+            Set value for a Range
+            </summary>
+            <param name="strRange">Ex: A10:F20</param>
+            <param name="values">Value must be Corrected. Use ExcelExportHelper.CorrectCellValue</param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.SetTableColumnValue(System.String,System.String,System.Object[])">
+            <summary>
+            Set value for a column in excel Table
+            </summary>
+            <param name="tableName">Excel Table name. Ex: MyTable</param>
+            <param name="columnName">Name of column in Table</param>
+            <param name="values">Value must be Corrected. Use ExcelExportHelper.CorrectCellValue</param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.SetTableValue(System.String,System.Object[0:,0:])">
+            <summary>
+            Set value for a Table. Auto insert rows if need.
+            </summary>
+            <param name="tableName">Excel table name. Ex: MyTable</param>
+            <param name="values">Value must be Corrected. Use ExcelExportHelper.CorrectCellValue</param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.AddPicture(System.String,System.String,System.Single,System.Single)">
+            <summary>
+            Add picture into file
+            </summary>
+            <param name="cell"></param>
+            <param name="picFilePath"></param>
+            <param name="picWidth"></param>
+            <param name="picHeight"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.AddFile(System.String,System.String)">
+            <summary>
+            embeeded a file into excel
+            </summary>
+            <param name="cell"></param>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.PrepareTableRows(System.String,System.Int32)">
+            <summary>
+            Add rows to table until enought
+            </summary>
+            <param name="tableName">Ex: MyTable</param>
+            <param name="rowCount">Final row count</param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.SaveAs(System.String)">
+            <summary>
+            Save Excel content from memory to a new file. Format is not changed.
+            </summary>
+            <param name="desFilePath"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.SaveAsWorkbookDefault(System.String)">
+            <summary>
+            Save from all formats (xlsx, xlsm...) to xslx
+            </summary>
+            <param name="desFilePath"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.Save">
+            <summary>
+            Save the opening file
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.ProtectSheet(System.String)">
+            <summary>
+            set protect editing for active sheet with password
+            </summary>
+            <param name="password"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.ActiveSheet(System.String)">
+            <summary>
+            Active Sheet by Name. Store Ref to active Sheet.
+            </summary>
+            <param name="sheetName"></param>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.ExcelWrapper.ComObjectRefs">
+            <summary>
+            List all Ref objects, MUST be Released by Mashal to fully close Excel Application
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelDataReader.Read(System.String,SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelMappingInfo)">
+            <summary>
+            Chi doc cac Cot dc config trong file Mapping
+            </summary>
+            <param name="excelFilePath"></param>
+            <param name="mappingInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelDataReader.GetEndRowIndex(System.Int32,System.String,System.String,System.Int32)">
+            <summary>
+            Get index of end data row, base on End signal
+            </summary>
+            <param name="endSignalCol"></param>
+            <param name="endSignal"></param>
+            <param name="endSignalNum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelDataReader.GetAllExcelRows(SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelMappingInfo)">
+            <summary>
+            Read data of all excel rows (Except header and footer, Only rows that contain data to import)
+            </summary>
+            <returns>DataTable contains excel data to import to DB. Column name is value of Header row in excel file.</returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelDataReader.ReadExcelFile(System.Collections.Generic.Dictionary{System.String,System.String},System.Int32,System.Int32)">
+            <summary>
+            Read excel data to DataTable
+            </summary>
+            <param name="dicHeaderIndex">
+            <para>Key: Column Header</para>
+            <para>Value: Excel Columns, like B, AA, AZ,...</para>
+            </param>
+            <param name="startRow">Index of start row, starts from 1</param>
+            <param name="endRow">Index of end row, starts from 1</param>
+            <returns>DataTable contains data. Column names are Excel columns</returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Utils.OUtility.ConvertExcelColumn(System.String)">
+            <summary>
+            Get column index from column name based one.
+            </summary>
+            <param name="columnName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Utils.OUtility.CreateDataTableStructure(System.Collections.Generic.List{System.String},System.Int32)">
+            <summary>
+            Create DataTable by column name
+            </summary>
+            <param name="lstColName">List ColumnName</param>
+            <param name="rowCount">Số row trống được tạo theo cấu trúc</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelMappingHelper.LoadExcelMappingInfo(System.String)">
+            <summary>
+            Load and validate the mapping file
+            </summary>
+            <param name="mappingFilePath">Full path to the mapping file</param>
+            <returns>Mapping object</returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelMappingHelper.AutoBindingObject``1(System.Data.DataRow,SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelMappingInfo)">
+            <summary>
+            Bind row data to object (IsAutoSetProperty true)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="rowData"></param>
+            <param name="mappingInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelMappingHelper.SetPropertyValue``1(``0@,System.Data.DataRow,SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelMappingTableInfo)">
+            <summary>
+            Set value for an object from a datarow
+            </summary>
+            <param name="obj">Object will be set</param>
+            <param name="row">DataRow</param>
+            <param name="enMapping">Excel mapping info</param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Excel.ExcelMappingHelper.GetMappingTableInfo(SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelMappingInfo,System.String)">
+            <summary>
+            If tableName null -> Get first table info
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelMappingInfo.HeaderRowIndex">
+            <summary>
+            Dòng chứa tên cột
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelMappingInfo.StartRowIndex">
+            <summary>
+            Dòng bắt đầu dữ liệu
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelMappingInfo.EndSignalColIndex">
+            <summary>
+            Cột chứa dấu hiệu kết thúc
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelMappingInfo.EndSignalValue">
+            <summary>
+            Dấu hiệu kết thúc
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelMappingInfo.NumOfEndSignal">
+            <summary>
+            Số lần xảy ra EndSignalValue liên tiếp
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelMappingInfo.ReportInfo">
+            <summary>
+            Config report
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelMappingInfo.ListExcelMappingTableInfo">
+            <summary>
+            Danh sách thông tin mỗi cột cần xử lý dữ liệu.
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelMappingTableInfo.TableName">
+            <summary>
+            Tên bảng / Tên class sẽ chứa dữ liệu từ các cell bên dưới.
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelMappingTableInfo.ListExcelCellInfo">
+            <summary>
+            Danh sách thông tin mỗi cột cần xử lý dữ liệu.
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelCellInfo.ColHeader">
+            <summary>
+            Header of Excel column.
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelCellInfo.PropertyName">
+            <summary>
+            Property name of object. Used for setting value automatically
+            Is also is Name of a table field in database.
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelCellInfo.IsAutoSetProperty">
+            <summary>
+            True: Set value for object property automatically. False: Set by code.
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelCellInfo.SqlDbType">
+            <summary>
+            Data type of Sql field.
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelCellInfo.ColIndex">
+            <summary>
+            Index of column. Used for accessing and validating with ColHeader.
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelCellInfo.MinValue">
+            <summary>
+            <para>Min value. For validating. Support DateTime, Int and Decimal only.</para>
+            <seealso cref="!:http://www.w3schools.com/schema/schema_dtypes_date.asp"/>
+            <para>DateTime example: &lt;MinValue xsi:type="xsd:dateTime"&gt;1753-01-01&lt;/MinValue&gt;</para>
+            <seealso cref="!:http://www.w3schools.com/schema/schema_dtypes_numeric.asp"/>
+            <para>Int example: &lt;MinValue xsi:type="xsd:int"&gt;10&lt;/MinValue&gt;</para>
+            <para>Decimal example: &lt;MinValue xsi:type="xsd:decimal"&gt;0&lt;/MinValue&gt;</para>
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelCellInfo.MaxValue">
+            <summary>
+            <para>Max value. For validating. Support DateTime, Int and Decimal only.</para>
+            <seealso cref="!:http://www.w3schools.com/schema/schema_dtypes_date.asp"/>
+            <para>DateTime: &lt;MaxValue xsi:type="xsd:dateTime"&gt;9999-12-31&lt;/MaxValue&gt;</para>
+            <seealso cref="!:http://www.w3schools.com/schema/schema_dtypes_numeric.asp"/>
+            <para>Int: &lt;MaxValue xsi:type="xsd:int"&gt;1000&lt;/MaxValue&gt;</para>
+            <para>Decimal: &lt;MaxValue xsi:type="xsd:decimal"&gt;123.45&lt;/MaxValue&gt;</para>
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelCellInfo.StringMaxLength">
+            <summary>
+            Max leng if data type is String
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelCellInfo.DateTimeFormat">
+            <summary>
+            Date time format. Used to convert string to date time.
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelCellInfo.IsAllowNull">
+            <summary>
+            Value of column is allowed null or not. Used for validating
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.OfficeUtilities.Shared.OConstants.INDEX_BASE">
+            <summary>
+            Index base of office = 1
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.OfficeUtilities.Shared.OConstants.EXCEL_FIRST_COL">
+            <summary>
+            A
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.OfficeUtilities.Shared.OConstants.EXCEL_FIRST_ROW">
+            <summary>
+            1
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.OfficeUtilities.Shared.OConstants.EXCEL_LAST_SUPPORT_COLUMN">
+            <summary>
+            200 columns
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.OfficeUtilities.Shared.OConstants.EXCEL_LAST_SUPPORT_ROW">
+            <summary>
+            60000 rows
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Word.WordWrapper.SaveAsPrintView(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Word.WordWrapper.SaveAs(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="htmlFilePath"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Word.WordWrapper.SaveAsPDF(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="pdfFilePath"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Word.WordWrapper.SaveAsXPS(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="xpsFilePath"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Word.WordWrapper.GetBookmarkNames">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Word.WordWrapper.GetBookmarkValue(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Word.WordWrapper.SetBookmarkValue(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Word.WordWrapper.AddPicture(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="bookmarkName"></param>
+            <param name="picFilePath"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Word.WordWrapper.AddWaterMark(System.String)">
+            <summary>
+            add Watermark into document
+            </summary>
+            <param name="watermark"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Word.WordWrapper.DeleteTable(System.String)">
+            <summary>
+            delete table
+            </summary>
+            <param name="title"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Word.WordWrapper.SetTableValueAndStruct(System.String,System.Data.DataTable,System.String)">
+            <summary>
+            Transform columns and rows from DataTable data into a table in word
+            </summary>
+            <param name="title"></param>
+            <param name="data"></param>
+            <param name="tempFolder"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Word.WordWrapper.SetTableValueAndStruct(Microsoft.Office.Interop.Word.Table,System.Data.DataTable,System.String)">
+            <summary>
+            Transform columns and rows from DataTable data into a table in word
+            </summary>
+            <param name="table"></param>
+            <param name="data"></param>
+            <param name="tempFolder"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Word.WordWrapper.SetTableValue(System.String,System.Data.DataTable,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="title"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Word.WordWrapper.SetTableValue(Microsoft.Office.Interop.Word.Table,System.Data.DataTable,System.String)">
+            <summary>
+            bind data into table
+            </summary>
+            <param name="table"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Word.WordWrapper.SetNewRowValue(Microsoft.Office.Interop.Word.Table,System.Data.DataRow,System.String)">
+            <summary>
+            add new row and set value
+            </summary>
+            <param name="table"></param>
+            <param name="dataRow"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Word.WordWrapper.SetRowValue(Microsoft.Office.Interop.Word.Row,System.Data.DataRow,System.String)">
+            <summary>
+            bind data into row
+            </summary>
+            <param name="row"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Word.WordWrapper.SetRangeValue(Microsoft.Office.Interop.Word.Range,System.String)">
+            <summary>
+            Set range value
+            </summary>
+            <param name="range"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:SoftMart.Core.OfficeUtilities.Word.WordWrapper.GetTableByTitle(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="title"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

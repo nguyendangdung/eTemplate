@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ConsoleTest.WorkFlow>
+
+<style>
+    .tile {
+        width: 100%;
+        display: inline-block;
+        box-sizing: border-box;
+        background: #fff;
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    .tile .title {
+        margin-top: 0px;
+    }
+    .tile.purple, .tile.blue, .tile.red, .tile.orange, .tile.green {
+        color: #fff;
+    }
+    .tile.purple {
+        background: #5133AB;
+    }
+    .tile.purple:hover {
+        background: #3e2784;
+    }
+    .tile.red {
+        background: #AC193D;
+    }
+    .tile.red:hover {
+        background: #7f132d;
+    }
+    .tile.green {
+        background: #00A600;
+    }
+    .tile.green:hover {
+        background: #007300;
+    }
+    .tile.blue {
+        background: #2672EC;
+    }
+    .tile.blue:hover {
+        background: #125acd;
+    }
+    .tile.orange {
+        background: #DC572E;
+    }
+    .tile.orange:hover {
+        background: #b8431f;
+    }
+</style>
+
+<div class="row">
+    
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-4">
+			<div class="tile red">
+				@using (Html.BeginForm("CreateSession", "Home", new {id = item.WorkFlowId}))
+				{
+					@Html.AntiForgeryToken()
+					<h3 class="title"><a style="color: white" href="#">@item.Name</a>
+					</h3>
+					<p>@item.Description</p>
+					<button type="submit" class="btn btn-primary">Thực hiện &raquo;</button>
+				}
+				
+
+				
+			</div>
+        </div>    
+    }
+</div>

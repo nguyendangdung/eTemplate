@@ -1,0 +1,80 @@
+﻿@model Web.Models.Screens.BussinessLendVM
+
+
+<!-- different content -->
+<div class="col-md-12 col-sm-12 col-xs-12 different-content">
+	<div class="col-md-8 col-md-push-2 col-sm-8 col-sm-push-2 col-xs-12 infor-account">	
+		<div class="form-group col-md-12 col-sm-12 col-xs-12">
+			@Html.LabelFor(model => model.Data.CompanyName)
+			@Html.TextBoxFor(model => model.Data.CompanyName, new { @class = "form-control", @autofocus = "autofocus" })
+			@*<label>Tên công ty:</label>
+			<input type="text" class="form-control">*@
+		</div>
+		<div class="form-group col-md-12 col-sm-12 col-xs-12">
+			@Html.LabelFor(model => model.Data.Address)
+			@Html.TextBoxFor(model => model.Data.Address, new { @class = "form-control" })
+			@*<label>Địa chỉ:</label>
+			<input type="text" class="form-control">*@
+		</div>
+		<div class="form-group col-md-12 col-sm-12 col-xs-12">
+			@Html.LabelFor(model => model.Data.TaxRegistrationNumber)
+			@Html.TextBoxFor(model => model.Data.TaxRegistrationNumber, new { @class = "form-control" })
+			@*<label>Mã số thuế:</label>
+			<input type="text" class="form-control">*@
+		</div>
+		<div class="form-group col-md-12 col-sm-12 col-xs-12">
+			@Html.LabelFor(model => model.Data.Amount)
+			@Html.TextBoxFor(model => model.Data.Amount, new { @class = "form-control" })
+			@*<label>Số tiền muốn vay:</label>
+			<input type="text" class="form-control">*@
+		</div>
+	</div>
+</div> <!-- end div different content -->
+
+
+@using (Html.BeginScriptContext())
+{
+	Html.AddScriptBlock(
+		@<script>
+ 			$(function () {
+ 				var anElement = new AutoNumeric('#Data_Amount',
+ 					{
+ 						decimalCharacter: ',',
+ 						digitGroupSeparator: '.',
+ 						decimalPlaces: 0
+ 					});
+ 			});
+		</script>
+		);
+}
+
+@*<div class="form-group">
+	@Html.LabelFor(model => model.Data.CompanyName, htmlAttributes: new { @class = "control-label col-md-2" })
+	<div class="col-md-10">
+		@Html.EditorFor(model => model.Data.CompanyName, new { htmlAttributes = new { @class = "form-control", @autofocus = "autofocus" } })
+		@Html.ValidationMessageFor(model => model.Data.CompanyName, "", new { @class = "text-danger" })
+	</div>
+</div>
+
+<div class="form-group">
+	@Html.LabelFor(model => model.Data.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+	<div class="col-md-10">
+		@Html.EditorFor(model => model.Data.Address, new { htmlAttributes = new { @class = "form-control" } })
+		@Html.ValidationMessageFor(model => model.Data.Address, "", new { @class = "text-danger" })
+	</div>
+</div>
+
+<div class="form-group">
+	@Html.LabelFor(model => model.Data.TaxRegistrationNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+	<div class="col-md-10">
+		@Html.EditorFor(model => model.Data.TaxRegistrationNumber, new { htmlAttributes = new { @class = "form-control" } })
+		@Html.ValidationMessageFor(model => model.Data.TaxRegistrationNumber, "", new { @class = "text-danger" })
+	</div>
+</div>
+<div class="form-group">
+	@Html.LabelFor(model => model.Data.Amount, htmlAttributes: new { @class = "control-label col-md-2" })
+	<div class="col-md-10">
+		@Html.EditorFor(model => model.Data.Amount, new { htmlAttributes = new { @class = "form-control" } })
+		@Html.ValidationMessageFor(model => model.Data.Amount, "", new { @class = "text-danger" })
+	</div>
+</div>*@

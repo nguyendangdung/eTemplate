@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PopupMaster.Master.cs"
+    Inherits="SM.eTemplate.UI.MasterPages.Common.PopupMaster" %>
+
+<%@ Register Assembly="SMCUI" Namespace="SoftMart.Core.UIControls" TagPrefix="tk" %>
+<%@ Register Src="~/UI/Shared/Common/HeaderContent.ascx" TagName="HeaderContent"
+    TagPrefix="sm" %>
+<%@ Register Src="~/UI/Shared/Common/FooterContent.ascx" TagName="FooterContent"
+    TagPrefix="sm" %>
+<%@ Register Src="~/UI/MasterPages/Common/ProcessingUC.ascx" TagName="Processing"
+    TagPrefix="uc" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=100" />
+    <title>Quản lý Tài sản đảm bảo</title>
+    <link rel="stylesheet" type="text/css" href="../../../Styles/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../../Styles/Toolbar.css" />
+    <link rel="Shortcut Icon" href="../../../Images/icon-softmart.ico" />
+    <script type="text/javascript" src="../../../Scripts/JScript.js"></script>
+    <script type="text/javascript" language="javascript">
+        function closeMe() {
+            try {
+                window.parent.closeActionPopup();
+            }
+            catch (e) {
+                alert(e);
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <tk:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" />
+    <asp:ScriptManager ID="scpritPopup" runat="server">
+    </asp:ScriptManager>
+    <div class="wrapper">
+        <div class="row main-content">
+            <!-- Khong de UpdatePannel o day-->
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <asp:ContentPlaceHolder ID="MainContentAjax" runat="server">
+                    </asp:ContentPlaceHolder>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+    </div>
+    </form>
+    <uc:Processing ID="Processing1" runat="server" />
+    <!-- START PLUGINS -->
+    <script type="text/javascript" src="../../../../Scripts/new-layout/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/bootstrap.min.js"></script>
+    <script type='text/javascript' src='../../../../Scripts/new-layout/icheck.min.js'></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/jquery.mCustomScrollbar.min.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/scrolltotop/scrolltopcontrol.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/plugins.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/actions.js"></script>
+    <!-- END PLUGINS -->
+    <script type="text/javascript">
+        $(document).on('click', '.dropdown-menu', function (e) {
+            e.stopPropagation();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainMaster.master.cs"
+    Inherits="SM.eTemplate.UI.MasterPages.Common.MainMaster" %>
+
+<%@ Register Assembly="SMCUI" Namespace="SoftMart.Core.UIControls" TagPrefix="tk" %>
+<%--<%@ Register Src="~/UI/Shared/Common/HeaderContent.ascx" TagName="HeaderContent"
+    TagPrefix="sm" %>
+<%@ Register Src="~/UI/Shared/Common/FooterContent.ascx" TagName="FooterContent"
+    TagPrefix="sm" %>
+<%@ Register Src="~/UI/Shared/Common/LeftContent.ascx" TagName="LeftContent" TagPrefix="sm" %>--%>
+<%@ Register Src="~/UI/MasterPages/Common/ProcessingUC.ascx" TagName="Processing"
+    TagPrefix="uc" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quản lý Tài sản đảm bảo</title>
+	<link href="../../../Styles/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../../../Styles/components.css" />
+    <link rel="stylesheet" type="text/css" href="../../../Styles/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../../../Styles/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../../Styles/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../Styles/treefile/style.min.css" />
+    <link rel="Shortcut Icon" href="../../../Images/icon-softmart.ico" />
+    <script type="text/javascript" src="../../../Scripts/JScript.js"></script>
+    <!-- START PLUGINS -->
+    <script type="text/javascript" src="../../../../Scripts/new-layout/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/bootstrap.min.js"></script>
+    <!-- END PLUGINS -->
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="sptManager" runat="server" OnAsyncPostBackError="sptManager_AsyncPostBackError">
+        </asp:ScriptManager>
+        <tk:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" />
+        <div class="page-container page-navigation-top-fixed page-navigation-toggled page-container-wide">
+            <%-- START LEFT CONTENT--%>
+            <div class="page-sidebar">
+                <%--<sm:LeftContent runat="server" ID="ucLeftContent" />--%>
+            </div>
+            <%-- END LEFT CONTENT--%>
+            <%--START RIGHT CONTENT--%>
+            <div class="page-content">
+                <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+                    <%--<sm:HeaderContent ID="ucHeaderContent" runat="server" />--%>
+                </ul>
+                <div class="page-content-wrap">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server" class="cssUpdatePanel">
+                        <ContentTemplate>
+                            <asp:ContentPlaceHolder ID="MainContentAjax" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+            </div>
+            <%--END RIGHT CONTENT--%>
+        </div>
+        <div class="row footer-content">
+            <%--<sm:FooterContent runat="server" ID="ucFooterContent" />--%>
+        </div>
+    </form>
+    <!-- START SCRIPTS -->
+    
+    <!-- START THIS PAGE PLUGINS-->
+    <script type="text/javascript" src="../../../../Scripts/new-layout/icheck.min.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/jquery.mCustomScrollbar.min.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/scrolltotop/scrolltopcontrol.js"></script>
+    <!-- END THIS PAGE PLUGINS-->
+    <!-- START TREE DOCUMENT -->
+    <script type="text/javascript" src="../../../../Scripts/new-layout/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/jstree.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/ui-tree.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/metronic.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/layout.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/quick-sidebar.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/demo.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            // initiate layout and plugins
+            Metronic.init(); // init metronic core components
+            Layout.init(); // init current layout
+            QuickSidebar.init(); // init quick sidebar
+            Demo.init(); // init demo features
+            UITree.init();
+        });
+    </script>
+    <!-- END TREE DOCUMENT -->
+    <script type="text/javascript" src="../../../../Scripts/new-layout/morris/raphael-min.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/morris/morris.min.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/rickshaw/d3.v3.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/rickshaw/rickshaw.min.js"></script>
+    <!-- START DASHBOARD DOCUMENT -->
+    <script type="text/javascript" src="../../../../Scripts/new-layout/plugins.js"></script>
+    <script type="text/javascript" src="../../../../Scripts/new-layout/actions.js"></script>
+    <%--<script type="text/javascript" src="../../../../Scripts/new-layout/demo_dashboard-index.js"></script>--%>
+    <!-- END DASHBOARD DOCUMENT -->
+    <uc:Processing runat="server" />
+</body>
+</html>

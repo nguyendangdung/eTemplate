@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMCSM</name>
+    </assembly>
+    <members>
+        <member name="M:SoftMart.Core.ServiceManager.Biz.BaseThread.#ctor(System.String)">
+            <summary>
+            BaseThread Constructor
+            </summary>
+            <param name="threadName">Name of thread</param>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.Biz.BaseThread.Start">
+            <summary>
+            Start new thread.
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.Biz.BaseThread.Wait">
+            <summary>
+            Stop thread and wait.
+            Monitor.Wait()
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.Biz.BaseThread.Resume">
+            <summary>
+            Resume from stopping status.
+            Monitor.Pulse()
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.ServiceManager.Biz.BaseThread.IsAlive">
+            <summary>
+            Get status IsAlive of thread.
+            </summary>
+        </member>
+        <member name="T:SoftMart.Core.ServiceManager.Biz.BaseWorker">
+            <summary>
+            Support 1 Manager thread
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.Biz.BaseWorker.WeakupAndWork">
+            <summary>
+            <para>Set smx_Work command weakup worker.</para>
+            <para>Synchronized with Caller thread.</para>
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.Biz.BaseWorker.StartService">
+            <summary>
+            Start thread
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.Biz.BaseWorker.Terminate">
+            <summary>
+            <para>Set smx_Terminate command weakup worker.</para>
+            <para>Synchronized with Caller thread.</para>
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.ServiceManager.Biz.BaseWorker.Status">
+            <summary>
+            Only get set by Manager thread. General are Free, AssignedJob and Finish
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.ServiceManager.Biz.BaseWorker.State">
+            <summary>
+            State of worker
+            </summary>
+        </member>
+        <member name="T:SoftMart.Core.ServiceManager.Biz.BaseWorkerManager`2">
+            <summary>
+            Manage workers
+            </summary>
+            <typeparam name="T">Actual Worker type</typeparam>
+            <typeparam name="T1">Task Data type</typeparam>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.Biz.BaseWorkerManager`2.PrepareWorkers(System.Int32)">
+            <summary>
+            Create new free workers
+            </summary>
+            <param name="workerCount"></param>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.Biz.BaseWorkerManager`2.Process1Round">
+            <summary>
+            Process 1 round: Check finish and assign task for worker
+            </summary>
+            <returns>True: All Workers are free and Queue is empty</returns>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.Biz.BaseWorkerManager`2.CreateWorker(System.Int32)">
+            <summary>
+            Create worker
+            </summary>
+            <param name="index">Index of Worker</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.Biz.BaseWorkerManager`2.GetTasks(System.Int32,System.Collections.Generic.List{`0})">
+            <summary>
+            Get tasks
+            </summary>
+            <param name="freeWorkerCount">Count of free workers</param>
+            <param name="lstProcessingWorker">List processing workers (Keeping data)</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.Biz.BaseWorkerManager`2.SetData(`0,`1)">
+            <summary>
+            Set Data of worker
+            </summary>
+            <param name="worker"></param>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.Biz.BaseWorkerManager`2.ClearData(`0)">
+            <summary>
+            Clear Data of worker to null
+            </summary>
+            <param name="worker"></param>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.Biz.BaseManagedWorker.DoTimedOut">
+            <summary>
+            Do work too long. Update processing item to failed
+            </summary>
+        </member>
+        <member name="T:SoftMart.Core.ServiceManager.Biz.ServiceExBiz">
+            <summary>
+            Ho tro start/stop service bang tay qua UI
+            </summary>
+        </member>
+        <member name="T:SoftMart.Core.ServiceManager.ServiceManager">
+            <summary>
+            Manage all Services
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.ServiceManager.StartService">
+            <summary>
+            Start ServiceManager and all defined Services
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.ServiceManager.TerminateService">
+            <summary>
+            Terminate all defined Services and ServiceManager
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.Biz.TickerHelper.CalculateTickers(SoftMart.Core.ServiceManager.Entity.ServiceInfo,System.Boolean)">
+            <summary>
+            Calculate form Now to next Scheduled time.
+            </summary>
+            <param name="service"></param>
+            <param name="isInitialize">Check RunOnStart when initialize</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.ServiceManagerApi.ConfigService(System.String,SoftMart.Core.ServiceManager.Biz.BaseBizProvider)">
+            <summary>
+            Config ServiceManager before running
+            </summary>
+            <param name="xmlConfig">Xml configuration content</param>
+            <param name="provider">Provider to create actual Service</param>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.ServiceManagerApi.GetElementValue(System.String,System.String)">
+            <summary>
+            Tìm Element con của service
+            </summary>
+            <param name="serviceName">Tên service, không phân biệt hoa thường</param>
+            <param name="elementName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.Biz.BaseBizProvider.CreateService(System.String,System.String)">
+            <summary>
+            Create Service thread by Name
+            </summary>
+            <param name="serviceName">Name from xml config file</param>
+            <param name="normalisedName">Normalised: Trim().ToUpper()</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.Biz.BaseBizProvider.CreateProfile(System.Int32,System.String,System.String)">
+            <summary>
+             Create Profile object
+            </summary>
+            <param name="employeeID"></param>
+            <param name="userName"></param>
+            <param name="fullName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.ServiceManager.Biz.BaseBizProvider.CreateServiceBiz">
+            <summary>
+            Allow overridding bussiness of ServiceBiz
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SoftMart.Core.ServiceManager.Shared.WorkerState">
+            <summary>
+            Trang thai noi bo cua worker, private
+            </summary>
+        </member>
+        <member name="T:SoftMart.Core.ServiceManager.Shared.WorkerStatus">
+            <summary>
+            Trang thai Worker co the duoc quan ly tu ben ngoai
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.ServiceManager.Shared.WorkerStatus.Free">
+            <summary>
+            Hoan toan ranh roi, chua dc giao viec gi
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.ServiceManager.Shared.WorkerStatus.AssignedJob">
+            <summary>
+            Da duoc giao viec
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.ServiceManager.Shared.WorkerStatus.Finished">
+            <summary>
+            Da lam xong viec duoc giao
+            </summary>
+        </member>
+        <member name="T:SoftMart.Core.ServiceManager.Shared.ManualCommandStatus">
+            <summary>
+            Trang thai command
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.ServiceManager.Shared.ManualCommandStatus.Open">
+            <summary>
+            Lenh chua duoc xu ly
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.ServiceManager.Shared.ManualCommandStatus.Processsed">
+            <summary>
+            Sau khi lenh da duoc xu ly
+            </summary>
+        </member>
+        <member name="T:SoftMart.Core.ServiceManager.Shared.ManualCommand">
+            <summary>
+            Cho viec dieu khien Service (Worker) manually
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.ServiceManager.Shared.ManualCommand.Activate">
+            <summary>
+            Resume chay tiep theo lich
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.ServiceManager.Shared.ManualCommand.InActivate">
+            <summary>
+            Pause service.
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.ServiceManager.Shared.ManualCommand.StartImmediate">
+            <summary>
+            Chay service ngay lap tuc, ko phu thuoc active hay khong
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.ServiceManager.Entity.ServiceConfig.BeatTime">
+            <summary>
+            Total time of a Beat. Miliseconds
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,28 @@
+﻿@model Web.Models.Screens.Index2Data
+
+<div>
+    <h4>Index2Data</h4>
+    <hr />
+	<div class="form-horizontal">
+		<div class="form-group">
+			<label class="col-xs-2 control-label">@Html.DisplayNameFor(model => model.FullName)</label>
+			<div class="col-xs-10">
+				<p class="form-control-static">@Model.FullName</p>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="col-xs-2 control-label">@Html.DisplayNameFor(model => model.DayOfBirth)</label>
+			<div class="col-xs-10">
+				<p class="form-control-static">@Model.DayOfBirth</p>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label class="col-xs-2 control-label">@Html.DisplayNameFor(model => model.CustomerId)</label>
+			<div class="col-xs-10">
+				<p class="form-control-static">@Model.CustomerId</p>
+			</div>
+		</div>
+	</div>
+</div>

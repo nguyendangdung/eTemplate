@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A93CCD16-2F8E-496E-B353-AF1AC33E086E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SM.eTemplate</RootNamespace>
+    <AssemblyName>SM.eTemplate</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SMCB, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\SMCB.dll</HintPath>
+    </Reference>
+    <Reference Include="SMCD, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\SMCD.dll</HintPath>
+    </Reference>
+    <Reference Include="SMCS, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\SMCS.dll</HintPath>
+    </Reference>
+    <Reference Include="SMCU, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\SMCU.dll</HintPath>
+    </Reference>
+    <Reference Include="SMCUI, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\SMCUI.dll</HintPath>
+    </Reference>
+    <Reference Include="SMK, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\SMK.dll</HintPath>
+    </Reference>
+    <Reference Include="SMSR">
+      <HintPath>..\Lib\SMSR.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\cancel.png" />
+    <Content Include="Images\change.png" />
+    <Content Include="Images\check.png" />
+    <Content Include="Images\clone.png" />
+    <Content Include="Images\config.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\done.png" />
+    <Content Include="Images\download.png" />
+    <Content Include="Images\edit.png" />
+    <Content Include="Images\excel-icon.png" />
+    <Content Include="Images\exit.png" />
+    <Content Include="Images\FirstItem.png" />
+    <Content Include="Images\GotoItem.png" />
+    <Content Include="Images\grey-2.png" />
+    <Content Include="Images\grey.png" />
+    <Content Include="Images\grid-images\active.png" />
+    <Content Include="Images\grid-images\add.png" />
+    <Content Include="Images\grid-images\default.png" />
+    <Content Include="Images\grid-images\delete.png" />
+    <Content Include="Images\grid-images\download-1.png" />
+    <Content Include="Images\grid-images\download.png" />
+    <Content Include="Images\grid-images\edit.png" />
+    <Content Include="Images\grid-images\excel.png" />
+    <Content Include="Images\grid-images\fill.png" />
+    <Content Include="Images\grid-images\green.png" />
+    <Content Include="Images\grid-images\image.png" />
+    <Content Include="Images\grid-images\inactive.png" />
+    <Content Include="Images\grid-images\pdf.png" />
+    <Content Include="Images\grid-images\preview.png" />
+    <Content Include="Images\grid-images\red.png" />
+    <Content Include="Images\grid-images\text.png" />
+    <Content Include="Images\grid-images\valuation.png" />
+    <Content Include="Images\grid-images\word.png" />
+    <Content Include="Images\grid-images\yellow.png" />
+    <Content Include="Images\group-packages.png" />
+    <Content Include="Images\history.png" />
+    <Content Include="Images\icon-approve.png" />
+    <Content Include="Images\icon-comment.png" />
+    <Content Include="Images\icon-email.png" />
+    <Content Include="Images\icon-excel.png" />
+    <Content Include="Images\icon-import.png" />
+    <Content Include="Images\icon-reset.png" />
+    <Content Include="Images\icon-softmart.ico" />
+    <Content Include="Images\icon_compare.png" />
+    <Content Include="Images\icon_tag.png" />
+    <Content Include="Images\icon_word.png" />
+    <Content Include="Images\image.png" />
+    <Content Include="Images\info.png" />
+    <Content Include="Images\LastItem.png" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\lock-icon.png" />
+    <Content Include="Images\minus.png" />
+    <Content Include="Images\minus_sub.png" />
+    <Content Include="Images\new.png" />
+    <Content Include="Images\NextItem.png" />
+    <Content Include="Images\plus.png" />
+    <Content Include="Images\PlusMinus.png" />
+    <Content Include="Images\preview.png" />
+    <Content Include="Images\PreviousItem.png" />
+    <Content Include="Images\print.png" />
+    <Content Include="Images\refresh.png" />
+    <Content Include="Images\reject.png" />
+    <Content Include="Images\request.png" />
+    <Content Include="Images\save.png" />
+    <Content Include="Images\search.png" />
+    <Content Include="Images\send.png" />
+    <Content Include="Images\softmart.png" />
+    <Content Include="Images\tag.png" />
+    <Content Include="Images\tool.png" />
+    <Content Include="Images\upload.png" />
+    <Content Include="Images\user-exit.png" />
+    <Content Include="Images\user.png" />
+    <Content Include="Images\value.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\css3-mediaqueries.js" />
+    <Content Include="Scripts\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\JScript.js" />
+    <Content Include="Scripts\new-layout\actions.js" />
+    <Content Include="Scripts\new-layout\bootstrap.min.js" />
+    <Content Include="Scripts\new-layout\demo.js" />
+    <Content Include="Scripts\new-layout\demo_dashboard-index.js" />
+    <Content Include="Scripts\new-layout\demo_dashboard.js" />
+    <Content Include="Scripts\new-layout\icheck.min.js" />
+    <Content Include="Scripts\new-layout\jquery-1.11.3.js" />
+    <Content Include="Scripts\new-layout\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="Scripts\new-layout\jquery-jvectormap-europe-mill-en.js" />
+    <Content Include="Scripts\new-layout\jquery-jvectormap-uakraine-merc-en.js" />
+    <Content Include="Scripts\new-layout\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="Scripts\new-layout\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Scripts\new-layout\jquery-ui.min.js" />
+    <Content Include="Scripts\new-layout\jquery.mCustomScrollbar.min.js" />
+    <Content Include="Scripts\new-layout\jquery.min.js" />
+    <Content Include="Scripts\new-layout\jquery.slimscroll.min.js" />
+    <Content Include="Scripts\new-layout\jquery.smartWizard-2.0.min.js" />
+    <Content Include="Scripts\new-layout\jstree.js" />
+    <Content Include="Scripts\new-layout\layout.js" />
+    <Content Include="Scripts\new-layout\metronic.js" />
+    <Content Include="Scripts\new-layout\morris\morris.min.js" />
+    <Content Include="Scripts\new-layout\morris\raphael-min.js" />
+    <Content Include="Scripts\new-layout\plugins.js" />
+    <Content Include="Scripts\new-layout\quick-sidebar.js" />
+    <Content Include="Scripts\new-layout\rickshaw\d3.layout.min.js" />
+    <Content Include="Scripts\new-layout\rickshaw\d3.min.js" />
+    <Content Include="Scripts\new-layout\rickshaw\d3.v2.js" />
+    <Content Include="Scripts\new-layout\rickshaw\d3.v3.js" />
+    <Content Include="Scripts\new-layout\rickshaw\rickshaw.min.js" />
+    <Content Include="Scripts\new-layout\scrolltotop\scrolltopcontrol.js" />
+    <Content Include="Scripts\new-layout\settings.js" />
+    <Content Include="Scripts\new-layout\ui-tree.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\SPAddressBook.js" />
+    <Content Include="Styles\bootstrap\bootstrap.min.css" />
+    <Content Include="Styles\components.css" />
+    <Content Include="Styles\custom.css" />
+    <Content Include="Styles\default-fullwidth.css" />
+    <Content Include="Styles\default.css" />
+    <Content Include="Styles\fontawesome\font-awesome.min.css" />
+    <Content Include="Styles\jquery\jquery-ui.min.css" />
+    <Content Include="Styles\layout.css" />
+    <Content Include="Styles\login.css" />
+    <Content Include="Styles\mcustomscrollbar\jquery.mCustomScrollbar.css" />
+    <Content Include="Styles\new-layout\bootstrap\bootstrap.min.css" />
+    <Content Include="Styles\new-layout\custom.css" />
+    <Content Include="Styles\new-layout\default-fullwidth.css" />
+    <Content Include="Styles\new-layout\default.css" />
+    <Content Include="Styles\new-layout\fontawesome\font-awesome.min.css" />
+    <Content Include="Styles\new-layout\jquery\jquery-ui.min.css" />
+    <Content Include="Styles\new-layout\mcustomscrollbar\jquery.mCustomScrollbar.css" />
+    <Content Include="Styles\Toolbar.css" />
+    <Content Include="Styles\treefile\32px.png" />
+    <Content Include="Styles\treefile\32px_line.png" />
+    <Content Include="Styles\treefile\32px_original.png" />
+    <Content Include="Styles\treefile\40px.png" />
+    <Content Include="Styles\treefile\style.css" />
+    <Content Include="Styles\treefile\style.min.css" />
+    <Content Include="Styles\treefile\throbber.gif" />
+    <Content Include="UI\Admin\Instructions\Add.aspx" />
+    <Content Include="UI\Admin\Instructions\Delete.aspx" />
+    <Content Include="UI\Admin\Instructions\Edit.aspx" />
+    <Content Include="UI\Admin\Instructions\Index.aspx" />
+    <Content Include="UI\MasterPages\Common\ProcessingUC.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="XmlConfigs\Administration_Committees.xml" />
+    <Content Include="XmlConfigs\Administration_Role.xml" />
+    <Content Include="XmlConfigs\Administration_Statistic.xml" />
+    <Content Include="XmlConfigs\Administration_UsersLog.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Biz\Entities\Instruction.cs" />
+    <Compile Include="Biz\Helper.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\Instructions\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\Instructions\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\Instructions\Delete.aspx.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\Instructions\Delete.aspx.designer.cs">
+      <DependentUpon>Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\Instructions\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\Instructions\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\Instructions\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\Instructions\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\Instructions\Instructions.master.cs">
+      <DependentUpon>Instructions.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\Instructions\Instructions.master.designer.cs">
+      <DependentUpon>Instructions.master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BaseUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\MasterPages\Common\MainMaster.Master.cs">
+      <DependentUpon>MainMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\MasterPages\Common\MainMaster.Master.designer.cs">
+      <DependentUpon>MainMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MasterPages\Common\PopupMaster.Master.cs">
+      <DependentUpon>PopupMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\MasterPages\Common\PopupMaster.Master.designer.cs">
+      <DependentUpon>PopupMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MasterPages\Common\ProcessingUC.ascx.cs">
+      <DependentUpon>ProcessingUC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\MasterPages\Common\ProcessingUC.ascx.designer.cs">
+      <DependentUpon>ProcessingUC.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EF\EF.csproj">
+      <Project>{eb5449cd-4c13-47cd-b35a-dcfcc343df91}</Project>
+      <Name>EF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Logging.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Styles\bootstrap\bootstrap.css.map" />
+    <None Include="Styles\fonts\fontawesome-webfont.eot" />
+    <None Include="Styles\fonts\fontawesome-webfont.svg" />
+    <None Include="Styles\fonts\fontawesome-webfont.ttf" />
+    <None Include="Styles\fonts\fontawesome-webfont.woff" />
+    <None Include="Styles\fonts\fontawesome-webfont.woff2" />
+    <None Include="Styles\fonts\FontAwesome.otf" />
+    <None Include="Styles\new-layout\bootstrap\bootstrap.css.map" />
+    <None Include="Styles\new-layout\fonts\fontawesome-webfont.eot" />
+    <None Include="Styles\new-layout\fonts\fontawesome-webfont.svg" />
+    <None Include="Styles\new-layout\fonts\fontawesome-webfont.ttf" />
+    <None Include="Styles\new-layout\fonts\fontawesome-webfont.woff" />
+    <None Include="Styles\new-layout\fonts\fontawesome-webfont.woff2" />
+    <None Include="Styles\new-layout\fonts\FontAwesome.otf" />
+    <Content Include="UI\MasterPages\Common\MainMaster.Master" />
+    <Content Include="UI\MasterPages\Common\PopupMaster.Master" />
+    <None Include="Templates\Administration_Roles.xlsm" />
+    <None Include="Templates\Administration_Statistic.xlsm" />
+    <None Include="Templates\Administration_UsersLog.xlsm" />
+    <Content Include="UI\Admin\Instructions\Instructions.master" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3934</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

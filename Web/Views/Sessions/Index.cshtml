@@ -1,0 +1,16 @@
+﻿@using Web.Models.Screens
+@model Web.Models.Sessions.SessionDetails
+@{
+	ViewBag.Title = "Index";
+	var inputParams = new InputParams()
+	{
+		SessionId = Model.SessionId,
+		InstructionId = Model.InstructionId,
+		TheNextInstructionInd = Model.TheNextInstructionId,
+		ThePreviousInstructionId = Model.ThePreviousInstructionId
+	};
+}
+
+
+@Html.Action(Model.ActionMethod.Action, Model.ActionMethod.Controller, inputParams)
+

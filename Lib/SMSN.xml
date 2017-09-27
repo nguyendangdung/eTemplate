@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMSN</name>
+    </assembly>
+    <members>
+        <member name="M:SoftMart.Service.Notification.Biz.BaseBizProvider.SendMail(System.Collections.Generic.List{System.String},System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            Mặc định: Dùng các thông số smtp mail lúc config service để gửi
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.Notification.Biz.NotifyServiceBiz.Notify(SoftMart.Service.Notification.Entity.Flex_NotifyQueue)">
+            <summary>
+            notify a existed item in database
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:SoftMart.Service.Notification.Biz.RequestBiz.RequestNotify(System.String,System.Object,System.String,System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Request a single notification
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.Notification.Biz.RequestBiz.RequestNotify(System.String,System.Data.DataTable,System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Request notifications by batch
+            </summary>
+            <param name="emailTemplateCode"></param>
+            <param name="data">Require two columns Email|Mobile, RefID</param>
+            <param name="requestedRefID">ID của Item gắn với mail</param>
+        </member>
+        <member name="M:SoftMart.Service.Notification.NotificationApi.ConfigService(System.String)">
+            <summary>
+            Config NotificationService to request
+            </summary>
+            <param name="connectionKey">Connnection string key to Application database</param>
+        </member>
+        <member name="M:SoftMart.Service.Notification.NotificationApi.ConfigService(System.String,SoftMart.Service.Notification.Biz.BaseBizProvider,SoftMart.Service.Notification.Entity.MailServerInfo)">
+            <summary>
+            Config NotificationService before running
+            </summary>
+            <param name="connectionKey">Connnection string key to Application database</param>
+            <param name="provider">Provider to create actual Business</param>
+            <param name="mailServerInfo">Information of mail server</param>
+        </member>
+        <member name="M:SoftMart.Service.Notification.NotificationApi.RequestNotifySingle(System.String,System.Object,System.String,System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Yêu cầu gửi 1 email
+            </summary>
+            <param name="emailTemplateCode">Mã EmailTemplate. Chỉ gửi khi EmailTemplate ở trạng thái Active</param>
+            <param name="data">Dữ liệu dùng đề transform với EmailTemplate
+            <para>DataRow: Sử dụng ColumnName</para>
+            <para>Object: Sử dụng PropertyName</para>
+            </param>
+            <param name="to">Danh sách người nhận cách nhau bằng dấu phẩy ","</param>
+            <param name="requestedRefID">ID bản ghi gắn với thư gửi</param>
+            <param name="lstAttachmentPaths">Danh sách đường dẫn tới file đính kèm</param>
+        </member>
+        <member name="M:SoftMart.Service.Notification.NotificationApi.RequestNotifyMulti(System.String,System.Data.DataTable,System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Yêu cầu gửi nhiều email
+            </summary>
+            <param name="emailTemplateCode">Mã EmailTemplate. Chỉ gửi khi EmailTemplate ở trạng thái Active</param>
+            <param name="data">Dữ liệu dùng đề transform với EmailTemplate. Yêu cầu có cột RefID và 1 trong 2 cột Email|Mobile</param>
+            <param name="requestedRefID">ID bản ghi gắn với thư gửi</param>
+            <param name="lstAttachmentPaths">Danh sách đường dẫn tới file đính kèm</param>
+        </member>
+        <member name="P:SoftMart.Service.Notification.Shared.Wkl.TopCount">
+            <summary>
+            Số lượng Item lấy để gửi mỗi cycle
+            </summary>
+        </member>
+    </members>
+</doc>

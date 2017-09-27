@@ -1,0 +1,350 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMCU</name>
+    </assembly>
+    <members>
+        <member name="T:SoftMart.Core.Utilities.Communications.WebServiceHelper">
+            <summary>
+            intergrated with web service
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.Communications.WebServiceHelper.Execute``1(System.String,System.String,System.String,System.Object[],System.String)">
+            <summary>
+            execute a method in web service
+            </summary>
+            <typeparam name="T">return type of method</typeparam>
+            <param name="serciveLink">link to service</param>
+            <param name="serviceName">name of service</param>
+            <param name="methodName">name of method</param>
+            <param name="args">arguments</param>
+            <param name="protocolName">service protocol</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.Diagnostics.Log4Net.LogDebug(System.String,System.Exception)">
+            <summary>
+            Log in Debug mode by default
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.Diagnostics.Log4Net.LogError(System.String,System.Exception)">
+            <summary>
+            Log in error mode by default
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:SoftMart.Core.Utilities.Diagnostics.PLogger">
+            <summary>
+            Performance logger
+            Chi PLogger ngoai cung la co tac dung ghi. Cac Scope ben trong chi log vao memory.
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.Utilities.Diagnostics.PLogger._LogInfoQueue">
+            <summary>
+            ThreadStatic. Dung chung cho tat ca moi PLogger va PLogger ben trong tren cung Thread
+            Chi PLogger dau tien, ngoai cung thi moi tao Queue, cac PLogger ben trong se khong tao
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.Utilities.Diagnostics.PLogger._isOwner">
+            <summary>
+            Xac dinh Logger da tao Queue. No se la noi thuc hien write file
+            Nhung Logger khac dc tao ra ben trong thi khong lam gi.
+            Chi dung cho tung object Logger rieng biet
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.Diagnostics.PLogger.LogInfo.#ctor">
+            <summary>
+            Can cho viec Serialize
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.Utilities.Diagnostics.PLogger.OutputMode.Normal">
+            <summary>
+            Name and Duration
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.Utilities.Diagnostics.PLogger.OutputMode.Full">
+            <summary>
+            Name, Duration and Detail
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.DownloadHelper.PushExcelFileForDownload(System.String,System.String,System.Boolean)">
+            <summary>
+            Push Excel file for downloading
+            </summary>
+            <param name="filePath"></param>
+            <param name="displayName"></param>
+            <param name="isDelete">true: Delete file after Pushed</param>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.DownloadHelper.PushExcelContentForDownload(System.Byte[],System.String)">
+            <summary>
+            Push Excel content for downloading
+            </summary>
+            <param name="fileContent"></param>
+            <param name="displayName"></param>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.DownloadHelper.PushWordFileForDownload(System.String,System.String,System.Boolean)">
+            <summary>
+            Push Word file for downloading
+            </summary>
+            <param name="filePath"></param>
+            <param name="displayName"></param>
+            <param name="isDelete">true: Delete file after Pushed</param>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.DownloadHelper.PushWordContentForDownload(System.Byte[],System.String)">
+            <summary>
+            Push Word content for downloading
+            </summary>
+            <param name="fileContent"></param>
+            <param name="displayName"></param>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.DownloadHelper.PushFileForDownload(System.String,System.String,System.String)">
+            <summary>
+            Copy file to Temp folder and Push. Delete temp file after pushed.
+            </summary>
+            <param name="filePath"></param>
+            <param name="displayName"></param>
+            <param name="tempFolderPath"></param>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.DownloadHelper.PushTextContent(System.String,System.String)">
+            <summary>
+            Push content for downloading as UTF8Encoding
+            </summary>
+            <param name="content"></param>
+            <param name="displayName"></param>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.DownloadHelper.PushBinaryContent(System.String,System.Byte[],System.String)">
+            <summary>
+            Push byte[] (file content) into response for download
+            </summary>
+            <param name="contentType"></param>
+            <param name="fileContent"></param>
+            <param name="displayName"></param>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.EmailHelper.SendMailAsync(System.Collections.Generic.List{System.String},System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            Gửi mail bất đồng bộ qua thread khác
+            </summary>
+            <param name="tos">Danh sách địa chỉ mail của người nhận</param>
+            <param name="subject">Tiêu đề</param>
+            <param name="body">Nội dung mail</param>
+            <param name="bccs">Danh sách địa chỉ gửi BCC</param>
+            <param name="ccs">Danh sách địa chỉ gửi CC</param>
+            <param name="atts">Danh sách đường dẫn tới file đính kèm</param>
+            <param name="delAtts">Có xóa file đính kèm sau khi gửi không. true: Xóa, false: Không</param>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.EmailHelper.SendMail(System.Collections.Generic.List{System.String},System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            Gửi mail
+            </summary>
+            <param name="tos">Danh sách địa chỉ mail của người nhận</param>
+            <param name="subject">Tiêu đề</param>
+            <param name="body">Nội dung mail</param>
+            <param name="bccs">Danh sách địa chỉ gửi BCC</param>
+            <param name="ccs">Danh sách địa chỉ gửi CC</param>
+            <param name="atts">Danh sách đường dẫn tới file đính kèm</param>
+            <param name="delAtts">Có xóa file đính kèm sau khi gửi không. true: Xóa, false: Không</param>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.FileHelper.UploadFile(System.IO.Stream,System.String)">
+            <summary>
+            Upload file to the webserver
+            </summary>
+            <param name="fileStream"></param>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.FileHelper.DeleteFile(System.String)">
+            <summary>
+            Delete a file in the physical disk
+            </summary>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.FileHelper.WaitingReadyFile(System.String)">
+            <summary>
+            check file is ready or no (is being processed by another process)
+            </summary>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.FileHelper.ReadAllBytes(System.String)">
+            <summary>
+            Waiting for ready and read all content of file in byte
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.ReflectionHelper.GetPropertyValue(System.Object,System.String)">
+            <summary>
+            Lấy giá trị từ 1 object qua tên thuộc tính
+            </summary>
+            <param name="objValue">Object</param>
+            <param name="propertyName">Tên thuộc tính</param>
+            <returns>Giá trị cần lấy</returns>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.ReflectionHelper.SetProperty(System.Object,System.String,System.Object)">
+            <summary>
+            Set value for a property of object
+            </summary>
+            <param name="objClass"></param>
+            <param name="propertyName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.ReflectionHelper.GetPropertyNames(System.Type)">
+            <summary>
+            Lấy tên các thuộc tính public
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.ReflectionHelper.CopyPropertyValues``2(``0,``1,System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            Copy toàn các Property cùng tên (không phân biệt hoa thường) từ 1 Object sang Object khác
+            </summary>
+            <param name="source">Object nguồn</param>
+            <param name="dest">Object đích</param>
+            <param name="lstIgnoreFields">Các trường bỏ qua không copy</param>
+            <param name="ignoreNullValue">true: Bỏ qua nếu giá trị null</param>
+        </member>
+        <member name="T:SoftMart.Core.Utilities.Statistics.Monitor">
+            <summary>
+            Support multi thread Read/Write
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.Statistics.Monitor.#ctor(System.String,System.String,System.Int32)">
+            <summary>
+            HealthChecker starts monitoring this item
+            </summary>
+            <param name="componentName"></param>
+            <param name="desc"></param>
+            <param name="initValue"></param>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.Statistics.Monitor.Dispose">
+            <summary>
+            HealthChecker will not monitor this Item
+            </summary>
+        </member>
+        <member name="T:SoftMart.Core.Utilities.Profiles.Profiles">
+            <summary>
+            Store Profile of running actor.
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.Profiles.Profiles.SetMyProfile(SoftMart.Core.Utilities.Profiles.IUserProfile)">
+            <summary>
+            Lưu thông tin của actor đang chạy
+            </summary>
+            <param name="profile"></param>
+        </member>
+        <member name="P:SoftMart.Core.Utilities.Profiles.Profiles.MyProfile">
+            <summary>
+            Thông tin của Actor đang chạy
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.Utilities.Profiles.Profiles.ProfileType">
+            <summary>
+            Cách lưu Profile với mỗi loại ứng dụng.
+            <para>Mặc định: Auto</para>
+            </summary>
+        </member>
+        <member name="T:SoftMart.Core.Utilities.Profiles.Profiles.Type">
+            <summary>
+            Cách lưu Profile với mỗi loại ứng dụng
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.Utilities.Profiles.Profiles.Type.Service">
+            <summary>
+            Dùng khi chạy winform/windows service
+            <para>Lưu Profile của Actor hiện tại trong biến Thread Static</para>
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.Utilities.Profiles.Profiles.Type.WebSession">
+            <summary>
+            Dùng khi chạy Web application với Form authentication
+            <para>Lưu Profile của Actor hiện tại trong HttpContext.Current.Session</para>
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.Utilities.Profiles.Profiles.Type.Static">
+            <summary>
+            Application tự quản lý thông qua biến Static
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.Utilities.Profiles.Profiles.Type.Auto">
+            <summary>
+            Tự động xác định như cũ dựa trên HttpContext.Current null hay không
+            <para>Null: Lấy từ Thread Static giống Type = Service</para>
+            <para>Not null: Lấy từ HttpContext.Current.Session giống Type = WebSession</para>
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.SerializeHelper.SerializeToString``1(``0)">
+            <summary>
+            Serialize object to string
+            </summary>
+            <typeparam name="T">Type of object</typeparam>
+            <param name="obj">Object data</param>
+            <returns>XML string</returns>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.SerializeHelper.Deserialize``1(System.String)">
+            <summary>
+            Deserialize string to object
+            </summary>
+            <typeparam name="T">Object type</typeparam>
+            <param name="xml">XML string</param>
+            <returns>Object with type is T</returns>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.SerializeHelper.DeserializeXmlFile``1(System.String)">
+            <summary>
+            Deserialize data from file content to object.
+            </summary>
+            <typeparam name="T">Object type</typeparam>
+            <param name="filePath"></param>
+            <returns>Object with type is T</returns>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.SerializeHelper.SerializeXmlFile``1(``0,System.String)">
+            <summary>
+            Serialize data from object to file.
+            </summary>
+            <typeparam name="T">Object type</typeparam>
+            <param name="obj">Object data</param>
+            <param name="filePath">Destination file path</param>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.TransformHelper.Transform(System.String,System.Int32,System.Object)">
+            <summary>
+            Transform Template + Data => string
+            </summary>
+            <param name="content"></param>
+            <param name="type">TransformHelper.TransformType</param>
+            <param name="data">
+            <para>Type Xslt: Data có thể là DataTable hoặc Object</para>
+            <para>Type Bookmark: Data có thể là DataRow (Sử dụng ColumnName) hoặc Object (Sử dụng PropertyName)</para>
+            </param>
+            <returns></returns>
+        </member>
+        <member name="F:SoftMart.Core.Utilities.TransformHelper.TransformType.Bookmark">
+            <summary>
+            [BookmarkName]
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.Utility.GetDateString(System.Nullable{System.DateTime})">
+            <summary>
+            DATE_FORMAT: dd/MM/yyyy
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.Utility.GetDateMinuteString(System.Nullable{System.DateTime})">
+            <summary>
+            dd/MM/yyyy HH:mm
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.Utility.GetDateTimeString(System.Nullable{System.DateTime})">
+            <summary>
+            dd/MM/yyyy HH:mm:ss
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:SoftMart.Core.Utilities.Utility.ConvertToDate(System.String)" -->
+        <member name="M:SoftMart.Core.Utilities.Utility.GetDictionaryValue``1(System.Collections.Generic.Dictionary{``0,System.String},System.Nullable{``0},System.String)">
+            <summary>
+            Truong hop T: int, key int?
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Utilities.Utility.GetDictionaryValue``1(System.Collections.Generic.Dictionary{``0,System.String},``0,System.String)">
+            <summary>
+            Truong hop T: int?, key int?
+            </summary>
+        </member>
+    </members>
+</doc>

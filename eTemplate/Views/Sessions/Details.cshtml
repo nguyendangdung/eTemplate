@@ -1,0 +1,19 @@
+﻿@using eTemplate.Models.Screens
+@model eTemplate.Models.Sessions.SessionDetails
+@{
+	ViewBag.Title = "Details";
+	var inputParams = new InputParams()
+	{
+		SessionId = Model.SessionId,
+		TheNextScreenId = Model.NextSessionData == null ? (int?)null : Model.NextSessionData.Screen.ScreenId,
+		ThePreviousScreenId = Model.PreviousSessionData == null ? (int?)null : Model.PreviousSessionData.Screen.ScreenId,
+		TheCurrentScreenId = Model.CurrentSessionData.Screen.ScreenId
+	};
+}
+
+
+@Html.Action(Model.CurrentSessionData.Screen.ActionMethod.Action, Model.CurrentSessionData.Screen.ActionMethod.Controller, inputParams)
+
+<div class="clearfix">
+	<a href="@Url.Action("Index", "Home")" class="btn btn-default pull-right">Làm lại</a>	
+</div>

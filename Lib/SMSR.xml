@@ -1,0 +1,455 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMSR</name>
+    </assembly>
+    <members>
+        <member name="M:SoftMart.Service.Reporting.Biz.BaseBiz.ModifyForeignColumn(System.Collections.Generic.List{SoftMart.Service.Reporting.SharedComponent.Entities.ReportingOutput},System.Data.DataTable)">
+            <summary>
+            Add foreign key data to the data table
+            </summary>
+            <param name="reportView"></param>
+            <param name="table"></param>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.Biz.BaseBizProvider.ExportManually(System.String,SoftMart.Service.Reporting.SharedComponent.Entities.Flex_Reporting,System.String@)">
+            <summary>
+            Export report by Application
+            </summary>
+            <param name="temporaryFolder">Report files are put to this folder</param>
+            <param name="enReporting">Reporting item</param>
+            <param name="logContent">Log content</param>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.Biz.ExportingBiz.RecoverPendingItem">
+            <summary>
+            Update all pending item to open item when start exporting service
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.Biz.ReportingBiz.TrimmingResult(System.Collections.Generic.List{SoftMart.Service.Reporting.SharedComponent.Entities.ReportingOutput},System.Data.DataTable)">
+            <summary>
+            Trimming all character in specified column
+            </summary>
+            <param name="lstOutput"></param>
+            <param name="table"></param>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.Biz.ReportingBiz.GetObjectValue(System.Object)">
+            <summary>
+            Get value in string of an object
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.Biz.ReportingBiz.BuildSqlCommand(SoftMart.Service.Reporting.SharedComponent.Params.ReportingParam)">
+            <summary>
+            Build sql command to retrive data from database
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.Biz.ReportingWorkerBiz.GetDataOfCommand(System.String,System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Get data from a specified SqlCommand
+            </summary>
+            <param name="command">The specified command</param>
+            <param name="pageSize">Size of each batch</param>
+            <param name="orderStatement">Odering statement of paging expression</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.Dao.Flex_ReportingDao.RecoverPendingItem">
+            <summary>
+            Update all pending item to open item
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportingApi.ConfigUI(System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Config ReportingService for UI
+            </summary>
+            <param name="appCnnKey">Connnection string key to Application database</param>
+            <param name="reportCnnKey">Connnection string key to Report database</param>
+            <param name="xmlConfigFolder">Folder contains Xml config file</param>
+            <param name="zipExtractSize">Small zip file will be extracted to download as excel</param>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportingApi.ConfigService(System.String,System.String,System.String,System.String,System.String,SoftMart.Service.Reporting.Biz.BaseBizProvider,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Config ReportingService before running
+            </summary>
+            <param name="appCnnKey">Connnection string key to Application database</param>
+            <param name="reportCnnKey">Connnection string key to Report database</param>
+            <param name="xmlConfigFolder">Folder contains Xml config file</param>
+            <param name="templateFolder">Folder contains Report template</param>
+            <param name="temporaryFolder">Folder to put temporary data</param>
+            <param name="provider">Provider to do manually report</param>
+            <param name="timedOut">If not Null: Set processing item to failed</param>
+            <param name="reportingCommandTimeout">Command timeout of reporting service</param>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportingApi.ReverseFromXmlFile(System.String)">
+            <summary>
+            Deserialize report info from xml config file path
+            </summary>
+            <param name="xmlConfigFilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportingApi.SaveReportViewFromSqlCommand(System.Data.SqlClient.SqlCommand,System.String,System.String,System.String)">
+            <summary>
+            Add reportview to queue to export later
+            </summary>
+            <param name="command">SqlCommand to get data</param>
+            <param name="orderStatement">Ordering of record</param>
+            <param name="xmlFile">Xml config file</param>
+            <param name="displayName">Display name of report</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportingApi.SaveReportFromXmlConfigFile(System.String,System.String,System.Data.SqlClient.SqlParameter[],System.String)">
+            <summary>
+            Save report from xmlConfigFile and specified filter
+            </summary>
+            <param name="xmlConfigFile">xmlConfigFile of report</param>
+            <param name="displayName">Display name of report</param>
+            <param name="filter">List of SqlParameter filter</param>
+            <param name="permissionTokenValue">Permission token string</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportingApi.SetForeignKeyData(System.Collections.Generic.List{SoftMart.Service.Reporting.ForeignKeyData})">
+            <summary>
+            Set foreign key data for service which using to build foreign key column
+            </summary>
+            <param name="foreignData">A dictionary to keep data of foreign key in result of dynamic report</param>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportingApi.ExportItemByID(System.Int32)">
+            <summary>
+            Perform export all pending or openning ExportingItem in database
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportingApi.DownloadReport(System.Int32,System.String@)">
+            <summary>
+            Download a report content by specified reportID
+            </summary>
+            <param name="reportingID">Specified reportID</param>
+            <param name="fileExtension">File extension of content</param>
+            <returns>File content</returns>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportingApi.RecoverPendingItem">
+            <summary>
+            Reset all pending item to open status
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportingApi.GetTopOpenningItem(System.Int32)">
+            <summary>
+            Get specified top exporting item in Openning status
+            </summary>
+            <param name="top">Specified exporting item</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportingApi.TransformToExcelFile(System.String,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter},System.String)">
+            <summary>
+            Transform xmlConfig to specifield destination
+            </summary>
+            <param name="xmlConfigPath">xmlConfig</param>
+            <param name="lstParam">Parram of xmlConfig</param>
+            <param name="destinationFilePath">File destination</param>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportingApi.TransformToExcelByte(System.String,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter})">
+            <summary>
+            Tranform xmlConfig to an excel file and return file content
+            </summary>
+            <param name="xmlConfigPath"></param>
+            <param name="lstParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportingApi.InsertManualReportRequest``1(``0,System.Int32,System.String)">
+            <summary>
+            Thêm yêu cầu báo cáo Manual (Xuất bằng code từ phía application)
+            </summary>
+            <typeparam name="T">Class chứa input parameter</typeparam>
+            <param name="searchParam">Các thông tin phục vụ code của application</param>
+            <param name="reportType">Loại báo cáo</param>
+            <param name="title">Tiêu đề</param>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportingApi.InsertReportResult(System.Byte[],System.String,System.String,System.DateTime,System.String)">
+            <summary>
+            Thêm (Lưu) Báo cáo đã xuất từ nơi khác
+            </summary>
+            <param name="resContent">Kết quả báo cáo đã xuất</param>
+            <param name="title">Tiêu đề</param>
+            <param name="logContent">Log nếu có</param>
+            <param name="startDTG">Thời điểm bắt đầu xuất báo cáo</param>
+            <param name="fileType">Loại file. Mặc định: SMX_RPT.Common.ExcelFile</param>
+        </member>
+        <member name="P:SoftMart.Service.Reporting.SharedComponent.Entities.ReportingOutput.Function">
+            <summary>
+            Function name to aggregating a column in result of report
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Reporting.SharedComponent.Entities.ReportingOutput.Trimming">
+            <summary>
+            The character will be trimmed in result
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Reporting.SharedComponent.Entities.ConditionControl.ListConditionItem">
+            <summary>
+            List item of condition control (ComboItem, TreeViewItem, DatePickerItem....)
+            </summary>
+        </member>
+        <member name="T:SoftMart.Service.Reporting.SharedComponent.Entities.ConditionItem">
+            <summary>
+            Class to keep init value of the condition control
+            </summary>
+        </member>
+        <member name="T:SoftMart.Service.Reporting.SharedComponent.Entities.ConditionControlType">
+            <summary>
+            Type of input control in condition searching section
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.ConditionControlType.TextBox">
+            <summary>
+            Control is text box
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.ConditionControlType.IntegerBox">
+            <summary>
+            Control is integer box
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.ConditionControlType.CurrencyBox">
+            <summary>
+            Control is currency box
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.ConditionControlType.Combobox">
+            <summary>
+            Control is sigle selection combobox
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.ConditionControlType.ComboCheckBox">
+            <summary>
+            Control is multiple selection combobox
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.ConditionControlType.ComboTreeView">
+            <summary>
+            Control is dropdown treeview
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.ConditionControlType.ComboTreeViewList">
+            <summary>
+            Control is treeview in dropdown. Selected value including childen nodes.
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.ConditionControlType.DatePicker">
+            <summary>
+            Control is DatePicker
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.ConditionControlType.MonthPicker">
+            <summary>
+            Control is month selector
+            </summary>
+        </member>
+        <member name="T:SoftMart.Service.Reporting.SharedComponent.Entities.ConditionControlSource">
+            <summary>
+            Type of data source of the input controls in the condition searching section
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.ConditionControlSource.None">
+            <summary>
+            Any value inputed by user
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.ConditionControlSource.List">
+            <summary>
+            Fixed list in format {{value1, name1}},{{value2, name2}}
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.ConditionControlSource.Sql">
+            <summary>
+            Source in sql command. Column 0 is DataValue, Column 1 is DataText. Ex: Select Code, Name from Office
+            </summary>
+        </member>
+        <member name="T:SoftMart.Service.Reporting.SharedComponent.Entities.OutputVisible">
+            <summary>
+            Set visible of the output column
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.OutputVisible.None">
+            <summary>
+            Invisible
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.OutputVisible.Web">
+            <summary>
+            Visible on web form
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.OutputVisible.Report">
+            <summary>
+            Visible on report
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.OutputVisible.Both">
+            <summary>
+            Visible on both web form and report
+            </summary>
+        </member>
+        <member name="T:SoftMart.Service.Reporting.SharedComponent.Entities.OutputAlignment">
+            <summary>
+            Set align of the output column
+            </summary>
+        </member>
+        <member name="T:SoftMart.Service.Reporting.SharedComponent.Entities.GridColumnType">
+            <summary>
+            Type of grid column
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.GridColumnType.GridBoundColumn">
+            <summary>
+            GridBoundColumn
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.GridColumnType.GridHyperLinkColumn">
+            <summary>
+            GridHyperLinkColumn
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.GridColumnType.GridButtonColumn">
+            <summary>
+            GridButtonColumn
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.GridColumnType.ForeignKeyCode">
+            <summary>
+            Display code of foreign key data
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.GridColumnType.ForeignKeyName">
+            <summary>
+            Display name of foreign key data
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.GridColumnType.ForeignKeyDictionary">
+            <summary>
+            Value of a dictionary. Param must be in format "AssemblyName, TypeName, DictionaryName"
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.DataInstance.Single">
+            <summary>
+            One instance in xml file
+            </summary>
+        </member>
+        <member name="F:SoftMart.Service.Reporting.SharedComponent.Entities.DataInstance.Multiple">
+            <summary>
+            Array instance in xml file
+            </summary>
+        </member>
+        <member name="T:SoftMart.Service.Reporting.SharedComponent.Entities.OutputType">
+            <summary>
+            Type of output file
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportViewer.#ctor">
+            <summary>
+            Create new instance of ReportViewer
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportViewer.BuildReportForm(System.Collections.Generic.List{System.Data.SqlClient.SqlParameter})">
+            <summary>
+            Start building the dynamic report form
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportViewer.SetVisibleColumn(System.Int32,System.Boolean)">
+            <summary>
+            Set visibility for a column on the result grid
+            </summary>
+            <param name="columnName">Unique column name</param>
+            <param name="visible"></param>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportViewer.ReloadData">
+            <summary>
+            Reload data on the grid
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportViewer.SaveReport(System.String)">
+            <summary>
+            Save current report view to export later
+            </summary>
+            <param name="displayName">Display name of report</param>
+            <returns>ID of saved report</returns>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportViewer.BuildSearchingSection">
+            <summary>
+            Building searching condition
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportViewer.SearchData">
+            <summary>
+            Search data from Target database
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportViewer.GetApplicationParam">
+            <summary>
+            Get dynamic param setted by user
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportViewer.GetSearchParam">
+            <summary>
+            Get dynamic search condition
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Service.Reporting.ReportViewer.GetSearchValueOfACondition(System.Web.UI.WebControls.HiddenField,System.Web.UI.WebControls.HiddenField,System.Web.UI.Control)">
+            <summary>
+            Get value of a dinamic condition control.
+            The value of the control are stored in to a list of object
+            </summary>
+            <param name="hidPosition"></param>
+            <param name="hidControlType"></param>
+            <param name="ctr"></param>
+            <returns></returns>
+        </member>
+        <member name="E:SoftMart.Service.Reporting.ReportViewer.RequestApplicationParam">
+            <summary>
+            Request other param from application
+            </summary>
+        </member>
+        <member name="E:SoftMart.Service.Reporting.ReportViewer.ItemCommand">
+            <summary>
+            Command name when click a button on the grid
+            </summary>
+        </member>
+        <member name="E:SoftMart.Service.Reporting.ReportViewer.ItemDataBound">
+            <summary>
+            Occurs after an item is data bound to the System.Web.UI.WebControls.DataGrid control.
+            </summary>
+        </member>
+        <member name="E:SoftMart.Service.Reporting.ReportViewer.OnPreGridDataBind">
+            <summary>
+            Occurs before calling Grid.DataBind()
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Reporting.ReportViewer.XmlConfigFile">
+            <summary>
+            Dynamic config file
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Reporting.ReportViewer.IsReportingDB">
+            <summary>
+            Indicate that report will query data from Reporting database.
+            Default value is FALSE
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Reporting.ReportViewer.PermissionTokenValue">
+            <summary>
+            Using to combie with RuleEngine to perform data security
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Reporting.ReportViewer.AutoLoadData">
+            <summary>
+            Load data automatically when page load
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Reporting.ReportViewer.ValidationGroup">
+            <summary>
+            Validation group name of dynamic report view
+            </summary>
+        </member>
+    </members>
+</doc>

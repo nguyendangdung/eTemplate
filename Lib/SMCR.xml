@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMCR</name>
+    </assembly>
+    <members>
+        <member name="M:SoftMart.Core.Ranking.Biz.RankingBiz.GetViewSchemaOfCategory(SoftMart.Core.Ranking.SharedComponent.Params.RankingParam)">
+            <summary>
+            Get view schema by categoryID, this method providers data to build dynamic grid on the form
+            </summary>
+            <param name="param"></param>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.Biz.RankingBiz.TryRanking(SoftMart.Core.Ranking.SharedComponent.Params.RankingParam)">
+            <summary>
+            Try ranking by rankingID. Return records matched with ranking conditions
+            </summary>
+            <param name="param"></param>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.Biz.RankingBiz.TryFullRanking(SoftMart.Core.Ranking.SharedComponent.Params.RankingParam)">
+            <summary>
+            Try ranking for all ranking in system. Return records matched with highest priority
+            </summary>
+            <param name="param"></param>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.Biz.RankingBiz.GetRankingResult(SoftMart.Core.Ranking.SharedComponent.Entities.Flex_Ranking)">
+            <summary>
+            Get RankingResultInfo by a ranking item
+            </summary>
+            <param name="enRanking"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.Dao.ApplicationDatabaseDao.getDictionaryFromTable(System.Data.DataTable)">
+            <summary>
+            Get dictionary from a table which has two column are ID and Name
+            </summary>
+            <param name="table"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.Dao.BaseDao.BuildInCondition(System.Collections.Generic.List{System.Int32},System.String)">
+            <summary>
+            Build SQL IN statement
+            </summary>
+            <param name="lstInput"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.Dao.Flex_RankingCategoryDao.GetViewNameAndKey(System.Int32)">
+            <summary>
+            Get ViewName and PrimaryKey in flex_RankingCategory by specified CategoryID
+            </summary>
+            <param name="categoryID"></param>
+            <returns></returns>
+        </member>
+        <member name="P:SoftMart.Core.Ranking.SharedComponent.Entities.Flex_RankingResultInfo.PrimaryValue">
+            <summary>
+            Value of primary key column
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.Ranking.SharedComponent.Entities.Flex_RankingResultInfo.RankingValue">
+            <summary>
+            Ranking value of record
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.Ranking.SharedComponent.Entities.Flex_RankingResultInfo.Title">
+            <summary>
+            Title of ranking
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.DisplayRanking.LoadRanking(System.Nullable{System.Int32},System.Int32,System.Boolean)">
+            <summary>
+            Load ranking info by specified rankingID and categoryid
+            </summary>
+            <param name="rankingID">Specified rankingID</param>
+            <param name="categoryID">Specified categoryID</param>
+            <param name="isEditingMode">Allow to edit ranking</param>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.DisplayRanking.SaveRanking">
+            <summary>
+            Save current ranking.
+            Add new if not existed, otherwise update ranking
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.DisplayRanking.DeleteRanking">
+            <summary>
+            Delete current ranking
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.DisplayRanking.GetRankingInfo">
+            <summary>
+            Get ranking info in ranking component
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.DisplayRanking.GetPropertiesInfo">
+            <summary>
+            Get list properties in ranking component
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.DisplayRankingCategory.LoadCategory(System.Nullable{System.Int32})">
+            <summary>
+            Load Ranking category information. This method must be called in OnInit holder page
+            </summary>
+            <param name="categoryID"></param>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.RankingEngineAPI.ConfigService(System.String,System.String)">
+            <summary>
+            Configure RankingService
+            </summary>
+            <param name="rankingConnection">ConnectionString key of ranking engine in config file </param>
+            <param name="applicationConnection">ConnectionString key of Application in config file</param>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.RankingEngineAPI.AddRanking(SoftMart.Core.Ranking.SharedComponent.Entities.Flex_Ranking,System.Collections.Generic.List{SoftMart.Core.Ranking.SharedComponent.Entities.Flex_RankingProperty})">
+            <summary>
+            Add new ranking record
+            </summary>
+            <param name="ranking">Ranking record</param>
+            <param name="properties">List properties of ranking</param>
+            <returns>ID of ranking record</returns>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.RankingEngineAPI.UpdateRanking(SoftMart.Core.Ranking.SharedComponent.Entities.Flex_Ranking,System.Collections.Generic.List{SoftMart.Core.Ranking.SharedComponent.Entities.Flex_RankingProperty})">
+            <summary>
+            Update ranking record
+            </summary>
+            <param name="ranking">Ranking record to be update</param>
+            <param name="properties">Properties of ranking</param>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.RankingEngineAPI.TryRanking(System.Int32)">
+            <summary>
+            Get records in view that matched with a specified RankingID
+            </summary>
+            <param name="rankingID">Specified RankingID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.RankingEngineAPI.GetRankingCategoryByID(System.Int32)">
+            <summary>
+            Get Ranking category info by specified ID
+            </summary>
+            <param name="categoryID">Specified categoryID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.RankingEngineAPI.GetRankingItemInCategory(System.Int32)">
+            <summary>
+            Get ranking item info in specified category ID
+            </summary>
+            <param name="categoryID">Specified categoryID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.RankingEngineAPI.GetRankingByID(System.Int32)">
+            <summary>
+            Get a ranking item by specified rankingID
+            </summary>
+            <param name="rankingID">Specified RankingID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.RankingEngineAPI.GetPropertiesByRankingID(System.Int32)">
+            <summary>
+            Get all properties in a ranking by specified rankingID
+            </summary>
+            <param name="rankingID">Specified rankingID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.RankingEngineAPI.DeleteCategory(System.Int32)">
+            <summary>
+            Delete ranking category by specified CategoryID
+            </summary>
+            <param name="categoryID">Specified categoryID</param>
+        </member>
+        <member name="M:SoftMart.Core.Ranking.RankingEngineAPI.SaveRankingPriority(System.Collections.Generic.List{SoftMart.Core.Ranking.SharedComponent.Entities.Flex_Ranking})">
+            <summary>
+            Save priority of specified RankingInfo list
+            </summary>
+            <param name="lstRanking">Specified RankingInfo list</param>
+        </member>
+    </members>
+</doc>

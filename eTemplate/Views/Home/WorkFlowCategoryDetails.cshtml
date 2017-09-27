@@ -1,0 +1,13 @@
+﻿@model ConsoleTest.WorkFlowCategory
+
+@{
+    ViewBag.Title = "WorkFlowCategoryDetails";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h1><strong>@Model.Name - @Model.DisplayText</strong></h1>
+    </div>
+</div>
+
+@Html.Partial("WorkFlows", Model.WorkFlows.ToList())

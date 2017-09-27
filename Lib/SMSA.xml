@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMSA</name>
+    </assembly>
+    <members>
+        <member name="F:SoftMart.Service.Automation.Biz.BaseAutoAssignEmployeeBiz._lstReportResult">
+            <summary>
+            Danh sách thông tin để xuất báo cáo
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.Automation.Biz.BaseAutoAssignEmployeeBiz.CalculateForOrganization(SoftMart.Service.Automation.Entity.IAutoOrganization,System.Collections.Generic.List{SoftMart.Service.Automation.Entity.IAutoEmployee},System.Collections.Generic.List{SoftMart.Service.Automation.Entity.IAutoContract})">
+            <summary>
+            Tính toán chia hồ sơ cho chuyên viên dựa trên BalancingValue
+            </summary>
+            <param name="org">Phòng</param>
+            <param name="lstAllEmployee">Tập chuyên viên</param>
+            <param name="lstNewContract">Tập hồ sơ</param>
+            <returns>Danh sách chuyên viên + Hồ sơ sau khi tính toán</returns>
+        </member>
+        <member name="M:SoftMart.Service.Automation.Biz.BaseAutoAssignEmployeeBiz.AssignNewItemsForEmployees(System.Collections.Generic.List{SoftMart.Service.Automation.Biz.BaseAutoAssignEmployeeBiz.AssignInfo})">
+            <summary>
+            Giao hồ sơ mới cho các chuyên viên
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.Automation.Biz.BaseAutoAssignEmployeeBiz.AddItemToReportList(SoftMart.Service.Automation.Entity.IAutoContract,SoftMart.Service.Automation.Biz.BaseAutoAssignEmployeeBiz.AssignInfo)">
+            <summary>
+            Tạo và lưu kết quả hợp đồng để xuất báo cáo
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.Automation.Biz.BaseAutoAssignEmployeeBiz.GetOrganizations">
+            <summary>
+            Get Organizations
+            </summary>
+            <returns>All properies of CSOrganization</returns>
+        </member>
+        <member name="M:SoftMart.Service.Automation.Biz.BaseAutoAssignEmployeeBiz.GetAssignEmpoyeeData(SoftMart.Service.Automation.Entity.IAutoOrganization)">
+            <summary>
+            Get Data to Assign item for Employee of Org
+            </summary>
+            <param name="org"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SoftMart.Service.Automation.Biz.BaseAutoAssignEmployeeBiz.AssignInfo">
+            <summary>
+            Thông tin tổng hợp việc giao hồ sơ cho 1 chuyên viên
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Automation.Biz.BaseAutoAssignEmployeeBiz.AssignInfo.Employee">
+            <summary>
+            Thông tin chuyên viên
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Automation.Biz.BaseAutoAssignEmployeeBiz.AssignInfo.Organization">
+            <summary>
+            Thông tin phòng
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Automation.Biz.BaseAutoAssignEmployeeBiz.AssignInfo.NewContracts">
+            <summary>
+            Danh sách các hợp đồng mới sẽ giao cho chuyên viên
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Automation.Biz.BaseAutoAssignEmployeeBiz.AssignInfo.NewBalancingValue">
+            <summary>
+            Giá trị mới
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Automation.Biz.BaseAutoAssignEmployeeBiz.AssignInfo.FinalBalancingValue">
+            <summary>
+            Tổng giá trị cuối cùng = Giá trị hiện tại của Chuyên viên + Mới thêm
+            </summary>
+        </member>
+        <member name="T:SoftMart.Service.Automation.Biz.BaseAutoAssignOrganizationBiz">
+            <summary>
+            Giao ho so vao phong theo thu tu lay dc.
+            Neu ho so da giao vao phong truoc roi se ko giao vao phong sau (Truong hop 1 ho so co the giao nhieu phong)
+            Ho so van thuoc phong do thi khong giao lai nua, nhung van ko giao vao phong sau
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.Automation.Biz.BaseAutoAssignOrganizationBiz.GetOrganizations">
+            <summary>
+            Get Organization for Auto assign contract for Organization. Organizations will be processed by order in list
+            </summary>
+            <returns>All properies of CSOrganization</returns>
+        </member>
+        <member name="M:SoftMart.Service.Automation.Biz.BaseAutoAssignOrganizationBiz.AssignContract(SoftMart.Service.Automation.Entity.IAutoContract,SoftMart.Service.Automation.Entity.IAutoOrganization)">
+            <summary>
+            Assign to Organization
+            </summary>
+            <param name="contract"></param>
+            <param name="org"></param>
+        </member>
+        <member name="M:SoftMart.Service.Automation.AutomationApi.ConfigService(SoftMart.Service.Automation.Biz.BaseBizProvider)">
+            <summary>
+            Config AutomationService before running
+            </summary>
+            <param name="provider">Provider to create actual Business</param>
+        </member>
+        <member name="P:SoftMart.Service.Automation.Entity.AutoAssignEmployeeData.Employees">
+            <summary>
+            List employees
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Automation.Entity.AutoAssignEmployeeData.NewContracts">
+            <summary>
+            List Items to assign for Employees above
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Automation.Entity.IAutoContract.ContractID">
+            <summary>
+            ID hồ sơ
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Automation.Entity.IAutoContract.BalancingValue">
+            <summary>
+            Giá trị dùng để cân bằng khi chia chuyên viên (Số hồ sơ, Số dư nợ,...)
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Automation.Entity.IAutoContract.OrganizationID">
+            <summary>
+            Phòng hiện tại của hồ sơ. Nếu có: Kiểm tra Phòng cũ = mới thì đánh dấu và không giao lại
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Automation.Entity.IAutoContract.IsSuccess">
+            <summary>
+            Kết quả việc giao chuyên viên, dùng cho báo cáo
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Automation.Entity.IAutoEmployee.EmployeeInfo">
+            <summary>
+            Thông tin Chuyên viên dùng để log báo cáo (UserName, ID,...)
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Automation.Entity.IAutoEmployee.CurrentBalancingValue">
+            <summary>
+            Số BalancingValue chuyên viên đang có
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Automation.Entity.IAutoEmployee.LimitedAbility">
+            <summary>
+            Khả năng của chuyên viên. Nếu giá trị BalancingValue vượt quá khả năng thì không giao thêm nữa
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Automation.Entity.ReportAutoAssignEmployee.ContractInfo">
+            <summary>
+            Default: IAutoContract.ContractID
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Automation.Entity.ReportAutoAssignEmployee.OrganizationInfo">
+            <summary>
+            Default: IAutoOrganization.Code
+            </summary>
+        </member>
+        <member name="P:SoftMart.Service.Automation.Entity.ReportAutoAssignEmployee.EmployeeInfo">
+            <summary>
+            Default: IAutoEmployee.EmployeeInfo
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:SoftMart.Service.Automation.Entity.ReportAutoAssignOrganization.ContractInfo" -->
+        <member name="P:SoftMart.Service.Automation.Entity.ReportAutoAssignOrganization.OrganizationInfo">
+            <summary>
+            Default: IAutoOrganization.Code
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,577 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMCD</name>
+    </assembly>
+    <members>
+        <!-- Badly formed XML comment ignored for member "M:SoftMart.Core.Dao.BaseEntity.#ctor(System.String,System.String,System.String,System.String)" -->
+        <member name="M:SoftMart.Core.Dao.BaseEntity.GetTableName">
+            <summary>
+            Get name of the table mapped with this entity
+            </summary>
+            <returns>Name of the table</returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.BaseEntity.GetPrimaryKey">
+            <summary>
+            Get primary key of the table mapped with this entity
+            </summary>
+            <returns>Primary key of the talbe</returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.BaseEntity.NotifyPropertyChanged(System.String)">
+            <summary>
+            Notify a property has setted a value in updating mode
+            </summary>
+            <param name="columnName"></param>
+        </member>
+        <member name="M:SoftMart.Core.Dao.BaseEntity.CheckChangedProperty(System.String)">
+            <summary>
+            Check a property has setted a value
+            </summary>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.BaseEntity.ClearChangedColumn">
+            <summary>
+            Clean changed columns
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Dao.BaseEntity.Dispose">
+            <summary>
+            Dispose object and clear garbage
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.Dao.BaseEntity.TableName">
+            <summary>
+            Name of corresponding table with this class
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.Dao.BaseEntity.PrimaryKey">
+            <summary>
+            Name of primary column in the table
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.Dao.BaseEntity.DeleteColumn">
+            <summary>
+            Name of Delete column
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.Dao.BaseEntity.VersionColumn">
+            <summary>
+            Name of version column
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.Dao.BaseEntity.UpdatingMode">
+            <summary>
+            Indicate that entity is created to Update or not
+            </summary>
+        </member>
+        <member name="T:SoftMart.Core.Dao.ConnectionMonitor">
+            <summary>
+            Get value from DB. Not set.
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Dao.DataToObjectUtil.MapDataTableToList``1(System.Data.DataTable)">
+            <summary>
+            Mapping a data table to a list of object
+            </summary>
+            <param name="table">Data table which contents data of list object</param>
+            <returns>List object have been created</returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseLicense.GetMachineID">
+            <summary>
+            Get machine ID based Mainboard, processor and bios
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SoftMart.Core.Dao.EnterpriseService">
+            <summary>
+            Class to access database
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.#ctor">
+            <summary>
+            Create a new instance of data context without a connection key
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.#ctor(System.String)">
+            <summary>
+            Create a new instance of data context with a connection key
+            </summary>
+            <param name="connectionKey">A connection key in configuration file</param>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.MapDataTableToList``1(System.Data.DataTable)">
+            <summary>
+            Map a data table to a list of object
+            </summary>
+            <param name="table">Source Table</param>
+            <param name="type">Type of destination to be converted</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.SerializeToString``1(``0)">
+            <summary>
+            Serialize object to xml string
+            </summary>
+            <typeparam name="T">Type of object</typeparam>
+            <param name="obj">Object will be serialized</param>
+            <returns>Xml string without declaration</returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.GetMachineID">
+            <summary>
+            Get machineID to generate license key
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.InsertItem``1(SoftMart.Core.Dao.BaseEntity)">
+            <summary>
+            Insert new item and then return scope identity of insert statement
+            </summary>
+            <param name="entity">Item will be added</param>
+            <returns>Scope identity of insert statement in entity</returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.InsertItems``1(System.Collections.Generic.List{``0},System.Int32)">
+            <summary>
+            Insert a list of item. This method do not bind identityID of item after inserting
+            </summary>
+            <typeparam name="T">Type of item will be insert</typeparam>
+            <param name="lst">List item tobe insert</param>
+            <param name="batchSize">Batch size in one execution. 0 to insert all</param>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.UpdateItem``1(SoftMart.Core.Dao.BaseEntity,System.Boolean)">
+            <summary>
+            Update item by it's ID.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+            <param name="autoIncreaseVersion">True: Auto increase version after updating. False: Do not increase the version</param>
+            <returns>Number of affected rows</returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.UpdateItemByColumnName``1(SoftMart.Core.Dao.BaseEntity,System.String,System.Object,System.Boolean)">
+            <summary>
+            Update table by a column name.
+            </summary>
+            <param name="entity">Item will be updated</param>
+            <param name="columnName">Column name to using in where clause</param>
+            <param name="value">Value to compare in where clause</param>
+            <param name="autoIncreaseVersion">True: Auto increase version after updating. False: Do not increase the version</param>
+            <returns>Numbers of affected row</returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.UpdateItemByColumnName``1(SoftMart.Core.Dao.BaseEntity,SoftMart.Core.Dao.ConditionList,System.Boolean)">
+            <summary>
+            Update table with multi condition
+            </summary>
+            <typeparam name="T">Type of item</typeparam>
+            <param name="entity"></param>
+            <param name="condition">Multi condition to compare</param>
+            <param name="autoIncreaseVersion">True: Auto increase version after updating. False: Do not increase the version</param>
+            <returns>Numbers of affected row</returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.UpdateItems``1(System.Collections.Generic.List{``0},System.String[],System.Int32,System.Boolean)">
+            <summary>
+            Update list of item based specified column. If updateColumn contains version column, the function automatically check version of original record with version of new record
+            </summary>
+            <typeparam name="T">Type of item</typeparam>
+            <param name="lst">List of item to update</param>
+            <param name="updateColumn">List column will be changed</param>
+            <param name="onColumn">Condition of update</param>
+            <param name="autoIncreaseVersion">True: Auto increase version after updating. False: Do not increase the version</param>
+            <returns>Numbers of affected row</returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.DeleteItem``1(System.Object)">
+            <summary>
+            Delete an item by it's ID
+            </summary>
+            <param name="id">ID of item will be deleted</param>
+            <returns>Numbers of rows affected</returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.DeleteItemByColumn``1(System.String,System.Object)">
+            <summary>
+            Delete items which have column equal with value
+            </summary>
+            <typeparam name="T">Type of item to delete</typeparam>
+            <param name="columnName">Column to compare</param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.SelectItemByID``1(System.Object)">
+            <summary>
+            Get an item in the table by it's ID.
+            \\ Caution. The item was marked Deleted = 1 will be not selected
+            </summary>
+            <param name="id">ID of the item</param>
+            <returns>An item in the table which has matched ID</returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.SelectItemByColumnName``1(System.String,System.Object)">
+            <summary>
+            Select a list item by a column name.
+            \\ Caution. The items were marked deleted will be not selected
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="columnName">Column name to compare</param>
+            <param name="value">Value to compare</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.SelectItemByColumnName``1(SoftMart.Core.Dao.ConditionList)">
+            <summary>
+            Select a list of item by multiple condition
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.SelectFieldsByID``1(System.String[],System.Object)">
+            <summary>
+            Select Item with special columns. The deleted items will be excluded from result
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="fieldNames"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.SelectFieldsByColumnName``1(System.String[],System.String,System.Object)">
+            <summary>
+            Select Item with special columns. The deleted items will be excluded from result
+            </summary>
+            <typeparam name="T">Type of Item</typeparam>
+            <param name="fieldNames">Column name will be selected</param>
+            <param name="columnName">Column name to compare</param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.SelectFieldsByColumnName``1(System.String[],SoftMart.Core.Dao.ConditionList)">
+            <summary>
+            Select field from a table by list of condition
+            </summary>
+            <typeparam name="T">Type of object</typeparam>
+            <param name="fieldNames">Fields name will be selected</param>
+            <param name="conditions">List of condition</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.SelectItemByColumnName``1(SoftMart.Core.Dao.ConditionList,System.Int32,System.Int32,System.String,System.Int32@)">
+            <summary>
+            Select a page of item in a table T and return out total record count match with specified conditions
+            </summary>
+            <typeparam name="T">Type of object will be returned</typeparam>
+            <param name="conditions">Condition of select expression</param>
+            <param name="pageIndex">Page index</param>
+            <param name="pageSize">Page size</param>
+            <param name="orderStatement">Order statement</param>
+            <param name="recordCount">Total record count</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.SelectFieldsByColumnName``1(System.String[],SoftMart.Core.Dao.ConditionList,System.Int32,System.Int32,System.String,System.Int32@)">
+            <summary>
+            Select a page of fields in a table T and return out total record count match with specified conditions
+            </summary>
+            <typeparam name="T">Type of object will be returned</typeparam>
+            <param name="fieldNames">List of fields to select</param>
+            <param name="conditions">Condition of select expression</param>
+            <param name="pageIndex">Page index</param>
+            <param name="pageSize">Page size</param>
+            <param name="orderStatement">Order statement</param>
+            <param name="recordCount">Total record count</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.SelectTopItemByColumnName``1(System.String,System.Object,System.Int32,System.String)">
+            <summary>
+            Select top item in a table by list of condition
+            </summary>
+            <typeparam name="T">Type of returning object</typeparam>
+            <param name="columnName">Column name to compare</param>
+            <param name="value">Value of column to compare</param>
+            <param name="top">Top record to select</param>
+            <param name="orderingStatement">Ordering statement. Default is sorting by Primary key</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.SelectTopItemByColumnName``1(SoftMart.Core.Dao.ConditionList,System.Int32,System.String)">
+            <summary>
+            Select top item in a table by list of condition
+            </summary>
+            <typeparam name="T">Type of returning object</typeparam>
+            <param name="conditions">List of conditions</param>
+            <param name="top">Top record to select</param>
+            <param name="orderingStatement">Ordering statement. Default is sorting by Primary key</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.SelectTopFieldsByColumnName``1(System.String[],System.String,System.Object,System.Int32,System.String)">
+            <summary>
+            Select top fields from a table by list of conditions
+            </summary>
+            <typeparam name="T">Type of returning object</typeparam>
+            <param name="fieldNames">Fields name will be selected</param>
+            <param name="columnName">Column name to compare</param>
+            <param name="value">Value of column to compare</param>
+            <param name="top">Top record to select</param>
+            <param name="orderingStatement">Ordering statement. Default is sorting by Primary key</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.SelectTopFieldsByColumnName``1(System.String[],SoftMart.Core.Dao.ConditionList,System.Int32,System.String)">
+            <summary>
+            Select top fields from a table by list of conditions
+            </summary>
+            <typeparam name="T">Type of returning object</typeparam>
+            <param name="fieldNames">Fields name will be selected</param>
+            <param name="conditions">List of conditions</param>
+            <param name="top">Top record to select</param>
+            <param name="orderingStatement">Ordering statement. Default is sorting by Primary key</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.ExecuteSelect``1(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Execute a select command and then return list of T item
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.ExecuteSelect``1(System.String)">
+            <summary>
+            Execute a select query and then return a list of T item
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.ExecuteSelect``1(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            Execute a select query and then return a list of T item
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="query"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.ExecuteSelectTop``1(System.Data.SqlClient.SqlCommand,System.Int32,System.String)">
+            <summary>
+            Select top record from a query
+            </summary>
+            <typeparam name="T">Type of result</typeparam>
+            <param name="command">Select command</param>
+            <param name="top">Maximize record will be returned</param>
+            <param name="orderStatement">Order statement. Default is primary key</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.ExecutePaging``1(System.Data.SqlClient.SqlCommand,System.Int32,System.Int32,System.String,System.Int32@,System.Boolean)">
+            <summary>
+            Execute a paging query based on a sql command.
+            </summary>
+            <typeparam name="T">Type of result will be casted</typeparam>
+            <param name="command">Select command</param>
+            <param name="pageIndex">Page index. Start from 0</param>
+            <param name="pageSize">Page size</param>
+            <param name="orderStatement">Column to be ordered</param>
+            <param name="recordCount">Total records in command</param>
+            <param name="countingRecords">Indicate that dose function need to calculate record count of query</param>
+            <returns>List of Items</returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.ExecutePaging``1(System.String,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter},System.Int32,System.Int32,System.String,System.Int32@,System.Boolean)">
+            <summary>
+            Execute a paging query based on a sql command.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="query">Select command</param>
+            <param name="sqlParams">Parameters in the query</param>
+            <param name="pageIndex">Page index. Start from 0</param>
+            <param name="pageSize">Page size</param>
+            <param name="orderStatement">Column to be ordered</param>
+            <param name="recordCount">Total records in query</param>
+            <param name="countingRecords">Indicate that dose function need to calculate record count of query</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.ExecuteRanking``1(System.Data.SqlClient.SqlCommand,System.Int32,System.Int32,System.String,System.Int32@,System.Boolean)">
+            <summary>
+            Execute a ranking query based on a sql command.
+            </summary>
+            <typeparam name="T">Type of result will be casted</typeparam>
+            <param name="command">Select command</param>
+            <param name="pageIndex">Page index. Start from 0</param>
+            <param name="pageSize">Page size</param>
+            <param name="orderStatement">Column to be ordered</param>
+            <param name="recordCount">Total records in command</param>
+            <param name="countingRecords">Indicate that dose function need to calculate record count of query</param>
+            <returns>List of Items</returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.CountItemByColumnName``1(System.String,System.Object)">
+            <summary>
+            Count item by a column name.
+            \\ Caution. The items were marked deleted are excluded in counting
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="columnName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.CountItemByColumnName``1(SoftMart.Core.Dao.ConditionList)">
+            <summary>
+            Count item by a list of conditions
+            </summary>
+            <typeparam name="T">Type of item to be counted</typeparam>
+            <param name="conditions">List of condition using to filter</param>
+            <returns>Number of items that matched with specific condition</returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.FillSchema(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Fill table schema of a specified select command.
+            </summary>
+            <param name="sqlCmd">Specified select command</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.ExecuteDataSet(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Execute a select command and then return a data set
+            </summary>
+            <param name="sqlCmd">Select command will be run</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.ExecuteDataTable(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Execute a select command and then return a data table
+            </summary>
+            <param name="sqlCmd">Select command will be run</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.ExecuteDataTable(System.Data.SqlClient.SqlCommand,System.Int32,System.Int32,System.String,System.Int32@,System.Boolean)">
+            <summary>
+            Get a page of record from a Sql Command
+            </summary>
+            <param name="command">Command to execute select</param>
+            <param name="pageIndex">Page index</param>
+            <param name="pageSize">Page size</param>
+            <param name="orderStatement">Order statement of paging</param>
+            <param name="recordCount">Number of record in command</param>
+            <param name="countingRecords">Perform counting total record?</param>
+            <returns>A page of query</returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.ExecuteDataTable(System.String)">
+            <summary>
+            Execute a select query and then return a data table
+            </summary>
+            <param name="query">Select query will be run</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.ExecuteNonQuery(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Executes a SqlCommand query and returns the number of rows affected.
+            </summary>
+            <param name="sqlCmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.ExecuteNonQuery(System.String)">
+            <summary>
+            Executes a query and returns the number of rows affected.
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.ExecuteScalar(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            Executes a SqlCommand query, and returns the first column of the first row in the result set returned by the query.
+            </summary>
+            <param name="sqlCmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.ExecuteScalar(System.String)">
+            <summary>
+            Executes a SqlCommand query, and returns the first column of the first row in the result set returned by the query.
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.ConfigBeforeExecute(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            1. Set timeout for command
+            2. Convert null value of parameter to DBNull.Value
+            </summary>
+            <param name="command"></param>
+        </member>
+        <member name="M:SoftMart.Core.Dao.EnterpriseService.Dispose">
+            <summary>
+            Dispose all connection
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.Dao.EnterpriseService.ConnectionString">
+            <summary>
+            Gets or sets connection string for data context
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.Dao.EnterpriseService.CommandTimeOut">
+            <summary>
+            The time in seconds to wait for the command to execute. The default is 30
+            </summary>
+        </member>
+        <member name="T:SoftMart.Core.Dao.EnterpriseTransaction">
+            <summary>
+            <para>Chi Scope ngoai cung la co tac dung. Cac Scope ben trong khong co tac dung gi.</para>
+            <para>Tat ca action deu do Scope ngoai cung dam nhiem</para>
+            <para>Khong ho tro Multi thread</para>
+            <para>Su dung HttpContext.Current.Items nen ko can Login (Khac voi Profiles dang su dung bien session)</para>
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.Dao.EnterpriseTransaction._SqlTrans">
+            <summary>
+            ThreadStatic. Dung chung cho tat ca moi DataContext, Scope ben trong tren cung Thread
+            Chi Scope dau tien, ngoai cung thi moi tao Trans, cac Scope ben trong se khong tao
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.Dao.EnterpriseTransaction._conn">
+            <summary>
+            Giu Connection de close khi Transaction ket thuc
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.Dao.EnterpriseTransaction._isComitted">
+            <summary>
+            Xac dinh xem Scope da dc commit thanh cong chua, neu chua thi rollback
+            Chi dung cho tung object Scope rieng biet
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.Dao.EnterpriseTransaction._isOwner">
+            <summary>
+            Xac dinh Scope da tao Transaction. No se la noi thuc hien Commit/Rolback/Dispose.
+            Nhung Scope khac dc tao ra ben trong thi khong lam gi.
+            Chi dung cho tung object Scope rieng biet
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.Dao.EnterpriseTransaction.SqlTrans">
+            <summary>
+            Neu la Web -> Su dung HttpContext, neu khong thi su dung ThreadStatic
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Dao.PropertyEntity.#ctor(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Create new instance of PropertyMapping
+            </summary>
+            <param name="columnName">Data column name</param>
+            <param name="isIdentity">Is identity column</param>
+        </member>
+        <member name="P:SoftMart.Core.Dao.PropertyEntity.ColumnName">
+            <summary>
+            Name of data column will be mapped with property of object
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.Dao.PropertyEntity.IsIdentity">
+            <summary>
+            Indicate this column is identity column in SqlDatabase
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.Dao.PropertyEntity.IsColumn">
+            <summary>
+            Indicate this property is a column of the table
+            </summary>
+        </member>
+        <member name="T:SoftMart.Core.Dao.TransactionScope">
+            <summary>
+            Chuyen doi giua 2 loai Transaction o day la dc, ko phai sua code
+            Default: Use System.Transactions.TransactionScope()
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Dao.TransactionScope.Config(System.String,System.Data.IsolationLevel,System.Boolean)">
+            <summary>
+            Switch Transactions.
+            <para>Key null: Use System.Tranaction.TransactionScope</para>
+            <para>Key not null: Use SqlTransaction</para>
+            </summary>
+            <param name="connectionKey">Connection key in config file</param>
+            <param name="level">Transaction level</param>
+            <param name="isLogPerformance">True: Add Log Performance</param>
+        </member>
+    </members>
+</doc>

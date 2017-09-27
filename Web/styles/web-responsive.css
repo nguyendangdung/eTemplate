@@ -1,0 +1,1449 @@
+@media only screen and (min-device-width : 1400px) {
+	/*index*/
+	.choose-type-part h4{
+		padding-top: 150px;
+		margin-top: 0px;
+		line-height: 25px;
+	}
+	.choose-type-part img{
+		margin: 30px auto;
+	}
+	.type a {
+		width: 300px;
+		line-height: 45px;
+	}
+	.choose-type-part{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.main-content{
+		padding-left: 0px;
+		padding-right: 0px;
+		margin-top: 15px;
+		margin-bottom: 48px;
+
+	}
+
+
+	/*Home*/
+	.posleft a{
+		padding-left: 0px;
+	}
+	.item-type img{
+		max-height: 110px;
+	}
+	.title-home{
+		margin-top: 30px;
+		font-size: 40px;
+		padding-bottom: 40px;
+	}
+	.no-pdg .container{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.choose-type-home{
+		margin-bottom: 15px;
+	}
+	.lst-btn, .bottom-btn{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.wizard .nav-tabs > li a{
+		margin: 0 auto 15px;
+	}
+
+	/*Account*/
+	.infor-account{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.title-form-account{
+		padding-bottom: 20px;
+	}
+	.title-form-account img{
+		max-height: 60px;
+		margin-top: -15px;
+		display: inline-block;
+	}
+	.title-account{
+		font-size: 32px;
+    	line-height: 38px;
+    	margin-top: 30px;
+    	margin-left: 20px;
+	}
+	.form-infor-account form, .infor-account .form-group, .div-table-money{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.infor-account .lst-btn{
+		padding-right: 0px;
+		padding-left: 0px;
+		margin-bottom: 15px;
+	}
+	.infor-account .lst-btn li:last-child { 
+		padding-right: 0px;
+	}
+	.main-content-account{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	/*detail-payment*/
+	.wizard .tab-pane{
+		padding-top: 20px;
+	}
+	.title-payment{
+		font-size: 32px;
+    	line-height: 38px;
+    	margin-bottom: 0px;
+	}
+	.number-money {
+	    padding-left: 20px; 
+	    padding-right: 0px; 
+	    margin-top: 15px; 
+	}
+	.number-money label{
+		width: 12%; 
+		float: left;
+	}
+	.number-money input{
+		width: 88%; 
+		float: right;
+	}
+	.tab-content .lst-btn li:last-child { 
+		padding-right: 0px;
+	}
+
+
+	/*thanks*/
+	.alert-noti .media-left img{
+		max-height: 100px;
+	}
+	.alert-noti .media-body p {
+	    margin-top: 40px;
+	    font-size: 15px;
+	}
+
+}
+
+@media only screen and (min-device-width : 1280px) and (max-device-width : 1399px){
+	/*index*/
+	.wizard .nav-tabs > li a{
+		margin: 0 auto 15px;
+	}
+	.choose-type-part h4{
+		padding-top: 140px;
+		margin-top: 0px;
+		line-height: 25px;
+	}
+	.choose-type-part img{
+		margin: 30px auto;
+	}
+	.type a {
+		width: 260px;
+		line-height: 42px;
+	}
+	.choose-type-part{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.main-content{
+		padding-left: 0px;
+		padding-right: 0px;
+		margin-top: 15px;
+		margin-bottom: 48px;
+	}
+	.lst-btn, .bottom-btn, .div-table-money{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	/*Home*/
+	.posleft a{
+		padding-left: 0px;
+	}
+	.item-type img{
+		max-height: 100px;
+	}
+	.title-home{
+		font-size: 32px;
+		margin-top: 30px;
+		padding-bottom: 40px;
+	}
+	.no-pdg .container{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+
+	/*Account*/
+	.infor-account{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.title-form-account{
+		padding-bottom: 20px;
+	}
+	.title-form-account img{
+		max-height: 50px;
+		margin-top: -15px;
+		display: inline-block;
+	}
+	.title-account{
+		font-size: 32px;
+    	line-height: 38px;
+    	margin-top: 30px;
+    	margin-left: 15px;
+	}
+	.form-infor-account form, .infor-account .form-group{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.infor-account .lst-btn{
+		padding-right: 0px;
+		padding-left: 0px;
+		margin-bottom: 15px;
+	}
+	.tab-content .lst-btn li:last-child { 
+		padding-right: 0px;
+	}
+	.main-content-account{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	/*detail-payment*/
+	.wizard .tab-pane{
+		padding-top: 15px;
+		/*padding-bottom: 15px;*/
+	}
+	.title-payment{
+		font-size: 32px;
+    	line-height: 38px;
+    	margin-bottom: 0px;
+	}
+	.number-money {
+	    padding-left: 20px; 
+	    padding-right: 0px; 
+	    margin-top: 15px; 
+	    margin-bottom: 0px;
+	}
+	.number-money label{
+		width: 12%; 
+		float: left;
+	}
+	.number-money input{
+		width: 88%; 
+		float: right;
+		margin-bottom: 15px;
+	}
+	.infor-account .lst-btn li:last-child { 
+		padding-right: 0px;
+	}
+
+	/*thanks*/
+	.alert-noti .media-left img{
+		max-height: 100px;
+	}
+	.alert-noti .media-body p {
+	    margin-top: 40px;
+	    font-size: 15px;
+	}
+
+}
+
+@media only screen and (min-device-width : 992px) and (max-device-width : 1279px) {
+	/*index*/
+	.wizard .nav-tabs > li a{
+		margin: 0 auto 15px;
+	}
+	.choose-type-part h4{
+		padding-top: 80px;
+		margin-top: 0px;
+		line-height: 25px;
+	}
+	.choose-type-part img{
+		margin: 30px auto;
+	}
+	.type a {
+		width: 240px;
+		line-height: 40px;
+	}
+	.choose-type-part{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.main-content{
+		padding-left: 0px;
+		padding-right: 0px;
+		margin-top: 15px;
+		margin-bottom: 48px;
+	}
+
+	/*Home*/
+	.posleft a{
+		padding-left: 0px;
+	}
+	.item-type img{
+		max-height: 95px;
+	}
+	.title-home{
+		font-size: 32px;
+		padding-bottom: 30px;
+		margin-top: 30px;
+	}
+	.no-pdg, .no-pdg .container{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.sub-title-type{
+		line-height: 22px;
+		min-height: 50px;
+	}
+
+	/*Account*/
+	.infor-account{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.title-form-account{
+		padding-bottom: 20px;
+	}
+	.title-form-account img{
+		max-height: 50px;
+		margin-top: -15px;
+		display: inline-block;
+	}
+	.title-account{
+		font-size: 28px;
+    	line-height: 38px;
+    	margin-left: 15px;
+	}
+	.form-infor-account form, .infor-account .form-group{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.infor-account .lst-btn{
+		padding-right: 0px;
+		padding-left: 0px;
+		margin-bottom: 15px;
+	}
+	.infor-account .lst-btn li:last-child { 
+		padding-right: 0px;
+	}
+	.main-content-account{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.bottom-btn .lst-btn, .div-table-money, .number-money{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+
+
+	/*detail-account*/
+	.title-payment{
+		font-size: 28px;
+    	line-height: 38px;
+	}
+	.div-table-money{
+		border: 0px;
+		margin-top: 5px;
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.lst-btn li:last-child{
+		padding-right: 0px;
+	}
+	.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+		padding: 10px 15px;
+	}
+	.wizard li.active:after{
+		left: 40%;
+	}
+	.wizard .tab-pane{
+		padding-top: 15px;
+		/*padding-bottom: 15px;*/
+	}
+	.number-money{
+		margin-top: 15px;
+		margin-bottom: 0px;
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.number-money label{
+		width: 20%; 
+		float: left;
+	}
+	.number-money input{
+		width: 80%; 
+		float: right;
+	}
+
+
+	/*Thanks*/
+	.regret {
+		padding-bottom: 30px;
+	}
+	.alert-noti .media-left img{
+		max-height: 60px;
+	}
+	.regret .media-body p{
+		margin-top: 20px;
+	}
+
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 991px) {
+	.connecting-line{
+		width: 90%;
+		top: 45%;
+	}
+	/*index*/
+	.choose-type-part h4{
+		padding-top: 80px;
+		margin-top: 0px;
+		line-height: 25px;
+	}
+	.choose-type-part img{
+		margin: 30px auto;
+	}
+	.type a {
+		width: 240px;
+		line-height: 40px;
+	}
+	.choose-type-part{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.main-content{
+		padding-left: 0px;
+		padding-right: 0px;
+		margin-top: 15px;
+		margin-bottom: 48px;
+	}
+	.lst-btn, .bottom-btn{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	/*Home*/
+	.posleft a{
+		padding-left: 0px;
+	}
+	.item-type img{
+		max-height: 70px;
+	}
+	.title-home{
+		font-size: 32px;
+		margin-top: 30px;
+		padding-bottom: 30px;
+	}
+	.item-type{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.sub-title-type{
+		margin-bottom: 15px;
+		min-height: 50px;
+		font-size: 13px;
+		padding-top: 10px;
+	}
+
+	/*Account*/
+	.infor-account{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.title-form-account{
+		padding-bottom: 20px;
+		padding-left: 0px;
+		padding-right: 0px;
+		text-align: center;
+	}
+	.title-form-account img{
+		max-height: 50px;
+		margin-top: -15px;
+		display: inline-block;
+	}
+	.title-account{
+		font-size: 28px;
+    	line-height: 38px;
+    	margin-top: 20px;
+    	margin-left: 15px;
+	}
+	.form-infor-account form, .infor-account .form-group{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.infor-account .lst-btn{
+		padding-right: 0px;
+		padding-left: 0px;
+		margin-bottom: 15px;
+	}
+	.infor-account .lst-btn li:last-child { 
+		padding-right: 0px;
+	}
+	.main-content-account{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.number-money{
+		margin-bottom: 0px;
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+
+	/*detail-account*/
+	.title-payment{
+		font-size: 28px;
+    	line-height: 38px;
+	}
+	.div-table-money{
+		border: 0px;
+		margin-top: 0px;
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.lst-btn li:last-child{
+		padding-right: 0px;
+	}
+	.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+		padding: 10px 15px;
+	}
+	.wizard li.active:after{
+		left: 40%;
+	}
+	.wizard .tab-pane{
+		padding-top: 15px;
+		/*padding-bottom: 15px;*/
+	}
+	.wizard .nav-tabs > li a{
+	    margin: 0px auto 15px;
+	}
+	.number-money{
+		margin-top: 15px;
+	}
+	.number-money label{
+		width: 20%; 
+		float: left;
+	}
+	.number-money input{
+		width: 80%; 
+		float: right;
+	}
+
+
+	/*Thanks*/
+	.regret {
+		padding-bottom: 30px;
+	}
+	.alert-noti .media-left img{
+		max-height: 60px;
+	}
+	.regret .media-body p{
+		margin-top: 20px;
+	}
+
+}
+
+@media only screen and (min-device-width : 600px) and (max-device-width : 767px) {
+
+	.nav-tabs>li {
+	    padding-right: 20px;
+	    padding-left: 20px;
+	}
+	.connecting-line{
+		top: 45%;
+		width: 90%;
+	}
+	/*index*/
+	.header-home .navbar-header img{
+		padding-left: 15px;
+	}
+	.choose-type-part h4{
+		padding-top: 30px;
+		margin-top: 0px;
+		line-height: 25px;
+	}
+	.choose-type-part img{
+		margin: 30px auto;
+	}
+	.type a {
+		width: 240px;
+		line-height: 40px;
+	}
+	.choose-type-part{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.main-content{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+
+	/*Home*/
+	.header-content .container{
+		padding-right: 15px;
+	}
+	.posleft{
+		float: left;
+		width: 60%
+	}
+	.option-type-customer{
+		float: right;
+		width: 40%;
+		display: inline-block;
+	}
+	.posleft a img{
+		padding-left: 0px !important;
+		max-height: 40px !important;
+		margin-top: 3px !important;
+	}
+	.item-type img{
+		max-height: 135px;
+	}
+	.title-home{
+		font-size: 32px;
+		padding-bottom: 30px;
+		margin-top: 30px;
+	}
+	.sub-title-type{
+		font-size: 17px;
+	}
+	.lst-option .lst-btn{
+		margin-right: 15px;
+	}
+
+	/*Account*/
+	.main-content-detail-money{
+		margin-bottom: 48px;
+		margin-top: 15px;
+	}
+	.lst-btn{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.title-form-account{
+		text-align: center;
+		margin-bottom: 15px;
+	}
+	.title-form-account img{
+		max-height: 50px;
+		margin-top: -15px;
+		display: inline-block;
+	}
+	.navbar-header .no-pagl{
+		padding-left: 15px;
+	}
+	.title-account{
+		font-size: 32px;
+    	line-height: 38px;
+    	margin-top: 25px;
+    	margin-left: 15px;
+	}
+	.form-infor-account form, .infor-account .form-group, .infor-account {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.infor-account .lst-btn{
+		padding-right: 0px;
+		padding-left: 0px;
+		margin-bottom: 15px;
+	}
+	.infor-account .lst-btn li:last-child { 
+		padding-right: 0px;
+	}
+	.main-content-account{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.bottom-btn{
+		padding-right: 0px;
+	}
+
+	/*detail-account*/
+	.title-payment{
+		font-size: 32px;
+    	line-height: 38px;
+	}
+	.div-table-money{
+		border: 0px;
+		margin-top: 0px;
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.number-money{
+		padding-right: 0px;
+		padding-left: 0px;
+		margin-bottom: 0px;
+	}
+	.lst-btn li:last-child{
+		padding-right: 0px;
+	}
+	.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+		padding: 10px 15px;
+	}
+	.wizard li.active:after{
+		left: 39%;
+	}
+	.wizard .tab-pane{
+		padding-top: 15px;
+		/*padding-bottom: 15px;*/
+	}
+	.wizard .nav-tabs > li a{
+	    margin: 15px auto;
+	}
+	.number-money label{
+		width: 10%; 
+		float: left;
+	}
+	.number-money input{
+		width: 90%; 
+		float: right;
+	}
+	.number{
+		width: 80px;
+	}
+	.noti{
+		width: 120px;
+	}
+
+
+	/*Thanks*/
+	.regret {
+		padding-bottom: 30px;
+		margin-left: 120px;
+	}
+	.alert-noti .media-left img{
+		max-height: 60px;
+	}
+	.media>.pull-right{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.media-body p{
+		margin-top: 15px;
+	}
+}
+
+@media only screen and (min-device-width : 481px) and (max-device-width : 599px) {
+	span.round-tab, .wizard .nav-tabs > li a{
+		width: 40px;
+		height: 40px;
+	}
+	.wizard li.active span.round-tab img, span.round-tab img{
+		height: 23px;
+		margin: 6px auto;
+	}
+	.nav-tabs>li{
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+	.connecting-line{
+		width: 70%;
+	}
+
+	/*index*/
+	.header-home .navbar-header img{
+		padding-left: 15px;
+	}
+	.choose-type-part h4{
+		padding-top: 30px;
+		margin-top: 0px;
+		line-height: 25px;
+	}
+	.choose-type-part img{
+		margin-top: 30px;
+	}
+	.type a {
+		width: 240px;
+		line-height: 40px;
+	}
+	.choose-type-part{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.main-content, .no-pdg{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.main-content-detail-money{
+		margin-bottom: 48px;
+		margin-top: 15px;
+	}
+
+	/*Home*/
+	.header-content .container{
+		padding-right: 15px;
+	}
+	.posleft{
+		float: left;
+		width: 50%
+	}
+	.option-type-customer{
+		float: right;
+		width: 50%;
+	}
+	.posleft a img{
+		padding-left: 0px !important;
+		max-height: 40px !important;
+		margin-top: 3px !important;
+	}
+	.choose-type-home{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.item-type img{
+		max-height: 110px;
+	}
+	.title-home{
+		font-size: 32px;
+		padding-bottom: 30px;
+	}
+
+	.number-money{
+		margin-bottom: 0px;
+	}
+	/*Account*/
+	.title-form-account{
+		text-align: center;
+		margin-bottom: 15px;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.title-form-account img{
+		max-height: 48px;
+		margin-top: -15px;
+		display: inline-block;
+	}
+	.navbar-header .no-pagl{
+		padding-left: 15px;
+	}
+	.title-account{
+		font-size: 28px;
+    	line-height: 38px;
+    	margin-top: 15px;
+    	margin-left: 15px;
+	}
+	.form-infor-account form, .infor-account .form-group, .infor-account, .number-money, .bottom-btn .lst-btn{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.infor-account .lst-btn{
+		padding-right: 0px;
+		padding-left: 0px;
+		margin-bottom: 15px;
+	}
+	.infor-account .lst-btn li:last-child { 
+		padding-right: 0px;
+	}
+	.main-content-account{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	/*detail-account*/
+	.title-payment{
+		font-size: 28px;
+    	line-height: 38px;
+	}
+	.div-table-money{
+		border: 0px;
+		margin-top: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.lst-btn li:last-child{
+		padding-right: 0px;
+	}
+	.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+		padding: 10px 15px;
+	}
+	.wizard li.active:after{
+		left: 28%;
+	}
+	.wizard .tab-pane{
+		padding-top: 15px;
+		/*padding-bottom: 15px;*/
+	}
+	.wizard .nav-tabs > li a{
+	    margin: 0px auto 15px;
+	}
+	.number-money label{
+		width: 15%; 
+		float: left;
+	}
+	.number-money input{
+		width: 85%; 
+		float: right;
+	}
+
+
+	/*Thanks*/
+	.regret {
+		padding-right: 0px;
+		padding-left: 0px;
+		padding-bottom: 20px;
+		margin-top: 20px;
+		margin-left: 80px;
+	}
+	.alert-noti .media-left img{
+		max-height: 60px;
+	}
+	.media-body p{
+		margin-top: 15px;
+	}
+
+}
+
+@media only screen and (min-device-width : 381px) and (max-device-width: 480px) {
+	span.round-tab, .wizard .nav-tabs > li a{
+		width: 40px;
+		height: 40px;
+	}
+	.wizard li.active span.round-tab img, span.round-tab img{
+		height: 22px;
+		margin: 8px auto;
+	}
+	.nav-tabs>li{
+		padding-right: 8px;
+		padding-left: 8px;
+	}
+	.connecting-line{
+		width: 80%;
+	}
+
+	/*index*/
+	.header-home .navbar-header img{
+		padding-left: 15px;
+	}
+	.choose-type-part h4{
+		padding-top: 30px;
+		margin-top: 0px;
+		line-height: 25px;
+	}
+	.choose-type-part img{
+		margin-top: 30px;
+	}
+	.type a {
+		width: 240px;
+		line-height: 40px;
+	}
+	.choose-type-part{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.main-content-detail-money{
+		margin-bottom: 77px;
+		margin-top: 15px;
+	}
+	.main-content, .no-pdg{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	.number-money{
+		margin-bottom: 0px;
+	}
+	/*Home*/
+/*	.header-content .container{
+		padding-right: 15px;
+	}*/
+	.label-warning{
+		padding: 10px;
+		font-size: 13px;
+	}
+	.posleft{
+		float: left;
+		width: 50%;
+	}
+	.option-type-customer {
+		float: right;
+		width: 50%;
+	}
+	.posleft a img{
+		padding-left: 0px !important;
+		max-height: 40px !important;
+		margin-top: 5px !important;
+	}
+	.choose-type-home{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.item-type img{
+		max-height: 100px;
+	}
+	.title-home{
+		font-size: 30px;
+		padding-bottom: 30px;
+	}
+	.sub-title-type{
+		font-size: 14px;
+	}
+	/*Account*/
+	.title-form-account{
+		text-align: center;
+		margin-bottom: 15px;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.title-form-account img{
+		max-height: 40px;
+		margin-top: -15px;
+		display: inline-block;
+	}
+	.navbar-header .no-pagl{
+		padding-left: 15px;
+	}
+	.title-account{
+		font-size: 24px;
+    	line-height: 38px;
+    	margin-top: 15px;
+    	margin-left: 15px;
+	}
+	.navbar-header .no-pagl{
+		padding-left: 15px;
+	}
+	.form-infor-account form, .infor-account .form-group, .infor-account{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.infor-account .lst-btn{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.infor-account .lst-btn li:last-child { 
+		padding-right: 0px;
+	}
+	.main-content-account{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	/*detail-account*/
+	.title-payment{
+		font-size: 24px;
+    	line-height: 38px;
+	}
+	.div-table-money{
+		border: 0px;
+		margin-top: 0px;
+		padding-left: 0px;
+	}
+	.lst-btn li:last-child{
+		padding-right: 0px;
+	}
+	.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+		padding: 10px 15px;
+	}
+	.wizard li.active:after{
+		left: 32%;
+	}
+	.wizard .tab-pane{
+		padding-top: 15px;
+		/*padding-bottom: 15px;*/
+	}
+	.wizard .nav-tabs > li a{
+	    margin: 0px auto 15px;
+	}
+
+	/*Thanks*/
+	.regret {
+		padding-right: 0px;
+		padding-left: 0px;
+		padding-bottom: 20px;
+	}
+	.alert-noti .media-left img{
+		max-height: 60px;
+	}
+	.media>.pull-right, .number-money, .bottom-btn .lst-btn{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.media-body p{
+		margin-top: 15px;
+	}
+
+
+	/*footer*/
+	.copyright{
+		padding-right: 0px;
+		padding-left: 0px;
+		bottom: 0px;
+	}
+	.copyright .license{
+		width: 100%;
+		text-align: center;
+	}
+	.copyright .menu-footer{
+		width: 100%;
+		text-align: center;
+	}
+}
+
+@media only screen and (min-device-width : 321px) and (max-device-width: 380px) {
+	span.round-tab, .wizard .nav-tabs > li a{
+		width: 38px;
+		height: 38px;
+	}
+	.wizard li.active span.round-tab img, span.round-tab img{
+		height: 20px;
+		margin: 7px auto;
+	}
+	.nav-tabs>li{
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+	.connecting-line{
+		width: 80%;
+		top: 35%;
+	}
+	.number-money{
+		margin-bottom: 0px;
+	}
+	/*index*/
+	.choose-type-part h4{
+		padding-top: 30px;
+		margin-top: 0px;
+		line-height: 25px;
+	}
+	.choose-type-part img{
+		margin-top: 30px;
+	}
+	.type a {
+		width: 240px;
+		line-height: 40px;
+	}
+	.choose-type-part{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+
+	/*Home*/
+	.header-content .container{
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+	.main-content-detail-money{
+		padding-left: 0px;
+		padding-right: 0px;
+		margin-bottom: 77px;
+		margin-top: 15px;
+	}
+	.posleft{
+		width: 100%;
+		text-align: center;
+	}
+	.option-type-customer {
+		width: 100%;
+		margin-bottom: 15px;
+		text-align: center;
+	}
+	.posleft a img{
+		padding-left: 0px !important;
+		max-height: 40px !important;
+		margin-top: 3px !important;
+	}
+	.no-pdg{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.item-type img{
+		max-height: 80px;
+	}
+	.title-home{
+		font-size: 28px;
+		padding-bottom: 30px;
+	}
+	.sub-title-type{
+		font-size: 13px;
+		min-height: 45px;
+	}
+
+
+	/*Account*/
+	.title-form-account{
+		text-align: center;
+		margin-bottom: 15px;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.title-form-account img{
+		max-height: 40px;
+		margin-top: -10px;
+		display: inline-block;
+	}
+	.navbar-header .no-pagl{
+		padding-left: 15px;
+		display: inline-block;
+    	float: inherit;
+	}
+	.title-account{
+		font-size: 20px;
+    	line-height: 38px;
+    	margin-top: 15px;
+    	margin-left: 5px;
+	}
+	.form-infor-account form, .infor-account .form-group, .infor-account{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.infor-account .lst-btn{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.infor-account .lst-btn li:last-child { 
+		padding-right: 0px;
+	}
+
+
+	/*detail-account*/
+	.title-payment{
+		font-size: 20px;
+    	line-height: 38px;
+	}
+	.div-table-money{
+		border: 0px;
+		margin-top:0px;
+		padding-left: 0px;
+	}
+	.lst-btn li:last-child{
+		padding-right: 0px;
+	}
+	.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+		padding: 10px;
+	}
+	.wizard li.active:after{
+		left: 30%;
+	}
+	.wizard .tab-pane{
+		padding-top: 15px;
+		/*padding-bottom: 15px;*/
+	}
+	.wizard .nav-tabs > li a{
+	    margin: 0px auto 15px;
+	}
+
+	/*Thanks*/
+	.regret {
+		padding-right: 0px;
+		padding-left: 0px;
+		padding-bottom: 20px;
+	}
+	.alert-noti .media-left img{
+		max-height: 60px;
+	}
+	.media>.pull-right, .number-money, .bottom-btn .lst-btn{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.media-body p{
+		margin-top: 10px;
+	}
+
+
+	/*footer*/
+	.copyright{
+		padding-right: 0px;
+		padding-left: 0px;
+		bottom: 0px;
+	}
+	.copyright .license{
+		width: 100%;
+		text-align: center;
+	}
+	.copyright .menu-footer{
+		width: 100%;
+		text-align: center;
+	}
+
+}
+
+@media only screen and (max-width : 320px) {
+	span.round-tab, .wizard .nav-tabs > li a{
+		width: 35px;
+		height: 35px;
+	}
+	.wizard li.active span.round-tab img, span.round-tab img{
+		height: 18px;
+		margin: 5px auto;
+	}
+	.nav-tabs>li{
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+	.connecting-line{
+		width: 80%;
+		top: 35%;
+	}
+
+	/*index*/
+	.header-home .navbar-header img{
+		padding-left: 15px;
+	}
+	.choose-type-part h4{
+		padding-top: 30px;
+		margin-top: 0px;
+		line-height: 25px;
+	}
+	.choose-type-part img{
+		margin-top: 30px;
+	}
+	.type a {
+		max-width: 240px;
+		padding: 10px 15px;
+		line-height: 25px;
+	}
+	.choose-type-part{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+
+
+	/*Home*/
+	.main-content-detail-money{
+		padding-right: 0px;
+		padding-left: 0px;
+		margin-top: 15px;
+		margin-bottom: 77px;
+	}
+	.header-content .container{
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+	.posleft{
+		text-align: center;
+	}
+	.option-type-customer {
+		width: 100%;
+		margin-bottom: 15px;
+		text-align: center !important;
+	}
+	.label-warning{
+		margin-top: 0px;
+	}
+	.posleft a img{
+		padding-left: 0px !important;
+		max-height: 40px !important;
+		margin-top: 3px !important;
+	}
+	.no-pdg, .form-home{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+
+	.item-type{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.item-type img{
+		max-height: 70px;
+	}
+	.title-home{
+		font-size: 26px;
+		padding-bottom: 30px;
+	}
+	.sub-title-type{
+		font-size: 13px;
+		min-height: 45px;
+		overflow: hidden;
+	}
+
+	/*Account*/
+	.title-form-account{
+		text-align: center;
+		margin-bottom: 15px;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.title-form-account img{
+		max-height: 35px;
+		display: inline-block;
+	}
+	.navbar-header .no-pagl{
+		padding-left: 15px;
+		display: inline-block;
+		float: inherit;
+	}
+	.title-account{
+		font-size: 18px;
+    	line-height: 30px;
+    	margin-top: 15px;
+	}
+	.form-infor-account form, .infor-account .form-group, .infor-account{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.infor-account .lst-btn{
+		display: flex;
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.infor-account .lst-btn li:first-child { 
+		padding-left: 0px;
+	}
+
+	/*footer*/
+	.copyright{
+		padding-right: 0px;
+		padding-left: 0px;
+		bottom: 0px;
+	}
+	.copyright .license{
+		width: 100%;
+		text-align: center;
+	}
+	.copyright .menu-footer{
+		width: 100%;
+		text-align: center;
+	}
+
+	/*detail-account*/
+	.title-payment{
+		font-size: 18px;
+    	line-height: 30px;
+    	margin-bottom: 15px;
+	}
+	.div-table-money{
+		border: 0px;
+		margin-top: 0px;
+		padding-left: 0px;
+	}
+	.lst-btn li:last-child{
+		padding-right: 0px;
+	}
+	.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+		padding: 10px 15px;
+	}
+	.wizard li.active:after{
+		left: 28%;
+	}
+	.wizard .tab-pane{
+		padding-top: 15px;
+		/*padding-bottom: 15px;*/
+	}
+	.wizard .nav-tabs > li a{
+	    margin: 0px auto 15px;
+	}
+
+	/*Thanks*/
+	.regret {
+		padding-right: 0px;
+		padding-left: 0px;
+		padding-bottom: 20px;
+	}
+	.alert-noti .media-left img{
+		max-height: 60px;
+	}
+	.number-money{
+		margin-bottom: 0px;
+	}
+	.media>.pull-right, .number-money, .bottom-btn .lst-btn{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.media-body p{
+		margin-top: 10px;
+	}
+}

@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMCUI</name>
+    </assembly>
+    <members>
+        <member name="P:SoftMart.Core.UIControls.ColorIndicator.PopupWidth">
+            <summary>
+            Width of popup
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.UIControls.ColorIndicator.PopupHeight">
+            <summary>
+            Height of popup
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.UIControls.ColorIndicator.ItemWidth">
+            <summary>
+            Width of Item
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.UIControls.ColorIndicator.ItemHeight">
+            <summary>
+            Height of Item
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.UIControls.DatePickerDisplayFormat.YMD">
+            <summary>
+            Year/Month/Day
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.UIControls.DatePickerDisplayFormat.MDY">
+            <summary>
+            Month/Day/Year
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.UIControls.DatePickerDisplayFormat.DMY">
+            <summary>
+            Day/Month/Year
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.UIControls.FileUploadExtended.ClearPostedFile">
+            <summary>
+            Delete cached posted file.
+            This method should be called before redirecting to other page.
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.UIControls.FileUploadExtended.ClearAllPostedFile">
+            <summary>
+            Delete all cached posted file
+            This methods should be called in first load of Toolkit manager
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.UIControls.FileUploadExtended.GetTemporaryFolder">
+            <summary>
+            Get temporary folder of FileUploadExtender.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:SoftMart.Core.UIControls.FileUploadExtended.AllowedFileExtensions">
+            <summary>
+            Gets or Sets allowed extensions of control.
+            The value is separated by | character
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.UIControls.UI.FileUploadExtended.UploadHandler.form1">
+            <summary>
+            form1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:SoftMart.Core.UIControls.UI.FileUploadExtended.UploadHandler.FileUpload1">
+            <summary>
+            FileUpload1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:SoftMart.Core.UIControls.UI.FileUploadExtended.UploadHandler.btnUpload">
+            <summary>
+            btnUpload control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="M:SoftMart.Core.UIControls.PopupPanel.Show">
+            <summary>
+            Show popup
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.UIControls.PopupPanel.Hide">
+            <summary>
+            Hide popup
+            </summary>
+        </member>
+        <member name="E:SoftMart.Core.UIControls.PopupPanel.PopupClosed">
+            <summary>
+            Event when popup is closed by Close button on the title bar.
+            If this event is not set, Close button will run in client mode
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.UIControls.AjaxSearchBox.ParseClientData(System.Collections.IList)">
+            <summary>
+            Parse specified list to JSON string
+            </summary>
+            <param name="data">Specified list</param>
+            <returns>JSON string</returns>
+        </member>
+        <member name="P:SoftMart.Core.UIControls.AjaxSearchBox.KeywordParam">
+            <summary>
+            Name of keyword param
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.UIControls.AjaxSearchBox.OptionParam">
+            <summary>
+            Name of option param
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.UIControls.AjaxSearchBox.OptionValue">
+            <summary>
+            Option condition will be post to ServiceMethod
+            </summary>
+        </member>
+        <member name="T:SoftMart.Core.UIControls.SearchFilterTemplate">
+            <summary>
+            Template of update panel container
+            </summary>
+        </member>
+        <member name="T:SoftMart.Core.UIControls.RepeaterTemplate">
+            <summary>
+            Template of repeater
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.UIControls.TabStrip.ConfigTextMode(System.Web.UI.Control)">
+            <summary>
+            Mỗi tab phải có 1 thẻ div chứa dữ liệu riêng. Component tự chuyển tab khi click
+            </summary>
+            <param name="tabContainer"></param>
+        </member>
+        <member name="M:SoftMart.Core.UIControls.TabStrip.ConfigHyperlinkMode(System.Boolean)">
+            <summary>
+            Trường hợp này chỉ có 1 div chứa dữ liệu. Component ko cần set ẩn hiện cho div. Application phải set active tab
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.UIControls.TabStrip.ContainerPanel">
+            <summary>
+            ID of panel contains tabs view
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.UIControls.TabStripDisplayMode.Text">
+            <summary>
+            Displays the list item content as text.
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.UIControls.TabStripDisplayMode.HyperLink">
+            <summary>
+            Displays the list item content as hyperlinks.
+            </summary>
+        </member>
+        <member name="F:SoftMart.Core.UIControls.TabStripDisplayMode.LinkButton">
+            <summary>
+            Displays the list item content as link buttons.
+            </summary>
+        </member>
+        <member name="E:SoftMart.Core.UIControls.TreeViewExtended.SelectedNodeChanged">
+            <summary>
+            Event when a node is clicked
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.UIControls.TreeViewExtended.OnNodeClientClick">
+            <summary>
+            Client script when click on a node. Function prototype. function(sender, nodeValue, nodeText)
+            sender: Clicked node.
+            nodeValue: Value of clicked node
+            nodeText: Display text of clicked node
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.UIControls.FlowChartAPI.GetNewPosition(System.Object,System.Collections.Generic.List{System.Int32},System.Boolean,System.Int32@,System.Int32@)">
+            <summary>
+            Caculate position of a new item
+            </summary>
+            <param name="currentDataSource"></param>
+            <param name="lstParentID"></param>
+            <param name="useParentLeft"></param>
+            <param name="level"></param>
+            <param name="left"></param>
+        </member>
+        <member name="P:SoftMart.Core.UIControls.FlowChartCommandEventArgs.CommandArgument">
+            <summary>
+            Gets the CommandArgument
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.UIControls.FlowChartCommandEventArgs.CommandName">
+            <summary>
+            Gets the CommandName
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.UIControls.FlowChartCommandEventArgs.Item">
+            <summary>
+            Gets FlowChartItem
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.UIControls.FlowChartItem.FindControl(System.String)">
+            <summary>
+            Find a control by it's ID
+            </summary>
+            <param name="controlID">ControlID</param>
+            <returns></returns>
+        </member>
+        <member name="P:SoftMart.Core.UIControls.FlowChartItem.ActivityID">
+            <summary>
+            Gets ActivityID
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.UIControls.FlowChartItem.HasCondition">
+            <summary>
+            Gets or sets HasCondition of the activity
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.UIControls.FlowChartItem.Level">
+            <summary>
+            Gets Level of the activity
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.UIControls.FlowChartItem.Left">
+            <summary>
+            Gets Left of the activity
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.UIControls.FlowChartItem.DataItem">
+            <summary>
+            Gets a DataItem associated with FlowChartItem
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.UIControls.FlowChartItemEventArgs.Item">
+            <summary>
+            Get FlowChartItem
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.UIControls.FlowChartUC.Items">
+            <summary>
+            Get list of activities in Flow
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.UIControls.Utils.FlowChartUtils.GetNumberInString(System.String)">
+            <summary>
+            Return number 123 in the string 123abc
+            </summary>
+            <param name="strInput"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.UIControls.Utils.FlowChartUtils.GetListIntFromString(System.String,System.Char)">
+            <summary>
+            Get list int value in a string which separate by specific character
+            </summary>
+            <param name="strInput"></param>
+            <param name="separator">Character between each item</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.UIControls.Utils.ToolkitUtil.ShowTooltip(System.Web.UI.WebControls.WebControl,System.String,System.Int32,System.Int32)">
+            <summary>
+            Show Html content of specified url to a div as a tooltip
+            </summary>
+            <param name="trigger">Trigger control to show tooltip</param>
+            <param name="url">Url to show tooltip</param>
+            <param name="width">With of tooltip</param>
+            <param name="height">Height of tooltip</param>
+        </member>
+        <member name="M:SoftMart.Core.UIControls.Utils.ToolkitUtil.ShowTooltip(System.Web.UI.WebControls.WebControl,System.Web.UI.WebControls.Panel)">
+            <summary>
+             Show a div a tooltip when hover to the specified control
+             </summary>
+             <param name="trigger">Specified control</param>
+             <param name="tooltip">Panel contain tooltip content</param>
+        </member>
+    </members>
+</doc>

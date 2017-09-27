@@ -1,0 +1,38 @@
+﻿
+@model Web.Models.Screens.MoneyDetailsData
+
+<div class="form-horizontal">
+	<h4>Chi tiết</h4>
+	<hr />
+	<div class="form-group">
+		<label class="col-xs-2 control-label">@Html.DisplayNameFor(model => model.Amount)</label>
+		<div class="col-xs-10">
+			<p class="form-control-static">@Model.Amount</p>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-xs-2 control-label"></label>
+		<div class="col-xs-10">
+			<table class="table table-bordered">
+				<thead>
+				<tr>
+					<th>Mệnh giá</th>
+					<th>Số tờ</th>
+					<th>Ghi chú</th>
+				</tr>
+				</thead>
+				<tbody>
+				@for (int i = 0; i < Model.Denominations.Count; i++)
+				{
+					<tr>
+						<td>Mệnh giá @Model.Denominations[i].Value</td>
+						<td>@Model.Denominations[i].NumberOfUnit</td>
+						<td>@Model.Denominations[i].Note</td>
+					</tr>
+				}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

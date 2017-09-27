@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMCB</name>
+    </assembly>
+    <members>
+        <member name="M:SoftMart.Core.BRE.Biz.RERuleBiz.GetRuleConditionByRuleID(SoftMart.Core.BRE.SharedComponent.RERuleParam)">
+            <summary>
+            Get a rule info by ruleID
+            </summary>
+            <param name="param"></param>
+        </member>
+        <member name="M:SoftMart.Core.BRE.Biz.RERuleBiz.BuildRuleConditionFromRuleAndRuleDetail(SoftMart.Core.BRE.SharedComponent.Entities.Flex_Rule,System.Collections.Generic.List{SoftMart.Core.BRE.SharedComponent.Entities.Flex_RuleDetail})">
+            <summary>
+            Build a rule condition from a rule and list of rule details
+            </summary>
+            <param name="enRule">Rule</param>
+            <param name="lstRuleDetail">List of rule detail</param>
+            <returns>A RuleCondition with sql condition is where clause only</returns>
+        </member>
+        <member name="M:SoftMart.Core.BRE.Dao.BaseDao.BuildInCondition(System.Collections.Generic.List{System.Int32},System.String)">
+            <summary>
+            Build SQL IN statement
+            </summary>
+            <param name="lstInput"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SoftMart.Core.BRE.RuleEngineService">
+            <summary>
+            API to intergate with RuleEngine
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.BRE.RuleEngineService.ConfigureService(System.String,System.String,System.Nullable{System.Int32},System.Collections.Generic.Dictionary{System.Int32,System.String})">
+            <summary>
+            Configure RuleEngineService to intergrate with containing application
+            </summary>
+            <param name="ruleEngineConnection">ConnectionKey point to database of RuleEngine</param>
+            <param name="targetDBConnection">ConnectionKey point to target database which apply RuleEngine</param>
+            <param name="cacheDuration">Cache duration in second of rule. Null is not timeout</param>
+            <param name="ruleCategories"></param>
+        </member>
+        <member name="M:SoftMart.Core.BRE.RuleEngineService.GetRuleConditionByRuleID(System.Int32)">
+            <summary>
+            Get RuleCondition by ruleID
+            </summary>
+            <param name="ruleID">Original ruleID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.BRE.RuleEngineService.GetRuleConditionByCode(System.String)">
+            <summary>
+            Get rule condition by Code
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.BRE.RuleEngineService.GetConditionInCategory(System.Nullable{System.Int32})">
+            <summary>
+            Get all rule condition in a specified category
+            </summary>
+            <param name="category">Specified category</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.BRE.RuleEngineService.GetRuleInCategory(System.Nullable{System.Int32})">
+            <summary>
+            Search all rule by name and category
+            </summary>
+            <param name="category">Null to return all rule</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.BRE.RuleEngineService.DeleteRule(System.Int32)">
+            <summary>
+            Delete rules by set of IDs
+            </summary>
+            <param name="ruleID"></param>
+        </member>
+        <member name="M:SoftMart.Core.BRE.DisplayRuleUC.ConfigDisplay(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Configure to display control on the Edit Rule UC
+            </summary>
+            <param name="showRuleName"></param>
+            <param name="showOutArgument"></param>
+            <param name="showViewName"></param>
+            <param name="showKeyColumn"></param>
+            <param name="showCategory"></param>
+        </member>
+        <member name="M:SoftMart.Core.BRE.DisplayRuleUC.LoadData(System.Int32)">
+            <summary>
+            Show Rule enginee by its ID
+            </summary>
+            <param name="ruleID"></param>
+        </member>
+        <member name="P:SoftMart.Core.BRE.DisplayRuleUC.RuleID">
+            <summary>
+            Gets or sets RuleID. Null when create new rule
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.BRE.EditRuleUC.#ctor">
+            <summary>
+            Create new instance of EditRule control
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.BRE.EditRuleUC.ConfigDisplay(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Configure to display control on the Edit Rule UC
+            </summary>
+            <param name="showRuleName"></param>
+            <param name="showOutArgument"></param>
+            <param name="showViewName"></param>
+            <param name="showKeyColumn"></param>
+            <param name="showCategory"></param>
+        </member>
+        <member name="M:SoftMart.Core.BRE.EditRuleUC.BindRule(System.Nullable{System.Int32})">
+            <summary>
+            Display a rule by ruleID
+            </summary>
+            <param name="ruleID">Original ruleID</param>
+        </member>
+        <member name="M:SoftMart.Core.BRE.EditRuleUC.SaveRule">
+            <summary>
+            Save rule and return RuleID
+            </summary>
+            <returns>RuleID</returns>
+        </member>
+        <member name="P:SoftMart.Core.BRE.EditRuleUC.RuleID">
+            <summary>
+            Gets or sets RuleID. Null when create new rule
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.BRE.ListRuleUC.InitConfig(System.String)">
+            <summary>
+            Find Rule engine by name and category
+            </summary>
+            <param name="displayUrlFormat"></param>
+        </member>
+    </members>
+</doc>

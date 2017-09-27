@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMK</name>
+    </assembly>
+    <members>
+        <member name="F:SoftMart.Kernel.Constant.KernelSMX.Open">
+            <summary>
+            1
+            </summary>
+        </member>
+        <member name="F:SoftMart.Kernel.Constant.KernelSMX.Updating">
+            <summary>
+            2
+            </summary>
+        </member>
+        <member name="F:SoftMart.Kernel.Constant.KernelSMX.Processing">
+            <summary>
+            4
+            </summary>
+        </member>
+        <member name="F:SoftMart.Kernel.Constant.KernelSMX.Approving">
+            <summary>
+            8
+            </summary>
+        </member>
+        <member name="F:SoftMart.Kernel.Constant.KernelSMX.Approved">
+            <summary>
+            16
+            </summary>
+        </member>
+        <member name="F:SoftMart.Kernel.Constant.KernelSMX.Rejected">
+            <summary>
+            32
+            </summary>
+        </member>
+        <member name="F:SoftMart.Kernel.Constant.KernelSMX.Final">
+            <summary>
+            64
+            </summary>
+        </member>
+        <member name="F:SoftMart.Kernel.Constant.KernelSMX.Cancel">
+            <summary>
+            128
+            </summary>
+        </member>
+        <member name="F:SoftMart.Kernel.Constant.KernelSMX.Failed">
+            <summary>
+            256
+            </summary>
+        </member>
+        <member name="F:SoftMart.Kernel.Constant.KernelSMX.Active">
+            <summary>
+            1
+            </summary>
+        </member>
+        <member name="F:SoftMart.Kernel.Constant.KernelSMX.Inactive">
+            <summary>
+            2
+            </summary>
+        </member>
+        <member name="F:SoftMart.Kernel.Entity.PagingInfo.DEFAULT_PAGE_SIZE">
+            <summary>
+            Default = 20 items
+            </summary>
+        </member>
+        <member name="M:SoftMart.Kernel.Entity.PagingInfo.#ctor">
+            <summary>
+            Creates a new PagingInfo instance
+            </summary>
+        </member>
+        <member name="M:SoftMart.Kernel.Entity.PagingInfo.#ctor(System.Int32)">
+            <summary>
+            Create a new PagingInfo instance with page index
+            </summary>
+            <param name="pageIndex"></param>
+        </member>
+        <member name="P:SoftMart.Kernel.Entity.PagingInfo.RecordCount">
+            <summary>
+            Get, Set Record count
+            </summary>
+        </member>
+        <member name="P:SoftMart.Kernel.Entity.PagingInfo.PageIndex">
+            <summary>
+            Get, Set Page number
+            </summary>
+        </member>
+        <member name="P:SoftMart.Kernel.Entity.PagingInfo.PageSize">
+            <summary>
+            Get/Set Page size - Constant
+            </summary>
+        </member>
+        <member name="P:SoftMart.Kernel.Entity.PagingInfo.PageCount">
+            <summary>
+            Get Page count
+            </summary>
+        </member>
+        <member name="P:SoftMart.Kernel.Entity.PagingInfo.RowsSkip">
+            <summary>
+            Get Number of rows to skip
+            </summary>
+        </member>
+    </members>
+</doc>

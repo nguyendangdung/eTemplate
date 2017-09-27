@@ -1,0 +1,471 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMCW</name>
+    </assembly>
+    <members>
+        <member name="M:SoftMart.Core.Workflow.ActivityFlowApi.GetProcessFlowByID(System.Int32)">
+            <summary>
+            Get ProcessFlow by specified id
+            </summary>
+            <param name="processFlowID">Specified id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ActivityFlowApi.GetProcessFlowOfItem(System.Int32,System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            GetProcessFlowOfItem
+            </summary>
+            <param name="refID"></param>
+            <param name="refType"></param>
+            <param name="status">Danh sách trạng thái. Bỏ qua nếu null</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ActivityFlowApi.GetProcessFlowStatus(System.Int32)">
+            <summary>
+            Get status of specified processFlow
+            </summary>
+            <param name="processFlowID">Specified process flow id</param>
+            <returns>Status of flow</returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ActivityFlowApi.CreateActivityFlow(System.Int32)">
+            <summary>
+            Create new empty activity flow
+            </summary>
+            <param name="flowID">FlowID to applying</param>
+            <returns>ProcessFlowID</returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ActivityFlowApi.AssignActivityFlow(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Assign an existing activity flow for a specified item
+            </summary>
+            <param name="processFlowID">ID of existing activity flow</param>
+            <param name="refID">ID of item</param>
+            <param name="refType">Item type</param>
+            <param name="comment">Comment</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ActivityFlowApi.FinishActivityFlow(System.Int32,System.String)">
+            <summary>
+            Finish an activity flow
+            </summary>
+            <param name="processFlowID">ID of activity flow to finish</param>
+            <param name="comment">Comment</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ActivityFlowApi.CancelActivityFlow(System.Int32,System.String)">
+            <summary>
+            Cancel an activity flow by specified ID
+            </summary>
+            <param name="processFlowID">Specified ID</param>
+            <param name="comment">Comment on cancelling</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ActivityFlowApi.ChangeIncharger(System.Int32,System.Nullable{System.Int32},System.String,System.String)">
+            <summary>
+            Change incharger of an processflow by specified ID
+            </summary>
+            <param name="processFlowID">Specified ID</param>
+            <param name="inchargerID">ID of new incharger</param>
+            <param name="inchargerUserName">User name of new incharger</param>
+            <param name="inchargerName">Name of new incharger</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ActivityFlowApi.GetProcessFlowActivity(System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            Get activity in specified processFlow and specified status
+            </summary>
+            <param name="processFlowID">ID of process flow</param>
+            <param name="status">List Specified status. Null to return all</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ActivityFlowApi.GetFlowByRefType(System.Nullable{System.Int32})">
+            <summary>
+            Get list of activity flow by specified category
+            </summary>
+            <param name="refType">Specified Category</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ActivityFlowApi.DeleteFlow(System.Int32)">
+            <summary>
+            Delete a flow by its ID. Throw SMXException if deletion fail
+            </summary>
+            <param name="flowID"></param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ActivityFlowApi.CopyProcessFlow(System.Int32,SoftMart.Core.Workflow.SharedComponent.Entities.Flex_ProcessFlow)">
+            <summary>
+            Copy properties from a flow to a process flow by specified flow ID
+            </summary>
+            <param name="fromFlowID">Specified flow id</param>
+            <param name="toProcessFlow">Destination process flow</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ActivityFlowApi.CopyProcessFlow(SoftMart.Core.Workflow.SharedComponent.Entities.Flex_Flow,SoftMart.Core.Workflow.SharedComponent.Entities.Flex_ProcessFlow)">
+            <summary>
+            Copy properties from a flow to a process flow
+            </summary>
+            <param name="fromFlow">Source flow</param>
+            <param name="toProcessFlow">Destination process flow</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ActivityFlowApi.CopyProcessFlowActivity(System.Int32,SoftMart.Core.Workflow.SharedComponent.Entities.Flex_ProcessFlowActivity)">
+            <summary>
+            Copy properties from an activity to a process activity by specified activityID
+            </summary>
+            <param name="fromActivityID">Source activity id</param>
+            <param name="toProcessActivity">Destination activity</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ActivityFlowApi.CopyProcessFlowActivity(SoftMart.Core.Workflow.SharedComponent.Entities.Flex_FlowActivity,SoftMart.Core.Workflow.SharedComponent.Entities.Flex_ProcessFlowActivity)">
+            <summary>
+            Copy properties from an activity to a process activity
+            </summary>
+            <param name="fromActivity">Source activity</param>
+            <param name="toProcessActivity">Destination activity</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.GetProcessFlowByID(System.Int32)">
+            <summary>
+            Get ProcessFlow by specified id
+            </summary>
+            <param name="processFlowID">Specified id</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.GetProcessFlowOfItem(System.Int32,System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            Get process flows of a refID in specified status
+            </summary>
+            <param name="refID">ID of item</param>
+            <param name="refType">Type of item</param>
+            <param name="status">List Specified status. Null to return all</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.GetProcessFlowStatus(System.Int32)">
+            <summary>
+            Get status of specified processFlow
+            </summary>
+            <param name="processFlowID">Specified process flow id</param>
+            <returns>Status of flow</returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.CreateApprovalFlow(System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            Create empty ApprovalFlow and then start specified activityID
+            </summary>
+            <param name="flowID">FlowID will be used for applying</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.AssignApprovalFlow(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Assign ApprovalFlow for a object in application
+            </summary>
+            <param name="processFlowID">ProcessFlowID will be used to assign</param>
+            <param name="refID">Object in application</param>
+            <param name="refType">Type of object</param>
+            <param name="comment"></param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.FinishApprovalFlow(System.Int32,System.String)">
+            <summary>
+            Finish a approval flow by specified process flow id. Status of flow will be changed to ApprovalStatus.Done
+            </summary>
+            <param name="processFlowID">Specified process flow id</param>
+            <param name="comment">Comment on finishing</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.GetCurrentProcessingActivity(System.Int32)">
+            <summary>
+            Get waiting activity for approval by specified processFlowID. 
+            </summary>
+            <param name="processFlowID">ProcessFlowID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.GetProcessingActivityByRefID(System.Int32,System.Int32)">
+            <summary>
+            Get waiting activity for approval by specified refID and refType
+            </summary>
+            <param name="refID">Specified refID</param>
+            <param name="refType">Specified refType</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.GetNextActivity(System.Int32)">
+            <summary>
+            Get next activity by specified processFlowActivity
+            </summary>
+            <param name="currentProcessActivityID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.GetOverdueActivities(System.DateTime)">
+            <summary>
+            Get overdue activity by specified deadline
+            </summary>
+            <param name="deadline">Specified deadline</param>
+            <returns>List overdue activities</returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.GetProcessFlowActivity(System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            Get activity in specified processFlow and specified status
+            </summary>
+            <param name="processFlowID">ID of process flow</param>
+            <param name="status">List Specified status. Null to return all</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.ApproveActivity(System.Int32,System.String)">
+            <summary>
+            Approve a specified activity by its ID
+            </summary>
+            <param name="activityID">Specified acitivity ID</param>
+            <param name="comment">Comment on the activity</param>
+            <param name="user">Loged user information</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.RejectActivity(System.Int32,System.String)">
+            <summary>
+            Reject a specified activity by its ID
+            </summary>
+            <param name="activityID">Specified activity ID</param>
+            <param name="comment">Comment of the activity</param>
+            <param name="user">Loged user information</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.AssignEmployee(System.Int32,System.Nullable{System.Int32},System.String,System.String)">
+            <summary>
+            Change incharger of specified activity
+            </summary>
+            <param name="activityID">Specified activity ID</param>
+            <param name="employeeID">EmployeeID of new incharger</param>
+            <param name="employeeName">UserName of new incharger</param>
+            <param name="displayName">Display name of new incharger</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.GetApprovalFlowByRefType(System.Int32)">
+            <summary>
+            Get approval flow by RefType.
+            </summary>
+            <param name="refType">RefType of ApprovalFlow</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.GetFlowByCode(System.String)">
+            <summary>
+            Get a flow by specified code
+            </summary>
+            <param name="flowCode">Specified code</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.DeleteFlow(System.Int32)">
+            <summary>
+            Delete a flow by its ID. Throw SMXException if deletion fail
+            </summary>
+            <param name="flowID"></param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.CopyProcessFlow(System.Int32,SoftMart.Core.Workflow.SharedComponent.Entities.Flex_APProcessFlow)">
+            <summary>
+            Copy properties from a flow to a process flow by specified flow ID
+            </summary>
+            <param name="fromFlowID">Specified flow id</param>
+            <param name="toProcessFlow">Destination process flow</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.CopyProcessFlow(SoftMart.Core.Workflow.SharedComponent.Entities.Flex_APFlow,SoftMart.Core.Workflow.SharedComponent.Entities.Flex_APProcessFlow)">
+            <summary>
+            Copy properties from a flow to a process flow
+            </summary>
+            <param name="fromFlow">Source flow</param>
+            <param name="toProcessFlow">Destination process flow</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.CopyProcessFlowActivity(System.Int32,SoftMart.Core.Workflow.SharedComponent.Entities.Flex_APProcessFlowActivity)">
+            <summary>
+            Copy properties from an activity to a process activity by specified activityID
+            </summary>
+            <param name="fromActivityID">Source activity id</param>
+            <param name="toProcessActivity">Destination activity</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ApprovalFlowApi.CopyProcessFlowActivity(SoftMart.Core.Workflow.SharedComponent.Entities.Flex_APFlowActivity,SoftMart.Core.Workflow.SharedComponent.Entities.Flex_APProcessFlowActivity)">
+            <summary>
+            Copy properties from an activity to a process activity
+            </summary>
+            <param name="fromActivity">Source activity</param>
+            <param name="toProcessActivity">Destination activity</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.Biz.BaseBiz.CopyProcessFlow(System.Int32,SoftMart.Core.Workflow.SharedComponent.Entities.Flex_ProcessFlow)">
+            <summary>
+            Copy một phương án xử lý từ ID của bản ghi cấu hình
+            </summary>
+            <param name="fromFlowID">ID của phần cấu hình</param>
+            <param name="refID">ID của bản ghi cần áp dụng phương án</param>
+            <param name="refType">Loại của bản ghi cần phê duyệt. = null nếu là luồng phê duyệt con.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.Biz.BaseBiz.CopyProcessFlowActivity(SoftMart.Core.Workflow.SharedComponent.Entities.Flex_FlowActivity,SoftMart.Core.Workflow.SharedComponent.Entities.Flex_ProcessFlowActivity)">
+            <summary>
+            Create a ProcessFlowActivity from FlowActivity
+            </summary>
+            <param name="flowActivity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.Biz.BaseBiz.CopyProcessFlow(System.Int32,SoftMart.Core.Workflow.SharedComponent.Entities.Flex_APProcessFlow)">
+            <summary>
+            Copy một phương án xử lý từ ID của bản ghi cấu hình
+            </summary>
+            <param name="fromFlowID">ID của phần cấu hình</param>
+            <param name="refID">ID của bản ghi cần áp dụng phương án</param>
+            <param name="refType">Loại của bản ghi cần phê duyệt. = null nếu là luồng phê duyệt con.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.Biz.BaseBiz.CopyProcessFlowActivity(SoftMart.Core.Workflow.SharedComponent.Entities.Flex_APFlowActivity,SoftMart.Core.Workflow.SharedComponent.Entities.Flex_APProcessFlowActivity)">
+            <summary>
+            Create a ProcessFlowActivity from FlowActivity
+            </summary>
+            <param name="flowActivity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.Biz.ProcessActivityFlowBiz.GetProcessFlowOfItem(SoftMart.Core.Workflow.SharedComponent.Params.WorkFlowParam)">
+            <summary>
+            Get process flow of an item by specified filter.
+            Filter by RefID, RefType, Status
+            </summary>
+            <param name="param"></param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.Biz.CalendarBiz.GetWorkingDuration(System.TimeSpan,System.TimeSpan,System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Get actual duration of a task in calendar
+            </summary>
+            <param name="startTask">Start task</param>
+            <param name="endTask">End task</param>
+            <param name="startShift">Start shift</param>
+            <param name="endShift">End shift</param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.Biz.ProcessApprovalFlowBiz.GetProcessFlowOfItem(SoftMart.Core.Workflow.SharedComponent.Params.APWorkFlowParam)">
+            <summary>
+            Get process flow of an item by specified filter.
+            Filter by RefID, RefType, Status
+            </summary>
+            <param name="param"></param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.Biz.ProcessApprovalFlowBiz.GetCurrentProcessingActivity(SoftMart.Core.Workflow.SharedComponent.Params.APWorkFlowParam)">
+            <summary>
+            Get current processing activity. Activity may be in Processing or RejectedInSubFlow
+            </summary>
+            <param name="param"></param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.Biz.ProcessApprovalFlowBiz.GetNextActivity(SoftMart.Core.Workflow.SharedComponent.Params.APWorkFlowParam)">
+            <summary>
+            Get next activity by a specified activityID
+            </summary>
+            <param name="param"></param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.CalendarApi.GetListOfHoliday(System.DateTime,System.DateTime)">
+            <summary>
+            Danh sách các ngày nghỉ trong khoảng thời gian startDate -> endDate
+            </summary>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.Dao.BaseDao.BuildInCondition(System.Collections.Generic.List{System.Int32},System.String)">
+            <summary>
+            Build SQL IN statement
+            </summary>
+            <param name="lstInput"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.Dao.ApplicationDatabaseDao.getDictionaryFromTable(System.Data.DataTable)">
+            <summary>
+            Get dictionary from a table which has two column are ID and Name
+            </summary>
+            <param name="table"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.Dao.APProcessFlowActivityDao.GetNextActivityInApprovalFlow(System.Int32)">
+            <summary>
+            Lấy ra bước kế tiếp của 1 approval activity
+            </summary>
+            <param name="currentActivityID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.Dao.APProcessFlowActivityDao.GetCurrentProcessingActivity(System.Int32)">
+            <summary>
+            Get current processing activity. Activity may be in Processing or RejectedInSubFlow
+            </summary>
+            <param name="processFlowID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.Dao.CalendarSheetDao.GetItemToCalculateEndTime">
+            <summary>
+            Lấy ra bộ giá trị phù hợp để tính giờ kết thúc một công việc
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.Dao.CalendarHolidayDao.GetItemToCalculateEndTime">
+            <summary>
+            Lấy ra bộ giá trị phù hợp để tính giờ kết thúc một công việc
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.Dao.CalendarWorkingDayDao.GetItemToCalculateEndTime">
+            <summary>
+            Lấy ra bộ giá trị phù hợp để tính giờ kết thúc một công việc
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.Dao.ProcessFlowActivityDao.ChangeStatusByParentID(System.Int32,System.Nullable{System.Int32},System.Int32)">
+            <summary>
+            Change status of activities by specified parentID
+            </summary>
+            <param name="parentID">Specified parentID</param>
+            <param name="status">Status</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.Dao.ProcessFlowActivityDao.CountNotCompleteActivity(System.Int32)">
+            <summary>
+            Đếm số bước chưa hoàn thành của 1 ProcessFlow
+            </summary>
+            <param name="processFlowID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.Dao.ProcessFlowActivityDao.GetCurrentProcessingActivity(System.Int32)">
+            <summary>
+            Get current processing activity. Activity may be in Processing or RejectedInSubFlow
+            </summary>
+            <param name="processFlowID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ConfigActivityFlow.InitConfig(System.Nullable{System.Int32},System.Collections.Generic.Dictionary{System.Int32,System.String},System.Collections.Generic.Dictionary{System.Int32,System.String},System.Collections.Generic.List{SoftMart.Core.Workflow.SharedComponent.Entities.Flex_IExtendedInfo},System.Collections.Generic.Dictionary{System.Int32,System.String})">
+            <summary>
+            Load an approval flow configuration to edit or addnew
+            </summary>
+            <param name="flowID">null when add new</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ConfigActivityFlow.GetConfigFlow">
+            <summary>
+            Get flow info on the form
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ConfigActivityFlow.GetConfigActivities">
+            <summary>
+            Get all activity info on the form
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.ConfigApprovalFlow.InitConfig(System.Nullable{System.Int32},System.Collections.Generic.Dictionary{System.Int32,System.String},System.Collections.Generic.Dictionary{System.Int32,System.String},System.Collections.Generic.Dictionary{System.Int32,System.String})">
+            <summary>
+            Load an approval flow configuration to edit or addnew
+            </summary>
+            <param name="flowID">null when add new</param>
+        </member>
+        <member name="P:SoftMart.Core.Workflow.ListCalendarSheet.DisplayPageUrlFormat">
+            <summary>
+            Display address page with one param to holder ID of calendar sheet
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.DisplayActivityFlow.LoadConfig(System.Int32,System.Collections.Generic.List{SoftMart.Core.Workflow.SharedComponent.Entities.Flex_IExtendedInfo})">
+            <summary>
+            Load an activity flow configuration to edit or addnew
+            </summary>
+            <param name="flowID">null when add new</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.DisplayActivityFlow.DeleteCurrentItem">
+            <summary>
+            Delete a flow by its ID. Throw SMXException if deletion fail
+            </summary>
+            <param name="flowID"></param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.DisplayApprovalFlow.LoadConfig(System.Int32)">
+            <summary>
+            Load an approval flow configuration to edit or addnew
+            </summary>
+            <param name="flowID">null when add new</param>
+        </member>
+        <member name="M:SoftMart.Core.Workflow.DisplayApprovalFlow.DeleteCurrentItem">
+            <summary>
+            Delete a flow by its ID. Throw SMXException if deletion fail
+            </summary>
+            <param name="flowID"></param>
+        </member>
+    </members>
+</doc>

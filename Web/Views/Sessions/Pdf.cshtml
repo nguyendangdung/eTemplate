@@ -1,0 +1,28 @@
+﻿@using Web.Models.Screens
+@model Web.Models.Sessions.PreviewAndPrint
+
+@{
+	ViewBag.Title = "PreviewAndPrint";
+	Layout = "../Shared/_PdfLayout.cshtml";
+}
+<div id="print-content">
+	<h2>Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi</h2>
+	@foreach (var item in Model.SessionDetailses)
+	{
+		@Html.Action(item.Instruction.Screen.ActionMethod.Action, item.Instruction.Screen.ActionMethod.Controller, new InputParams()
+		{
+			SessionId = Model.SessionId,
+			IsReporter = true,
+			InstructionId = item.InstructionId,
+			TheNextInstructionInd = item.Instruction.NextInstructionId,
+			ThePreviousInstructionId = item.Instruction.PreviousInstructionId
+		})
+	}
+	
+</div>
+@*<iframe src="../../web/viewer.html?file=abc.pdf"></iframe>*@
+
+<ul class="pager">
+	<li class="previous"><a href="@Url.Action("Details", "Instructions", new {id = Model.PreviousInstructionId, sessionId = Model.SessionId})">Quay lại</a></li>
+	<li class="next"><a href="@Url.Action("Index", "Home")">Kết thúc</a></li>
+</ul>

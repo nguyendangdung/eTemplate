@@ -1,0 +1,22 @@
+﻿@model Web.Models.Screens.CustomerInfoData
+
+<div>
+    <h4>Thông tin tài khoản</h4>
+	<hr />
+	<div class="form-horizontal">
+		<div class="form-group">
+			<label class="col-xs-2 control-label">@Html.DisplayNameFor(model => model.CustomerName)</label>
+			<div class="col-xs-10">
+				<p class="form-control-static">@Model.CustomerName</p>
+			</div>
+		</div>
+	</div>
+	<div class="form-horizontal">
+		<div class="form-group">
+			<label class="col-xs-2 control-label">@Html.DisplayNameFor(model => model.AccountNumber)</label>
+			<div class="col-xs-10">
+				<p class="form-control-static">@Model.AccountNumber</p>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,14 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/UI/MasterPages/Common/MainMaster.Master" AutoEventWireup="true" CodeBehind="Instructions.master.cs" Inherits="SM.eTemplate.UI.Admin.Instructions.Instructions" %>
+<%@ Register TagPrefix="cc1" Namespace="SoftMart.Core.UIControls" Assembly="SMCUI" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+	<div class="col-md-3">
+		<cc1:TreeViewExtended ID="_instructionsTreeView" runat="server" 
+							OnSelectedNodeChanged="SelectedNodeChanged" AutoPostBack="true"></cc1:TreeViewExtended>
+	</div>
+	<div class="col-md-9">
+		<asp:ContentPlaceHolder ID="MainContent" runat="server">
+		</asp:ContentPlaceHolder>	
+	</div>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContentAjax" runat="server">
+</asp:Content>

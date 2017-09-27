@@ -1,0 +1,85 @@
+﻿@model Web.Models.Screens.NaviDetailsVM
+
+<div class="col-md-12 col-sm-12 col-xs-12 different-content">
+	<div class="col-md-12 col-sm-12 col-xs-12 choose-type-home no-pdg">
+		@foreach (var item in Model.Data.Instructions)
+		{
+			<div class="col-md-2 col-xs-6 col-sm-2 div-item-home no-pdg">
+				<a href="@Url.Action("Details", "Instructions", new {id = item.InstructionId})">
+					<div class="col-md-12 col-sm-12 col-xs-12 withdrawal item-type">
+						<img src="@item.IconUrl" onerror="this.src='../../images/default-300x169.png';">
+						<h4 class="sub-title-type">@item.Name</h4>
+					</div>
+				</a>
+			</div>
+			@*<div class="col-md-2 col-xs-6 col-sm-2 div-item-home no-pdg">
+					<a href="">
+						<div class="col-md-12 col-sm-12 col-xs-12 saving item-type">
+							<img src="@item.">
+							<h4 class="sub-title-type">Tiết kiệm</h4>
+						</div>
+					</a>
+				</div>*@
+		}
+	</div>
+</div>
+	@*<style>
+			.tile {
+				width: 100%;
+				display: inline-block;
+				box-sizing: border-box;
+				background: #fff;
+				padding: 20px;
+				margin-bottom: 30px;
+			}
+			.tile .title {
+				margin-top: 0px;
+			}
+			.tile.purple, .tile.blue, .tile.red, .tile.orange, .tile.green {
+				color: #fff;
+			}
+			.tile.purple {
+				background: #5133AB;
+			}
+			.tile.purple:hover {
+				background: #3e2784;
+			}
+			.tile.red {
+				background: #AC193D;
+			}
+			.tile.red:hover {
+				background: #7f132d;
+			}
+			.tile.green {
+				background: #00A600;
+			}
+			.tile.green:hover {
+				background: #007300;
+			}
+			.tile.blue {
+				background: #2672EC;
+			}
+			.tile.blue:hover {
+				background: #125acd;
+			}
+			.tile.orange {
+				background: #DC572E;
+			}
+			.tile.orange:hover {
+				background: #b8431f;
+			}
+		</style>
+
+		<div class="row">
+			@foreach (var item in Model.Data.Instructions)
+			{
+				<div class="col-sm-4">
+					<a href="@Url.Action("Details", "Instructions", new {id = item.InstructionId})">
+						<div class="tile red">
+							<h3 class="title">@item.Name</h3>
+						</div>
+					</a>
+
+				</div>
+			}
+		</div>*@

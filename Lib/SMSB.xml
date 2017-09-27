@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMSB</name>
+    </assembly>
+    <members>
+        <member name="T:SoftMart.Service.BatchProcessing.Biz.BaseDynamicImporting">
+            <summary>
+            Base to import data from Excel
+            </summary>
+        </member>
+        <member name="T:SoftMart.Service.BatchProcessing.Biz.BaseExcelImporting">
+            <summary>
+            Base to import data from Excel
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.BatchProcessing.Biz.BaseExcelImporting.ProcessExcelFile(SoftMart.Service.BatchProcessing.Entity.Flex_Importing,System.String)">
+            <summary>
+            Import data from Excel file
+            </summary>
+            <param name="task"></param>
+            <param name="excelFilePath">Full path to excel file</param>
+            <returns>Result: original data + status + Detail result</returns>
+        </member>
+        <member name="M:SoftMart.Service.BatchProcessing.Biz.BaseExcelImporting.AddResultColumns(System.Data.DataTable)">
+            <summary>
+            Add columns to store result of each row
+            </summary>
+            <param name="dtData"></param>
+        </member>
+        <member name="M:SoftMart.Service.BatchProcessing.Biz.BaseExcelImporting.ImportExcelRowToSql(System.Data.DataRow,SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelMappingInfo)">
+            <summary>
+            Import a excel row to Database.
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.BatchProcessing.Biz.BaseExcelImporting.NormalizeRowData(System.Data.DataRow,SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelMappingInfo)">
+            <summary>
+            <para>Validate Row information of a common excel file.</para>
+            <para>Normalize data of all cells. Ex: Convert string -> DateTime, int,...</para>
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.BatchProcessing.Biz.BaseExcelImporting.ProcessRow(System.Data.DataRow,SoftMart.Core.OfficeUtilities.Excel.Entity.ExcelMappingInfo)">
+            <summary>
+            Process row
+            </summary>
+            <param name="rowData">Data of a row</param>
+            <param name="mappingRowInfo">Ìnormation of row, for validating</param>
+            <returns>Error message</returns>
+        </member>
+        <member name="P:SoftMart.Service.BatchProcessing.Biz.BaseExcelImporting.Task">
+            <summary>
+            Item in database
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.BatchProcessing.Biz.BaseDynamicImporting.AddResultColumns(System.Data.DataTable)">
+            <summary>
+            Add columns to store result of each row
+            </summary>
+            <param name="dtData"></param>
+        </member>
+        <member name="M:SoftMart.Service.BatchProcessing.BatchProcessingApi.ConfigUI(System.String,System.Collections.Generic.Dictionary{System.Int32,System.String})">
+            <summary>
+            Config BatchProcessingService for UI
+            </summary>
+            <param name="connectionKey">Connnection string key</param>
+            <param name="dicImportTypeDesc">All ImportType desctiption</param>
+        </member>
+        <member name="M:SoftMart.Service.BatchProcessing.BatchProcessingApi.ConfigService(System.String,System.String,System.String,System.String,SoftMart.Service.BatchProcessing.Biz.BaseBizProvider)">
+            <summary>
+            Config BatchProcessingService before service running
+            </summary>
+            <param name="connectionKey">Connnection string key</param>
+            <param name="xmlConfigFolder">Folder xml configl files</param>
+            <param name="templateFolder">Folder contains Report template</param>
+            <param name="temporaryFolder">Folder to put temporary data</param>
+            <param name="provider">Provider to create actual Business</param>
+            <param name="logger">If Null: Use default logger ("BatchProcessingService")</param>
+        </member>
+        <member name="M:SoftMart.Service.BatchProcessing.Dao.Flex_ImportingDao.GetTask">
+            <summary>
+            Get 1 item from Importing table in DB to process
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:SoftMart.Service.BatchProcessing.Shared.ImportingStatus.Failed">
+            <summary>
+            When excel file is invalid.
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.BatchProcessing.AddNewUC.BindData(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            BindData
+            </summary>
+            <param name="dicTylstImportTypepeDesc">Danh sách loại Import được hiển thị. Null: Bỏ qua, hiển thị toàn bộ</param>
+        </member>
+        <member name="M:SoftMart.Service.BatchProcessing.DefaultUC.BindData(System.Collections.Generic.List{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            BindData
+            </summary>
+            <param name="dicTylstImportTypepeDesc">Danh sách loại Import được hiển thị. Null: Bỏ qua, hiển thị toàn bộ</param>
+            <param name="employeeID">ID người import. Null: Bỏ qua</param>
+        </member>
+    </members>
+</doc>

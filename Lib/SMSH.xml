@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMSH</name>
+    </assembly>
+    <members>
+        <member name="M:SoftMart.Service.SHC.SHCApi.ConfigService(System.String,System.String)">
+            <summary>
+            Config System Health Check service before running
+            </summary>
+            <param name="packageName">Service/Web...</param>
+            <param name="connectionKey">Connnection string key to Application database</param>
+        </member>
+        <member name="T:SoftMart.Service.SHC.SHCServiceThread">
+            <summary>
+            Manage all Services
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.SHC.SHCServiceThread.StartService">
+            <summary>
+            Start ServiceManager and all defined Services
+            </summary>
+        </member>
+        <member name="M:SoftMart.Service.SHC.SHCServiceThread.TerminateService">
+            <summary>
+            Terminate all defined Services and ServiceManager
+            </summary>
+        </member>
+    </members>
+</doc>

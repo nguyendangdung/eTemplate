@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMSV</name>
+    </assembly>
+    <members>
+        <member name="M:SoftMart.Service.Validation.ValidationApi.ConfigService(System.String,System.Nullable{System.Int32},System.String,SoftMart.Service.Validation.Biz.BaseBizProvider)">
+            <summary>
+            Config ValidationService before running
+            </summary>
+            <param name="connectionKey">Connnection string key to Application database</param>
+            <param name="ruleCategory">Validation rule category</param>
+            <param name="temporaryFolder">Folder to put temporary data</param>
+            <param name="provider">Provider to create actual Business</param>
+        </member>
+    </members>
+</doc>

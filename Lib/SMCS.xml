@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SMCS</name>
+    </assembly>
+    <members>
+        <member name="T:SoftMart.Core.Security.UnsecuredPage">
+            <summary>
+            Support Log Performance 
+            </summary>
+        </member>
+        <member name="T:SoftMart.Core.Security.SecuredPage">
+            <summary>
+            <para>1. OnPreInit: Check Profile, Neu chua Login -> Redirect sang Login</para>
+            <para>2. OnInit: Tu dong check Function Security (Quyen vao trang, chuc nang)</para>
+            <para>3. OnLoadComplete: Merge Function Security voi Data Security (Neu co)</para>
+            <para>   Tu dong goi ResponsePermission cho cac trang con check viec an hien Chuc nang</para>
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Security.SecuredPage.HandleNotLogin">
+            <summary>
+            Do something when user not logged in. Redirect to Login page
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Security.SecuredPage.HandleNoPermission">
+            <summary>
+            User doesn't have permission for this page. Redirect to perssion page
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Security.SecuredPage.GetPagePermission">
+            <summary>
+            Get all function rights for this page
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SoftMart.Core.Security.SecuredPage.OnPreInit(System.EventArgs)">
+            <summary>
+            Check accessibility on page. Check Login and get page permission
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:SoftMart.Core.Security.SecuredPage.OnLoadComplete(System.EventArgs)">
+            <summary>
+            Final permission (permission on page + permission on item)
+            Merge DataRights with FunctionRights to FunctionRights
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:SoftMart.Core.Security.SecuredPage.MergeFunctionRight(System.Collections.Generic.List{SoftMart.Core.Security.Entity.IFunctionRight},System.Collections.Generic.List{SoftMart.Core.Security.Entity.IFunctionRight})">
+            <summary>
+            Megre function Right with data Right by "AND" FunctionCode
+            </summary>
+            <param name="lstPageRight">Function Right</param>
+            <param name="lstItemRight">Data Right</param>
+        </member>
+        <member name="M:SoftMart.Core.Security.SecuredPage.ResponsePermission">
+            <summary>
+            Check all controls in FunctionCodeMapping. Set control.Visible = true if has permission
+            Called in OnLoadComplete
+            </summary>
+        </member>
+        <member name="M:SoftMart.Core.Security.SecuredPage.SetPermission(System.Object,System.String)">
+            <summary>
+            Check code from FunctionRights and set Visible for control
+            </summary>
+            <param name="objControl">Instance of control. Support: Control and DataGridColumn</param>
+            <param name="code">Function code</param>
+            <returns>True: has permission. Flase: No permission</returns>
+        </member>
+        <member name="M:SoftMart.Core.Security.SecuredPage.HasPermission(System.String)">
+            <summary>
+            De Virtual o day de cho phep trang con co the them dieu kien ma Rule check ko du.
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.Security.SecuredPage.FunctionRights">
+            <summary>
+            <para>Danh sách các chức năng được phép xử lý trên Page, được set khi OnPreInit.</para>
+            <para>Merge với DataRights (Nếu not null) khi OnLoadComplete</para>
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.Security.SecuredPage.DataRights">
+            <summary>
+            <para>Danh sách các chức năng được phép xử lý đối với item đang hiển thị. Được set bởi trang con trước khi OnLoadComplete.</para>
+            <para>Nếu Null: Bỏ qua không kiểm tra quyền xem dữ liệu khi OnLoadComplete</para>
+            </summary>
+        </member>
+        <member name="P:SoftMart.Core.Security.SecuredPage.FunctionCodeMapping">
+            <summary>
+            Mapping between UI control with function code. Default: Return empty dictionary
+            Voi 1 Control co n code thi chi can 1 trong cac code duoc phep thi se hien thi. Ko quan tam thu tu trong danh sach.
+            <para>Key: UI control (Page, Button, Grid column...)</para>
+            <para>Value: FunctionCode of Control</para>
+            </summary>
+        </member>
+    </members>
+</doc>
