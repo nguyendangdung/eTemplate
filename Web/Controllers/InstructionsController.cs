@@ -40,6 +40,11 @@ namespace Web.Controllers
             var isMenuInstruction = instruction.NextInstructionId == null && instruction.SubInstructions.Any();
 	        var isRootInstruction = instruction.ParentInstructionId == null;
             //var inProgress = session != null && session.SessionDetails.Any();
+            if (!isRootInstruction && !isMenuInstruction && (SessionHelper.SessionId == null || session == null))
+            {
+                return RedirectToAction("index", "home");
+            }
+
 
             var isNewSession = session == null // 
                 || isMenuInstruction;

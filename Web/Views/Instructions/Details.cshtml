@@ -35,7 +35,12 @@
 		<div class="tab-pane active col-md-12 col-sm-12 col-xs-12 lst-option" role="tabpanel" id="step2">
 			<h3 class="text-center title-account title-payment">@Model.Instruction.Name</h3>
 			
-			@Html.ValidationSummary(true, "", new {@class = "text-danger"})
+			@if (!Html.ViewData.ModelState.IsValid)
+			{
+				<h6 class="alert-error">@Html.ViewData.ModelState.SelectMany(keyValuePair => keyValuePair.Value.Errors).FirstOrDefault().ErrorMessage</h6>
+			}
+
+			@*@Html.ValidationSummary(true, "", new {@class = "text-danger"})*@
 			@Html.Action(Model.Instruction.Screen.ActionMethod.Action, Model.Instruction.Screen.ActionMethod.Controller, new InputParams()
 			{
 				Instruction = Model.Instruction,

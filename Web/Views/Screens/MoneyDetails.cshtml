@@ -23,7 +23,7 @@
 					@Html.HiddenFor(s => Model.Data.Denominations[i].Value)
 					<td class="txt-bold cost">@Model.Data.Denominations[i].Value.ToString("N0", new CultureInfo("vi-VN", false)) VND</td>
 					<td class="number">
-						@Html.TextBoxFor(s => Model.Data.Denominations[i].NumberOfUnit, new { @class = "input-number form-control", type = "number" })
+						@Html.TextBoxFor(s => Model.Data.Denominations[i].NumberOfUnit, new { @class = "input-number form-control", type = "text" })
 						@*<input type="text" class="form-control">*@
 					</td>
 					<td class="noti">
@@ -34,7 +34,7 @@
 					@Html.HiddenFor(s => Model.Data.Denominations[i + 1].Value)
 					<td class="txt-bold cost">@Model.Data.Denominations[i + 1].Value.ToString("N0", new CultureInfo("vi-VN", false)) VND</td>
 					<td class="number">
-						@Html.TextBoxFor(s => Model.Data.Denominations[i + 1].NumberOfUnit, new { @class = "input-number form-control", type = "number" })
+						@Html.TextBoxFor(s => Model.Data.Denominations[i + 1].NumberOfUnit, new { @class = "input-number form-control", type = "text" })
 						@*<input type="text" class="form-control">*@
 					</td>
 					<td class="noti">
@@ -59,21 +59,26 @@
 
 @using (Html.BeginScriptContext())
 {
-	Html.AddScriptFile("~/scripts/kendo/kendo.core.min.js");
-	Html.AddScriptFile("~/scripts/kendo/kendo.userevents.min.js");
-	Html.AddScriptFile("~/scripts/kendo/kendo.numerictextbox.min.js");
-	Html.AddScriptFile("~/scripts/kendo/cultures/kendo.culture.vi-VN.min.js");
+    //Html.AddScriptFile("~/scripts/kendo/kendo.core.min.js");
+    //Html.AddScriptFile("~/scripts/kendo/kendo.userevents.min.js");
+    //Html.AddScriptFile("~/scripts/kendo/kendo.numerictextbox.min.js");
+    //Html.AddScriptFile("~/scripts/kendo/cultures/kendo.culture.vi-VN.min.js");
 
 	Html.AddScriptBlock(
 		@<script>
- 			$(function () {
+            $(function () {
  				var anElement = new AutoNumeric('#Data_Amount',
  					{
  						decimalCharacter: ',',
  						digitGroupSeparator: '.',
  						decimalPlaces: 0
  					});
- 				//$(".input-number").kendoNumericTextBox();
+ 				var elements = AutoNumeric.multiple('.input-number',
+                    {
+                        decimalCharacter: ',',
+                        digitGroupSeparator: '.',
+                        decimalPlaces: 0
+                    });
  			});
  		</script>
 		);

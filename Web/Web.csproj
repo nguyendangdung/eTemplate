@@ -388,7 +388,7 @@
     <Content Include="Scripts\kendo\kendo.core.min.js" />
     <Content Include="Scripts\kendo\kendo.numerictextbox.min.js" />
     <Content Include="Scripts\kendo\kendo.userevents.min.js" />
-    <None Include="Views\Shared\_optionLayout.cshtml" />
+    <Content Include="Views\Shared\_optionLayout.cshtml" />
     <Content Include="Scripts\ventors\bootstrap.min.js" />
     <Content Include="Scripts\ventors\html5shiv.min.js" />
     <Content Include="Scripts\ventors\jquery.min.js" />
@@ -817,6 +817,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

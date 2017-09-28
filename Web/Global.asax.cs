@@ -16,6 +16,7 @@ namespace Web
 		protected void Application_Start()
 		{
 			ModelBinders.Binders.Add(typeof(long?), new DecimalModelBinder());
+		    ModelBinders.Binders.Add(typeof(int?), new IntegerModelBinder());
 
 			AreaRegistration.RegisterAllAreas();
 			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

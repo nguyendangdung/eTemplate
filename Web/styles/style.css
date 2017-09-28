@@ -92,6 +92,11 @@ body{
 .header-home .navbar-header img{
 	max-height: 45px;
 }
+.label-warning.active{
+	color: #fff;
+    background-color: #EC870E;
+    border: 1px solid #EC870E;
+}
 .label-warning{
 	font-size: 15px;
 	padding: 10px 15px;
@@ -100,7 +105,11 @@ body{
     font-weight: 500;
     border-radius: 0px;
     display: inline-block;
-    background-color: #EC870E;
+}
+.label-warning.no-active{
+	background-color: #fff;
+	border: 1px solid #EC870E;
+	color: #EC870E;
 }
 .ctn-home{
 	padding-left: 0px;
@@ -333,7 +342,7 @@ span.round-tab:hover {
 
 .wizard h3 {
     margin-top: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .div-table-money{
@@ -446,7 +455,7 @@ span.round-tab:hover {
 	font-size: 14px;
 	margin-left: 0px;
 	margin-right: 0px;
-	padding: 5px 0px;
+	padding: 10px 0px;
 }
 .detail-display-content{
 	font-size: 14px;
@@ -454,4 +463,19 @@ span.round-tab:hover {
 .field .control-label{
 	text-align: left;
 	border-right: 1px solid #ddd;
+}
+
+.alert-error{
+	color: #e8341e;
+	font-size: 14px;
+	text-align: center;
+}
+.display-infor-customer{
+	margin-bottom: 15px;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+.form-horizontal .form-group{
+	margin-left: 0px;
+	margin-right: 0px;
 }

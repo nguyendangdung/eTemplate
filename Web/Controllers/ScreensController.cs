@@ -41,23 +41,36 @@ namespace Web.Controllers
 		        }
 		        CustomerInfoData data = null;
 				var modelFromParent = ControllerContext.ParentActionViewContext.ViewBag.Model as CustomerInfoVM;
+		        var newInput = true;
 		        if (sessionData == null)
 		        {
 			        data = modelFromParent == null ? null : modelFromParent.Data;
 		        }
 		        else
 		        {
+			        newInput = false;
 			        data = string.IsNullOrWhiteSpace(sessionData.Data)
 				        ? null
 				        : sessionData.Data.XmlDeserializeFromString<CustomerInfoData>();
 
 		        }
 
-				return PartialView(new CustomerInfoVM()
+		        if (newInput)
 		        {
-					Instruction = instruction,
-			        Data = data
-				});
+			        return PartialView(new CustomerInfoVM()
+			        {
+				        Instruction = instruction,
+				        Data = data
+			        });
+				}
+		        else
+		        {
+					return PartialView("CustomerInfoReporter", new CustomerInfoVM()
+					{
+						Instruction = instruction,
+						Data = data
+					});
+				}
 	        }
             
         }

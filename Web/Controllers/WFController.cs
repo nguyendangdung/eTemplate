@@ -27,14 +27,23 @@ namespace Web.Controllers
             return View();
         }
 
-		//[ChildActionOnly]
+		[ChildActionOnly]
 	    public ActionResult NavigationHeader(int? wfId)
 	    {
-		    var rootInstructions = _context.Instructions.Where(s => s.ParentInstructionId == null).ToList();
-            var activeRootInstruction = SessionHelper.SessionControlContainer.Instructions.FirstOrDefault();
-            ViewBag.ActiveRootInstruction = activeRootInstruction == null ? (int?)null : activeRootInstruction.InstructionId;
+		 //   var rootInstructions = _context.Instructions.Where(s => s.ParentInstructionId == null).ToList();
+   //         var activeRootInstruction = SessionHelper.SessionControlContainer.Instructions.FirstOrDefault();
+   //         ViewBag.ActiveRootInstruction = activeRootInstruction == null ? (int?)null : activeRootInstruction.InstructionId;
+			//return PartialView(rootInstructions);
+
+			var rootInstructions = _context.Instructions.Where(s => s.ParentInstructionId == null).ToList();
+
+			if (SessionHelper.SessionControlContainer != null && SessionHelper.SessionControlContainer.Instructions != null)
+			{
+				var activeRootInstruction = SessionHelper.SessionControlContainer.Instructions.FirstOrDefault();
+				ViewBag.ActiveRootInstruction = activeRootInstruction == null ? (int?)null : activeRootInstruction.InstructionId;
+			}
 			return PartialView(rootInstructions);
-	    }
+		}
 
 
 	    protected override void Dispose(bool disposing)

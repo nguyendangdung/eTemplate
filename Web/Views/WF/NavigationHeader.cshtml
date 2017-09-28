@@ -1,29 +1,21 @@
 ﻿@using Web.Biz
 @model IEnumerable<EF.Instruction>
 
-@*<ul class="nav navbar-nav navbar-right">
-	@foreach (var item in Model)
-	{
-		<li class="@(item.InstructionId == ViewBag.ActiveRootInstruction ? "active" : "")"><a href="@Url.Action("Details", "Instructions", new {id = item.InstructionId})">@item.Name</a></li>
-	}
-</ul>*@
-
-@foreach (var item in Model.ToList())
+@foreach (var item in Model)
 {
 	if (Model.LastOrDefault() == item)
 	{
-		<a class="label label-warning company-customer" href="@Url.Action("Details", "Instructions", new {id = item.InstructionId})">
+		<a class="@(item.InstructionId == ViewBag.ActiveRootInstruction ? "label label-warning active company-customer" : "label label-warning no-active company-customer")" 
+		   href="@Url.Action("Details", "Instructions", new {id = item.InstructionId})">
 			<span>@item.Name</span>
 		</a>
 	}
 	else
 	{
-		<a class="label label-warning personal-customer" href="@Url.Action("Details", "Instructions", new {id = item.InstructionId})">
+		<a class="@(item.InstructionId == ViewBag.ActiveRootInstruction ? "label label-warning active personal-customer" : "label label-warning no-active personal-customer")" 
+		   href="@Url.Action("Details", "Instructions", new {id = item.InstructionId})">
 			<span class="">@item.Name</span>
 		</a>	
 	}
 	
 }
-
-@*<a href=""><span class="label label-warning personal-customer">Cá nhân</span></a>
-<a href=""><span class="label label-warning company-customer">Doanh nghiệp</span></a>*@

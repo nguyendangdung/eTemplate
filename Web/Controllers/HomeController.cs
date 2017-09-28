@@ -12,6 +12,7 @@ namespace Web.Controllers
 	    readonly Context _context = new Context();
 		public ActionResult Index()
 		{
+			//throw new Exception();
 			var defaultInstruction = _context.Instructions.FirstOrDefault(s => s.IsDefault);
 			if (defaultInstruction == null)
 			{

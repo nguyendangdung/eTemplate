@@ -1,6 +1,27 @@
-﻿@model Web.Models.Screens.CustomerInfoData
+﻿@model Web.Models.Screens.CustomerInfoVM
 
-<div>
+<div class="col-md-12 col-sm-12 col-xs-12 different-content">
+	<div class="col-md-6 col-md-push-3 col-sm-8 col-sm-push-2 col-xs-12 form-horizontal display-infor-customer">
+		<div class="form-group col-md-12 col-sm-12 col-xs-12 field infor-name">
+			<label class="control-label col-md-5 col-sm-5 col-xs-5">Họ và tên</label>
+			<div class="col-md-7 col-sm-7 col-xs-7 content-field">
+				<h6 class="detail-display-content">@Model.Data.CustomerName</h6>
+			</div>
+		</div>
+
+		<div class="form-group col-md-12 col-sm-12 col-xs-12 field infor-number-account">
+			<label class="control-label col-md-5 col-sm-5 col-xs-5">Số tài khoản</label>
+			<div class="col-md-7 col-sm-7 col-xs-7 content-field">
+				<h6 class="detail-display-content">@Model.Data.AccountNumber</h6>
+			</div>
+		</div>
+	</div>
+</div> <!-- end div different content -->
+
+@Html.HiddenFor(s => s.Data.AccountNumber)
+@Html.HiddenFor(s => s.Data.CustomerName)
+
+@*<div>
     <h4>Thông tin tài khoản</h4>
 	<hr />
 	<div class="form-horizontal">
@@ -19,4 +40,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div>*@
