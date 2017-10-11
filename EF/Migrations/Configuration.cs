@@ -13,7 +13,7 @@
 
         protected override void Seed(EF.Context context)
         {
-	        //ContextInitializer.SeedData(context);
+	        ContextInitializer.SeedData2(context);
 		}
     }
 
