@@ -118,6 +118,7 @@ namespace Web.Controllers
 	    /// <returns></returns>
 	    public ActionResult Pdf(int id, int previousInstructionId)
 	    {
+	        var templateDir = Path.Combine(HttpRuntime.AppDomainAppPath, "Templates");
 		    var session = _context.Sessions
 			    .FirstOrDefault(s => s.SessionId == id && s.Status == Status.Active);
 		    var instruction = _context.Instructions.Find(previousInstructionId);
@@ -148,12 +149,17 @@ namespace Web.Controllers
 
 		    if (lastInstruction.Name == "Thông tin công ty")
 		    {
-			    pdfHelper.GenFile(@"D:\projects\eTemplate2\Web\Templates\PhieuVayTien.docx", dic, @"D:\projects\eTemplate2\Web\Templates\PhieuVayTien.pdf");
-			    return File(@"D:\projects\eTemplate2\Web\Templates\PhieuVayTien.pdf", "application/pdf");
-			}
+                pdfHelper.GenFile(Path.Combine(templateDir, "PhieuVayTien.docx"), dic, Path.Combine(templateDir, "PhieuVayTien.pdf"));
+                return File(Path.Combine(templateDir, "PhieuVayTien.pdf"), "application/pdf");
+                //pdfHelper.GenFile(@"D:\projects\eTemplate2\Web\Templates\PhieuVayTien.docx", dic, @"D:\projects\eTemplate2\Web\Templates\PhieuVayTien.pdf");
+                //return File(@"D:\projects\eTemplate2\Web\Templates\PhieuVayTien.pdf", "application/pdf");
+            }
 
-		    pdfHelper.GenFile(@"D:\projects\eTemplate2\Web\Templates\PhieuRutTien.docx", dic, @"D:\projects\eTemplate2\Web\Templates\PhieuRutTien.pdf");
-			return File(@"D:\projects\eTemplate2\Web\Templates\PhieuRutTien.pdf", "application/pdf");
+
+	        pdfHelper.GenFile(Path.Combine(templateDir, "PhieuRutTien.docx"), dic, Path.Combine(templateDir, "PhieuRutTien.pdf"));
+	        return File(Path.Combine(templateDir, "PhieuRutTien.pdf"), "application/pdf");
+   //         pdfHelper.GenFile(@"D:\projects\eTemplate2\Web\Templates\PhieuRutTien.docx", dic, @"D:\projects\eTemplate2\Web\Templates\PhieuRutTien.pdf");
+			//return File(@"D:\projects\eTemplate2\Web\Templates\PhieuRutTien.pdf", "application/pdf");
 		}
 	}
 }
